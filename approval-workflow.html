@@ -5,188 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Approval Workflow - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="src/js/template-renderer.js"></script>
+    <script src="src/js/data/approval-workflow-data.js"></script>
 </head>
 <body>
     <div class="container">
         <div id="header"></div>
-        <main class="automation-details">
-            <div class="breadcrumbs">
-                <div class="breadcrumb-item">
-                    <a href="automations.html" style="color: inherit; text-decoration: none;"><span>Automation templates</span></a>
-                    <img src="public/icons/arrow-light-right.svg" alt=">" class="breadcrumb-arrow">
-                </div>
-                <div class="breadcrumb-item">
-                    <span>Approval Workflow</span>
-                </div>
-            </div>
-
-            <div class="automation-content side-by-side">
-                <div class="workflow-visualization dotted-bg" style="min-height: 420px; height: 480px; display: flex; align-items: center;">
-                    <div class="workflow-steps-vertical">
-                        <div class="step-vertical">
-                            <div class="step-content-vertical">
-                                <div class="step-icon" style="background-color: rgba(33, 103, 198, 0.08); border-color: rgba(33, 103, 198, 0.16);">
-                                    <img src="public/icons/document.svg" alt="Document">
-                                </div>
-                                <span>Create document</span>
-                            </div>
-                        </div>
-                        <div class="step-arrow-vertical">
-                            <img src="public/icons/arrow-down.svg" alt="↓">
-                        </div>
-                        <div class="step-vertical">
-                            <div class="step-content-vertical">
-                                <div class="step-icon" style="background-color: rgba(154, 68, 169, 0.08); border-color: rgba(154, 68, 169, 0.16);">
-                                    <img src="public/icons/approval-workflow.svg" alt="Approval">
-                                </div>
-                                <span>Route for approval</span>
-                            </div>
-                        </div>
-                        <div class="step-arrow-vertical">
-                            <img src="public/icons/arrow-down.svg" alt="↓">
-                        </div>
-                        <div class="step-vertical">
-                            <div class="step-content-vertical">
-                                <div class="step-icon" style="background-color: rgba(33, 103, 198, 0.08); border-color: rgba(33, 103, 198, 0.16);">
-                                    <img src="public/icons/send.svg" alt="Send">
-                                </div>
-                                <span>Send to client</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="automation-right-content">
-                    <div class="automation-info" style="padding-right: 0;">
-                        <div style="margin: 24px 0 16px; font-weight: 600; color: #248567; font-size: 16px;">Required Plan: Business, Enterprise</div>
-                        <h1 class="automation-title">Approval Workflow</h1>
-                        <p class="automation-description">
-                            Ensure every document is error-free and compliant before it reaches your clients with PandaDoc Approval Workflows. Automate the review process by assigning approvers at the template level and setting approval orders to route documents to the right stakeholders at the right time.<br><br>
-                            <b>Use case:</b> Ideal for contracts, MSAs, NDAs, hiring packages, project scopes, and proposals that require internal review before sending externally.<br><br>
-                            <b>Example:</b> When sending a services agreement, the legal team is automatically prompted to review and approve the document if specific clauses or high contract values are included — saving time, avoiding manual follow-ups, and ensuring full compliance.
-                        </p>
-                        <button class="button-primary" style="margin-top: 24px; font-size: 16px; padding: 12px 32px; border-radius: 6px;">Try it</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="features">
-                <div class="feature-item">
-                    <h2 class="feature-title">Streamline Your Document Approval Process</h2>
-                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
-                        Stop chasing down key stakeholders and sending countless reminder emails. Automate the approval process and define a clear path for every document you create.
-                    </p>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 18px; margin-bottom: 16px;">Create a Seamless Document Approval Process</h3>
-                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                            Make sure the right people review your document at the right time. Set up an approval order in your template to ensure the right people are looped in automatically. To have the same person review a document at different stages, you can add them as an approver multiple times.
-                        </p>
-                    </div>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 18px; margin-bottom: 16px;">Customize Approval Processes</h3>
-                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                            Set up an automated internal workflow with designated approvers before sending to recipients. Designated approvers receive a document only when certain conditions are met, such as a specific document value or when adding a discount.
-                        </p>
-                    </div>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 18px; margin-bottom: 16px;">Notifications & Audit Trails</h3>
-                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                            Reviewers receive an email notification when a document is ready to approve. Audit trails and latest activity tiles track a document's approval status, so you always know where you are in the process.
-                        </p>
-                    </div>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 18px; margin-bottom: 16px;">Improve Communication and Collaboration</h3>
-                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                            Approvers can leave comments directly in the document. If a document is rejected, the sender must make edits and resend for review. Documents never go to clients before they're ready and bottlenecks are identified and easily eliminated.
-                        </p>
-                    </div>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 18px; margin-bottom: 16px;">Keep Documents Moving</h3>
-                        <ul style="margin: 16px 0; padding-left: 24px; font-size: 15px; line-height: 1.6;">
-                            <li style="margin-bottom: 8px;"><b>Set up an approval order:</b> Need someone's sign off before you can move to the next step? Approval orders let you send the document to one person at a time, in the appropriate order.</li>
-                            <li style="margin-bottom: 8px;"><b>Send your document for review:</b> Once your document is ready, click send to get approval. The document status will change and team members will receive an email notification to approve or reject the document.</li>
-                            <li style="margin-bottom: 8px;"><b>Lock sensitive content & track changes easily:</b> Once the approver rejects or approves the document, the sender will receive an email notification along with any comments. With content locking and user permissions in PandaDoc, you can safeguard important documents to ensure only the right people can access and edit them.</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: 32px;">
-                        <h3 style="font-size: 18px; margin-bottom: 16px;">Enterprise Plan Features</h3>
-                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                            On the Enterprise plan, you get access to advanced approval workflow capabilities that help you handle complex approval scenarios with ease:
-                        </p>
-                        <ul style="margin: 16px 0; padding-left: 24px; font-size: 15px; line-height: 1.6;">
-                            <li style="margin-bottom: 8px;"><b>Conditional Approvals:</b> Set up dynamic approval paths based on document content, values, or metadata. For example, route contracts to legal only when the value exceeds $100,000 or when specific clauses are included.</li>
-                            <li style="margin-bottom: 8px;"><b>Approval Groups:</b> Create predefined groups of approvers (like "Legal Team" or "Finance Department") and route documents to entire teams at once. Documents can be approved when any member of the group approves, or require approval from all members.</li>
-                            <li style="margin-bottom: 8px;"><b>Advanced Rules Engine:</b> Build complex approval logic using a powerful rules engine. Combine multiple conditions, set up parallel approval paths, and create sophisticated approval workflows that match your business processes.</li>
-                            <li style="margin-bottom: 8px;"><b>Role-Based Approvals:</b> Route documents based on user roles rather than specific individuals, making your workflows more flexible and maintainable as your organization grows.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="feature-item" style="margin-top: 32px;">
-                    <h2 class="feature-title">Document Types & Approval Scenarios</h2>
-                    <div style="overflow-x:auto;">
-                    <table style="width:100%; border-collapse:separate; border-spacing:0; font-size: 15px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(36,36,36,0.04);">
-                        <thead>
-                            <tr style="background:#f8f9fa;">
-                                <th style="padding:14px 12px; border-bottom:2px solid #e0e0e0; min-width:220px; text-align:left; font-size:15px; font-weight:700;">Document Type</th>
-                                <th style="border-bottom:2px solid #e0e0e0; min-width:340px; text-align:left; font-size:15px; font-weight:700;">Scenario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background:#fff;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Sales Quotes/Proposals (Discounted)</td><td style="border-bottom:1px solid #f3f3f3;">Route quotes/proposals exceeding certain discount thresholds or total values to managers/finance for approval before sending to the client.</td></tr>
-                            <tr style="background:#fcfcfc;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Sales Contracts/MSAs/SOWs</td><td style="border-bottom:1px solid #f3f3f3;">Route agreements for legal, finance, or operational review based on complexity, value, or non-standard terms before final signature.</td></tr>
-                            <tr style="background:#fff;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Purchase Orders</td><td style="border-bottom:1px solid #f3f3f3;">Route internal POs for budget holder or finance department approval before sending to the vendor.</td></tr>
-                            <tr style="background:#fcfcfc;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">HR Action Forms (Comp Change, etc.)</td><td style="border-bottom:1px solid #f3f3f3;">Route salary changes, promotions, or significant policy exceptions through management/HR leadership for approval.</td></tr>
-                            <tr style="background:#fff;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Vendor Agreements/Contracts</td><td style="border-bottom:1px solid #f3f3f3;">Ensure procurement/legal/finance reviews and approves agreements with new or existing vendors before they are finalized.</td></tr>
-                            <tr style="background:#fcfcfc;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Change Orders</td><td style="border-bottom:1px solid #f3f3f3;">Route significant change orders (affecting scope or budget) for project manager or client approval.</td></tr>
-                            <tr style="background:#fff;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Offer Letters (Exec/High Value)</td><td style="border-bottom:1px solid #f3f3f3;">High-level or non-standard offer letters may require multiple internal approvals before being extended.</td></tr>
-                            <tr style="background:#fcfcfc;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">Expense Reports/Internal Requests</td><td style="border-bottom:1px solid #f3f3f3;">Automate the approval routing for internal financial requests based on amount or department policy.</td></tr>
-                            <tr style="background:#fff;"><td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">NDAs (Standard)</td><td style="border-bottom:1px solid #f3f3f3;">Standard NDAs often have pre-approved terms and may not require an instance-by-instance approval workflow.</td></tr>
-                            <tr style="background:#fcfcfc;"><td style="padding:12px 12px;">Compliance Policies (Acknowledgment)</td><td>Typically sent for signature/acknowledgment, not usually requiring a pre-send approval workflow for the standardized policy document itself.</td></tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div>
-            </div>
+        <main class="automation-details" id="automation-content">
+            <!-- Content will be rendered here -->
         </main>
-
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Request your PandaDoc demo today</h2>
-                <p>Discover how easy your agreement process can be.</p>
-                <div class="cta-buttons">
-                    <button class="cta-button primary">Request a demo</button>
-                    <button class="cta-button secondary">Start free 14-day trial</button>
-                </div>
-                <p class="cta-caption">No credit card required</p>
-            </div>
-        </section>
     </div>
     <div id="footer"></div>
     <script>
-      ['header', 'footer'].forEach(function(part) {
-        fetch(part + '.html')
-          .then(res => res.text())
-          .then(html => document.getElementById(part).innerHTML = html);
-      });
-      // Adjust workflow canvas height to always be a bit higher than the right content
-      window.addEventListener('DOMContentLoaded', function() {
-        function adjustWorkflowHeight() {
-          var right = document.querySelector('.automation-right-content');
-          var canvas = document.querySelector('.workflow-visualization');
-          if (right && canvas) {
-            var rightHeight = right.offsetHeight;
-            canvas.style.minHeight = (rightHeight + 40) + 'px'; // 40px taller
-          }
-        }
-        adjustWorkflowHeight();
-        window.addEventListener('resize', adjustWorkflowHeight);
-      });
+        // Load header and footer
+        ['header', 'footer'].forEach(function(part) {
+            fetch(part + '.html')
+                .then(res => res.text())
+                .then(html => document.getElementById(part).innerHTML = html);
+        });
+
+        // Render the automation content using the template
+        window.addEventListener('DOMContentLoaded', async function() {
+            const renderer = new AutomationDetailsRenderer('template-details.html');
+            const content = await renderer.render(window.approvalWorkflowData);
+            document.getElementById('automation-content').innerHTML = content;
+
+            // Adjust workflow canvas height
+            function adjustWorkflowHeight() {
+                var right = document.querySelector('.automation-right-content');
+                var canvas = document.querySelector('.workflow-visualization');
+                if (right && canvas) {
+                    var rightHeight = right.offsetHeight;
+                    canvas.style.minHeight = (rightHeight + 40) + 'px'; // 40px taller
+                }
+            }
+            adjustWorkflowHeight();
+            window.addEventListener('resize', adjustWorkflowHeight);
+        });
     </script>
 </body>
 </html> 

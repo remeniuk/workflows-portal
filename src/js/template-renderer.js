@@ -1,0 +1,88 @@
+class AutomationDetailsRenderer {
+    constructor(templatePath) {
+        this.templatePath = templatePath;
+    }
+
+    async render(data) {
+        const response = await fetch(this.templatePath);
+        let html = await response.text();
+
+        // Replace all template placeholders with actual data
+        html = html.replace(/<!-- TEMPLATE_TITLE -->/g, data.title);
+        html = html.replace(/<!-- TEMPLATE_NAME -->/g, data.name);
+        html = html.replace(/<!-- TEMPLATE_PLANS -->/g, data.plans);
+        html = html.replace(/<!-- TEMPLATE_DESCRIPTION -->/g, data.description);
+        html = html.replace(/<!-- TEMPLATE_USE_CASE -->/g, data.useCase);
+        html = html.replace(/<!-- TEMPLATE_EXAMPLE -->/g, data.example);
+        html = html.replace(/<!-- TEMPLATE_FEATURES_TITLE -->/g, data.featuresTitle || "");
+        html = html.replace(/<!-- TEMPLATE_FEATURES_INTRO -->/g, data.featuresIntro || "");
+        
+        // Replace workflow steps
+        if (data.steps) {
+            const stepsHtml = data.steps.map((step, idx) => `
+                <div class="step-vertical">
+                    <div class="step-content-vertical">
+                        <div class="step-icon" style="background-color: ${step.iconBgColor}; border-color: ${step.iconBorderColor};">
+                            <img src="${step.icon}" alt="${step.alt}">
+                        </div>
+                        <span>${step.name}</span>
+                    </div>
+                </div>
+                ${idx < data.steps.length - 1 ? `<div class="step-arrow-vertical">
+                    <img src="public/icons/arrow-down.svg" alt="↓">
+                </div>` : ''}
+            `).join('');
+            html = html.replace(/<!-- TEMPLATE_STEPS -->/, stepsHtml);
+        }
+
+        // Replace features
+        if (data.features && data.features.length > 0) {
+            const featuresHtml = data.features.map(feature => `
+                <div style="margin-bottom: 32px;">
+                    <h3 style="font-size: 18px; margin-bottom: 16px;">${feature.title}</h3>
+                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                        ${feature.description}
+                    </p>
+                </div>
+            `).join('');
+            html = html.replace(/<!-- TEMPLATE_FEATURES -->/, featuresHtml);
+        } else {
+            // Remove the entire features block if no features, title, or intro
+            html = html.replace(/<div class="features">[\s\S]*?<div class="feature-item" style="margin-top: 32px;">/, '<div class="feature-item" style="margin-top: 32px;">');
+        }
+
+        // Replace enterprise features
+        if (data.enterpriseFeatures) {
+            const enterpriseFeaturesHtml = `
+                <div style="margin-bottom: 32px;">
+                    <h3 style="font-size: 18px; margin-bottom: 16px;">Enterprise Plan Features</h3>
+                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                        ${data.enterpriseFeatures.description}
+                    </p>
+                    <ul style="margin: 16px 0; padding-left: 24px; font-size: 15px; line-height: 1.6;">
+                        ${data.enterpriseFeatures.features.map(feature => `
+                            <li style="margin-bottom: 8px;"><b>${feature.title}:</b> ${feature.description}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+            html = html.replace(/<!-- TEMPLATE_ENTERPRISE_FEATURES -->/, enterpriseFeaturesHtml);
+        }
+
+        // Replace document types
+        if (data.documentTypes) {
+            const documentTypesHtml = data.documentTypes.map((type, index) => `
+                <tr style="background:${index % 2 === 0 ? '#fff' : '#fcfcfc'};">
+                    <td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">${type.name}</td>
+                    <td style="border-bottom:1px solid #f3f3f3;">${type.scenario}</td>
+                </tr>
+            `).join('');
+            html = html.replace(/<!-- TEMPLATE_DOCUMENT_TYPES -->/, documentTypesHtml);
+        }
+
+        return html;
+    }
+}
+
+// Export the renderer class
+window.AutomationDetailsRenderer = AutomationDetailsRenderer; 

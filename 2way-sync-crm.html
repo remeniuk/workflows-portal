@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guided Document Creation - PandaDoc</title>
+    <title>2-Way Sync with CRM - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
     <script src="src/js/template-renderer.js"></script>
-    <script src="src/js/data/guided-document-creation-data.js"></script>
+    <script src="src/js/data/2way-sync-crm-data.js"></script>
 </head>
 <body>
     <div class="container">
@@ -27,7 +27,7 @@
         // Render the automation content using the template
         window.addEventListener('DOMContentLoaded', async function() {
             const renderer = new AutomationDetailsRenderer('template-details.html');
-            const content = await renderer.render(window.guidedDocumentCreationData);
+            const content = await renderer.render(window.twoWaySyncCrmData);
             document.getElementById('automation-content').innerHTML = content;
 
             // Adjust workflow canvas height
