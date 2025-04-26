@@ -261,6 +261,10 @@ body {
     flex: 1;
 }
 
+.templates-grid.three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .template-card {
     background: #fff;
     border-radius: 4px;
@@ -339,8 +343,9 @@ body {
 }
 
 .see-more {
-    text-align: center;
-    margin: 40px 0 80px;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
 }
 
 .btn-text-icon {
@@ -873,5 +878,77 @@ body {
 .workflow-steps-vertical, .step-vertical, .step-content-vertical, .step-arrow-vertical {
     position: relative;
     z-index: 1;
+}
+
+/* --- Improved Figma-style Branching Chips and Block --- */
+.branching-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.diamond-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.condition-diamond {
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: 2px solid #248567;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.condition-diamond img {
+  transform: rotate(-45deg);
+  width: 28px;
+  height: 28px;
+}
+
+.branch-chips-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  justify-content: center;
+}
+
+.branch-chip {
+  display: flex;
+  align-items: center;
+  background: #EDF5F3;
+  border: 1px solid #248567;
+  border-radius: 16px;
+  padding: 0 8px 0 16px;
+  height: 32px;
+  font-family: 'Graphik LC Web', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #248567;
+  box-sizing: border-box;
+  box-shadow: none;
+  letter-spacing: 0;
+}
+
+.branch-chip.fallback {
+  border: 1px solid #E4E4E4;
+  color: #2F2F2F;
+  background: #FFFFFF;
+  padding: 0 16px 0 16px;
+}
+/* --- End Improved Figma-style Branching Chips and Block --- */
+
+.main-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
