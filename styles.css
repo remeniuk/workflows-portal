@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +7,8 @@
 }
 
 body {
-    font-family: "Graphik LC Web", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f5f5f5;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #FFFFFF;
     color: #242424;
 }
 
@@ -17,68 +19,96 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px 60px;
-    border-bottom: 1px solid #e0e0e0;
-    background: #fff;
-    gap: 93px;
+    background: #FFFFFF;
+    gap: 40px;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .logo {
-    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-mark {
+    height: 24px;
     width: auto;
 }
 
 .logo-text {
-    height: 24px;
+    height: 16px;
     width: auto;
 }
 
 .header-nav {
     display: flex;
     gap: 5px;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .nav-item {
     padding: 12px;
     color: #242424;
     text-decoration: none;
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 15px;
-    line-height: 1.2;
+    line-height: 1.2em;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: left;
 }
 
 .header-cta {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-shrink: 0;
+    margin-left: auto;
 }
 
 .btn-text {
     color: #242424;
     text-decoration: none;
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 15px;
-    line-height: 1.2;
+    line-height: 1.2em;
     padding: 12px;
+    height: 42px;
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    vertical-align: top;
 }
 
 .btn-outline {
     color: #242424;
     text-decoration: none;
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 15px;
-    line-height: 1.2;
+    line-height: 1.2em;
     padding: 12px 13px;
     border: 1px solid #242424;
     border-radius: 4px;
+    background: rgba(255, 255, 255, 0);
+    height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    vertical-align: top;
 }
 
 .btn-primary {
@@ -153,6 +183,10 @@ body {
     display: flex;
     gap: 40px;
     margin-bottom: 80px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .sidebar {
@@ -263,24 +297,30 @@ body {
 }
 
 .cta-section {
-    background: #F8F5F3;
-    padding: 120px 160px;
-    text-align: center;
+    background-color: #F8F5F3;
+    padding: 120px 0;
+    width: 100%;
+    margin: 0;
 }
 
 .cta-content {
     max-width: 880px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .cta-content h2 {
+    font-family: 'Graphik LC Web', sans-serif;
     font-weight: 700;
     font-size: 42px;
-    line-height: 1.1905;
+    line-height: 1.19;
+    color: #242424;
     margin-bottom: 21px;
 }
 
-.cta-content > p {
+.cta-content p {
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 400;
     font-size: 24px;
     line-height: 1.5;
     color: rgba(36, 36, 36, 0.7);
@@ -294,15 +334,41 @@ body {
     margin-bottom: 15px;
 }
 
-.cta-note {
+.cta-button {
+    padding: 15.5px 24px;
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.19;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cta-button.primary {
+    background-color: #248567;
+    color: white;
+    border: none;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #242424;
+    border: 1px solid rgba(36, 36, 36, 0.3);
+}
+
+.cta-caption {
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
     color: rgba(36, 36, 36, 0.55);
+    margin: 0;
 }
 
 .footer {
-    background: #fff;
+    background: #FFFFFF;
     padding: 0 60px 40px;
+    width: 100%;
 }
 
 .footer-content {
@@ -348,8 +414,10 @@ body {
 }
 
 .copyright {
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 400;
     font-size: 12px;
-    line-height: 1.1667;
+    line-height: 1.17;
     color: #242424;
 }
 
@@ -359,10 +427,12 @@ body {
 }
 
 .legal-links a {
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
     color: rgba(36, 36, 36, 0.7);
     text-decoration: none;
-    font-size: 12px;
-    line-height: 1.1667;
 }
 
 .footer-right {
@@ -386,11 +456,18 @@ body {
     align-items: center;
     gap: 4px;
     color: rgba(36, 36, 36, 0.7);
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 1.1429;
+    line-height: 1.14;
 }
 
 .language-selector img {
     width: 20px;
     height: 20px;
+}
+
+.language-selector img:last-child {
+    width: 14px;
+    height: 14px;
 } 
