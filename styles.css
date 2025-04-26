@@ -315,6 +315,7 @@ body {
     padding: 120px 0;
     width: 100%;
     margin: 0;
+    margin-top: 80px;
 }
 
 .cta-content {
@@ -524,6 +525,30 @@ body {
     margin-bottom: 100px;
 }
 
+.automation-content.side-by-side {
+    flex-direction: row;
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 100px;
+}
+
+.workflow-visualization.dotted-bg {
+    min-width: 700px;
+    max-width: 740px;
+    flex: 0 0 700px;
+    margin: 0;
+}
+
+.automation-right-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 440px;
+}
+
 .automation-info {
     max-width: 440px;
 }
@@ -708,4 +733,84 @@ body {
 
 .feature-list li:last-child {
     margin-bottom: 0;
+}
+
+.workflow-steps-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.step-vertical {
+    width: 300px;
+    max-width: 100%;
+}
+
+.step-content-vertical {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 1px 4px 0px rgba(47, 47, 47, 0.12), 0px 0px 1px 0px rgba(47, 47, 47, 0.04);
+    padding: 12px 20px;
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #2F2F2F;
+    width: 100%;
+}
+
+.step-arrow-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+}
+
+.step-arrow-vertical img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid;
+}
+
+.step-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.dotted-bg {
+    background-color: #F8F5F3;
+    border-radius: 8px;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+.dotted-bg:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(#D9D9D9 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.workflow-steps-vertical, .step-vertical, .step-content-vertical, .step-arrow-vertical {
+    position: relative;
+    z-index: 1;
 } 

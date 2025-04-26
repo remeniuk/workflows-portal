@@ -3,113 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Details - Workflow Portal</title>
+    <title>Automation Details - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <div class="logo-mark">
-                    <div class="logo-yellow"></div>
-                    <div class="logo-blue"></div>
-                    <img src="public/images/pd.svg" alt="PD" class="logo-pd">
+    <div class="container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="public/images/pandadoc-logo.svg" alt="PandaDoc Logo" class="logo-mark">
                 </div>
-                <div class="logo-text">
-                    <img src="public/images/pandadoc.svg" alt="PandaDoc" class="logo-pandadoc">
-                    <div class="logo-r">
-                        <img src="public/images/title.svg" alt="R" class="logo-title">
-                    </div>
-                </div>
+                <img src="public/images/pandadoc-text.svg" alt="PandaDoc" class="logo-text">
             </div>
             <nav class="header-nav">
                 <a href="#" class="nav-item">Workflows</a>
-                <a href="#" class="nav-item active">Automations</a>
+                <a href="#" class="nav-item">Automations</a>
             </nav>
             <div class="header-cta">
-                <a href="#" class="nav-item">Log in</a>
-                <button class="button-custom">Request a demo</button>
+                <a href="#" class="btn-text">Log in</a>
+                <a href="#" class="btn-outline">Request a demo</a>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="automation-details">
-        <div class="breadcrumbs">
-            <div class="breadcrumb-item">
-                <span>Automation templates</span>
-                <img src="public/icons/arrow-light-right.svg" alt=">" class="breadcrumb-arrow">
-            </div>
-            <div class="breadcrumb-item">
-                <span>Streamlined document fillout</span>
-            </div>
-        </div>
-
-        <div class="automation-content">
-            <div class="automation-info">
-                <h1 class="automation-title">Streamlined document fillout</h1>
-                <p class="automation-description">
-                    Organize documents effortlessly by automating folder placement and syncing completed files to your preferred cloud storage solution. Simplify access, ensure compliance, and save time.
-                </p>
-                <button class="button-primary">Try it</button>
+        <main class="automation-details">
+            <div class="breadcrumbs">
+                <div class="breadcrumb-item">
+                    <span>Automation templates</span>
+                    <img src="public/icons/arrow-light-right.svg" alt=">" class="breadcrumb-arrow">
+                </div>
+                <div class="breadcrumb-item">
+                    <span>Streamlined document fillout</span>
+                </div>
             </div>
 
-            <div class="workflow-visualization">
-                <div class="workflow-steps">
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-name">
+            <div class="automation-content side-by-side">
+                <div class="workflow-visualization dotted-bg">
+                    <div class="workflow-steps-vertical">
+                        <div class="step-vertical">
+                            <div class="step-content-vertical">
                                 <div class="step-icon" style="background-color: rgba(189, 50, 89, 0.08); border-color: rgba(189, 50, 89, 0.16);">
                                     <img src="public/icons/crm.svg" alt="CRM">
                                 </div>
                                 <span>Pull data from CRM</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="step-arrow">
-                        <img src="public/icons/arrow-right.svg" alt="→">
-                    </div>
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-name">
+                        <div class="step-arrow-vertical">
+                            <img src="public/icons/arrow-down.svg" alt="↓">
+                        </div>
+                        <div class="step-vertical">
+                            <div class="step-content-vertical">
                                 <div class="step-icon" style="background-color: rgba(154, 68, 169, 0.08); border-color: rgba(154, 68, 169, 0.16);">
                                     <img src="public/icons/form.svg" alt="Form">
                                 </div>
                                 <span>Collect data via a form</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="step-arrow">
-                        <img src="public/icons/arrow-right.svg" alt="→">
-                    </div>
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-name">
+                        <div class="step-arrow-vertical">
+                            <img src="public/icons/arrow-down.svg" alt="↓">
+                        </div>
+                        <div class="step-vertical">
+                            <div class="step-content-vertical">
                                 <div class="step-icon" style="background-color: rgba(255, 115, 20, 0.08); border-color: rgba(255, 115, 20, 0.16);">
                                     <img src="public/icons/approval.svg" alt="Approval">
                                 </div>
                                 <span>Send to approvers</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="step-arrow">
-                        <img src="public/icons/arrow-right.svg" alt="→">
-                    </div>
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-name">
+                        <div class="step-arrow-vertical">
+                            <img src="public/icons/arrow-down.svg" alt="↓">
+                        </div>
+                        <div class="step-vertical">
+                            <div class="step-content-vertical">
                                 <div class="step-icon" style="background-color: rgba(33, 103, 198, 0.08); border-color: rgba(33, 103, 198, 0.16);">
                                     <img src="public/icons/document.svg" alt="Document">
                                 </div>
                                 <span>Generate document</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="step-arrow">
-                        <img src="public/icons/arrow-right.svg" alt="→">
-                    </div>
-                    <div class="step">
-                        <div class="step-content">
-                            <div class="step-name">
+                        <div class="step-arrow-vertical">
+                            <img src="public/icons/arrow-down.svg" alt="↓">
+                        </div>
+                        <div class="step-vertical">
+                            <div class="step-content-vertical">
                                 <div class="step-icon" style="background-color: rgba(33, 103, 198, 0.08); border-color: rgba(33, 103, 198, 0.16);">
                                     <img src="public/icons/send.svg" alt="Send">
                                 </div>
@@ -118,49 +93,124 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="integrations">
-                <h2 class="integrations-title">Integrates with</h2>
-                <div class="integration-logos">
-                    <img src="public/images/google-drive.svg" alt="Google Drive">
-                    <img src="public/images/sharepoint.svg" alt="SharePoint">
-                    <img src="public/images/dropbox.svg" alt="Dropbox">
+                <div class="automation-right-content">
+                    <div class="automation-info">
+                        <h1 class="automation-title">Streamlined document fillout</h1>
+                        <p class="automation-description">
+                            Organize documents effortlessly by automating folder placement and syncing completed files to your preferred cloud storage solution. Simplify access, ensure compliance, and save time.
+                        </p>
+                        <button class="button-primary">Try it</button>
+                    </div>
+                    <div class="integrations">
+                        <h2 class="integrations-title">Integrates with</h2>
+                        <div class="integration-logos">
+                            <img src="public/images/google-drive.svg" alt="Google Drive">
+                            <img src="public/images/sharepoint.svg" alt="SharePoint">
+                            <img src="public/images/dropbox.svg" alt="Dropbox">
+                        </div>
+                        <p class="integrations-description">Google Drive and 11 more cloud storages</p>
+                    </div>
                 </div>
-                <p class="integrations-description">Google Drive and 11 more cloud storages</p>
             </div>
-        </div>
 
-        <div class="features">
-            <div class="feature-item">
-                <h2 class="feature-title">What's included</h2>
-                <p class="feature-description">
-                    Automate the tedious task of filing documents by status, project, or type. Completed files can be instantly moved into structured folders in PandaDoc or external platforms like Google Drive, SharePoint, and Dropbox. No more manual downloads or misfiled documents — everything is where it needs to be, automatically.
-                </p>
+            <div class="features">
+                <div class="feature-item">
+                    <h2 class="feature-title">What's included</h2>
+                    <p class="feature-description">
+                        Automate the tedious task of filing documents by status, project, or type. Completed files can be instantly moved into structured folders in PandaDoc or external platforms like Google Drive, SharePoint, and Dropbox. No more manual downloads or misfiled documents — everything is where it needs to be, automatically.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h2 class="feature-title">Best for</h2>
+                    <p class="feature-description">
+                        Businesses and teams dealing with high document volume, requiring seamless organization without manual work. Also ideal for industries where regulatory compliance demands reliable record storage practices.
+                    </p>
+                    <ul class="feature-list">
+                        <li>High-volume document workflows</li>
+                        <li>Centralized document access for internal or external teams</li>
+                        <li>Organizations with strict audit/compliance needs</li>
+                    </ul>
+                </div>
+                <div class="feature-item">
+                    <h2 class="feature-title">Example use cases</h2>
+                    <p class="feature-description">
+                        Whether you need to keep contracts, sales documents, or financial records properly archived, this workflow ensures no file is ever misplaced.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Automatically move signed contracts into "Executed Agreements" folders</li>
+                        <li>Sync sales and marketing documents to shared Google Drive folders for easy team collaboration</li>
+                        <li>Archive year-end financial reports into SharePoint with secure, time-stamped backups</li>
+                    </ul>
+                </div>
             </div>
-            <div class="feature-item">
-                <h2 class="feature-title">Best for</h2>
-                <p class="feature-description">
-                    Businesses and teams dealing with high document volume, requiring seamless organization without manual work. Also ideal for industries where regulatory compliance demands reliable record storage practices.
-                </p>
-                <ul class="feature-list">
-                    <li>High-volume document workflows</li>
-                    <li>Centralized document access for internal or external teams</li>
-                    <li>Organizations with strict audit/compliance needs</li>
-                </ul>
+        </main>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Request your PandaDoc demo today</h2>
+                <p>Discover how easy your agreement process can be.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary">Request a demo</button>
+                    <button class="cta-button secondary">Start free 14-day trial</button>
+                </div>
+                <p class="cta-caption">No credit card required</p>
             </div>
-            <div class="feature-item">
-                <h2 class="feature-title">Example use cases</h2>
-                <p class="feature-description">
-                    Whether you need to keep contracts, sales documents, or financial records properly archived, this workflow ensures no file is ever misplaced.
-                </p>
-                <ul class="feature-list">
-                    <li>Automatically move signed contracts into "Executed Agreements" folders</li>
-                    <li>Sync sales and marketing documents to shared Google Drive folders for easy team collaboration</li>
-                    <li>Archive year-end financial reports into SharePoint with secure, time-stamped backups</li>
-                </ul>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="app-badges">
+                        <a href="#" class="app-badge">
+                            <img src="public/images/google-play.svg" alt="Get it on Google Play" width="120" height="40">
+                        </a>
+                        <a href="#" class="app-badge">
+                            <img src="public/images/app-store.svg" alt="Download on the App Store" width="120" height="40">
+                        </a>
+                    </div>
+                    <div class="security-badges">
+                        <img src="public/images/hipaa.svg" alt="HIPAA Compliant" width="80" height="40">
+                        <img src="public/images/aicpa-soc.svg" alt="SOC 2 Type II" width="80" height="40">
+                        <img src="public/images/gdpr.svg" alt="GDPR Compliant" width="80" height="40">
+                        <img src="public/images/eidas.svg" alt="eIDAS Compliant" width="80" height="40">
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-left">
+                        <p class="copyright">© 2024 PandaDoc Inc. All rights reserved.</p>
+                        <div class="legal-links">
+                            <a href="#">Privacy notice</a>
+                            <a href="#">Legal</a>
+                            <a href="#">Cookie settings</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <img src="public/images/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link">
+                                <img src="public/images/facebook.svg" alt="Facebook" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link">
+                                <img src="public/images/twitter.svg" alt="Twitter" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link">
+                                <img src="public/images/instagram.svg" alt="Instagram" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link">
+                                <img src="public/images/youtube.svg" alt="YouTube" width="24" height="24">
+                            </a>
+                        </div>
+                        <div class="language-selector">
+                            <img src="public/images/location.svg" alt="Language" width="20" height="20">
+                            <span>English (United States)</span>
+                            <img src="public/images/arrow-down.svg" alt="Select Language" width="14" height="14">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </main>
+        </footer>
+    </div>
 </body>
 </html> 
