@@ -40,7 +40,7 @@ body {
 }
 
 .logo-mark {
-    height: 24px;
+    height: 32px;
     width: auto;
 }
 
@@ -509,13 +509,22 @@ body {
     font-weight: 600;
     font-size: 14px;
     line-height: 1.14;
-    color: #242424;
+    color: #248567;
 }
 
 .breadcrumb-arrow {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     opacity: 0.5;
+    color: rgba(36, 36, 36, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadcrumb-arrow img {
+    width: 10px;
+    height: 10px;
 }
 
 .automation-content {
@@ -669,13 +678,13 @@ body {
 
 .integration-logos {
     display: flex;
-    gap: 16px;
+    gap: 8px;
     margin-bottom: 12px;
 }
 
 .integration-logos img {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
 }
 
 .integrations-description {
