@@ -19,19 +19,52 @@ class AutomationDetailsRenderer {
         
         // Replace workflow steps
         if (data.steps) {
-            const stepsHtml = data.steps.map((step, idx) => `
-                <div class="step-vertical">
-                    <div class="step-content-vertical">
-                        <div class="step-icon" style="background-color: ${step.iconBgColor}; border-color: ${step.iconBorderColor};">
-                            <img src="${step.icon}" alt="${step.alt}">
+            let stepsHtml = '';
+            for (let idx = 0; idx < data.steps.length; idx++) {
+                const step = data.steps[idx];
+                // Render conditional branch with Figma-style chips
+                if (step.type === 'condition' && step.branches && step.branches.length === 2) {
+                    stepsHtml += `
+                        <div class="branching-block">
+                            <div class="diamond-row">
+                                <div class="condition-diamond">
+                                    <img src="${step.icon}" alt="${step.alt}">
+                                </div>
+                            </div>
+                            <div class="branch-chips-row">
+                                <div class="branch-chip">${step.branches[0].label}</div>
+                                <div class="branch-chip fallback">${step.branches[1].label}</div>
+                            </div>
                         </div>
-                        <span>${step.name}</span>
-                    </div>
-                </div>
-                ${idx < data.steps.length - 1 ? `<div class="step-arrow-vertical">
-                    <img src="public/icons/arrow-down.svg" alt="↓">
-                </div>` : ''}
-            `).join('');
+                    `;
+                    // Only add arrow down if not last step
+                    if (idx < data.steps.length - 1) {
+                        stepsHtml += `<div class="step-arrow-vertical">
+                            <img src="public/icons/arrow-down.svg" alt="↓">
+                        </div>`;
+                    }
+                } else {
+                    // Render normal step
+                    stepsHtml += `
+                        <div class="step-vertical">
+                            <div class="step-content-vertical">
+                                <div class="step-icon" style="background-color: ${step.iconBgColor}; border-color: ${step.iconBorderColor};">
+                                    <img src="${step.icon}" alt="${step.alt}">
+                                </div>
+                                <span>${step.name}</span>
+                            </div>
+                        </div>
+                    `;
+                    if (idx < data.steps.length - 1) {
+                        // Only add arrow down if not last step and next is not a condition
+                        if (!data.steps[idx + 1].type || data.steps[idx + 1].type !== 'condition') {
+                            stepsHtml += `<div class="step-arrow-vertical">
+                                <img src="public/icons/arrow-down.svg" alt="↓">
+                            </div>`;
+                        }
+                    }
+                }
+            }
             html = html.replace(/<!-- TEMPLATE_STEPS -->/, stepsHtml);
         }
 
@@ -101,4 +134,6 @@ class AutomationDetailsRenderer {
 }
 
 // Export the renderer class
+window.AutomationDetailsRenderer = AutomationDetailsRenderer; 
+window.AutomationDetailsRenderer = AutomationDetailsRenderer; 
 window.AutomationDetailsRenderer = AutomationDetailsRenderer; 
