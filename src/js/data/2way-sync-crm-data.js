@@ -7,6 +7,24 @@ const twoWaySyncCrmData = {
     example: `A sales rep updates a quote in PandaDoc, and the changes are instantly reflected in the CRM. When a customer fills out a form or signs a document, all relevant data is pushed back to the CRM, ensuring both systems are always aligned.`,
     featuresTitle: "Automate Data Sync Between PandaDoc and Your CRM",
     featuresIntro: "Experience the power of true two-way data synchronization. No more copy-pasting or switching between systems. Keep your sales documents and CRM records perfectly aligned at all times.",
+    integrations: {
+        title: "Supported CRMs",
+        logos: [
+            {
+                src: "public/images/Salesforce-logo.png",
+                alt: "Salesforce"
+            },
+            {
+                src: "public/images/hubspot-logo.png",
+                alt: "HubSpot"
+            },
+            {
+                src: "public/images/pipedrive-logo.png",
+                alt: "Pipedrive"
+            }
+        ],
+        description: "Seamlessly integrate with leading CRM platforms"
+    },
     steps: [
         {
             name: "Pull data from CRM",

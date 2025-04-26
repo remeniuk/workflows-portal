@@ -80,6 +80,22 @@ class AutomationDetailsRenderer {
             html = html.replace(/<!-- TEMPLATE_DOCUMENT_TYPES -->/, documentTypesHtml);
         }
 
+        // Replace integrations
+        if (data.integrations) {
+            const integrationsHtml = `
+                <div class="integrations" style="margin: 24px 0;">
+                    <h3 class="integrations-title" style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">${data.integrations.title}</h3>
+                    <div class="integration-logos" style="display: flex; gap: 16px; margin-bottom: 8px;">
+                        ${data.integrations.logos.map(logo => `
+                            <img src="${logo.src}" alt="${logo.alt}" style="width: 32px; height: 32px;">
+                        `).join('')}
+                    </div>
+                    <p class="integrations-description" style="font-size: 14px; color: #666;">${data.integrations.description}</p>
+                </div>
+            `;
+            html = html.replace(/<!-- TEMPLATE_INTEGRATIONS -->/, integrationsHtml);
+        }
+
         return html;
     }
 }

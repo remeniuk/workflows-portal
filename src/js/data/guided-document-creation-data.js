@@ -1,10 +1,30 @@
 window.guidedDocumentCreationData = {
     title: "Guided Document Creation",
     name: "Guided Document Creation",
-    plans: "Business",
-    description: "Streamline the creation of complex documents with Guided Document Creation in PandaDoc. Instead of starting from scratch or editing manually, users are prompted through a series of questions and choices that automatically customize the document.",
-    useCase: "Perfect for generating contracts, MSAs, NDAs, onboarding packages, or project scopes — where different terms, clauses, or attachments are needed based on the situation.",
-    example: "A legal team creating a Master Services Agreement can dynamically include the right jurisdiction clauses and service descriptions based on project type and client location — all through a simple guided experience.",
+    plans: "Enterprise (or Business with Automations add-on)",
+    description: `Streamline your document creation process with smart content and guided workflows. Create dynamic documents that automatically adapt to your customer's needs using conditional content, placeholders, and pre-selected collateral. Save time and reduce errors by leveraging smart variables that populate based on CRM data, customer characteristics, and predefined rules.`,
+    useCase: "Ideal for sales teams who want to create personalized documents quickly while maintaining consistency and accuracy.",
+    example: `A sales rep starts creating a proposal. The system automatically populates company information from the CRM, suggests relevant case studies based on the industry, and adjusts pricing based on the customer's location. The rep only needs to review and send the document.`,
+    featuresTitle: "Smart Document Creation with Guided Workflows",
+    featuresIntro: "Transform your document creation process with intelligent automation and smart content. Create personalized documents in minutes while ensuring consistency and accuracy across your team.",
+    forms: {
+        title: "Smart Forms & Questionnaires",
+        description: `Create intelligent forms that adapt to user responses using smart content. Use conditional logic to show or hide questions based on previous answers, automatically populate fields from your CRM, and guide users through a personalized document creation experience. Smart forms help you gather the right information while maintaining a smooth user experience.`,
+        features: [
+            {
+                title: "Conditional Logic",
+                description: "Show or hide questions based on previous answers, creating a dynamic form experience."
+            },
+            {
+                title: "CRM Integration",
+                description: "Auto-populate form fields with data from your CRM, reducing manual entry."
+            },
+            {
+                title: "Smart Validation",
+                description: "Validate responses in real-time and provide instant feedback to users."
+            }
+        ]
+    },
     steps: [
         {
             icon: "public/icons/form.svg",
