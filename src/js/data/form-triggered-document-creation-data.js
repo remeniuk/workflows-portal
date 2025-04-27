@@ -10,15 +10,15 @@ window.formTriggeredDocumentCreationData = {
     steps: [
         {
             icon: "public/icons/form.svg",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)",
+            iconBgColor: "rgba(154, 68, 169, 0.08)",
+            iconBorderColor: "rgba(154, 68, 169, 0.16)",
             name: "Submit form",
             alt: "Form Submission"
         },
         {
             icon: "public/icons/trigger.svg",
-            iconBgColor: "rgba(36, 174, 97, 0.08)",
-            iconBorderColor: "rgba(36, 174, 97, 0.16)",
+            iconBgColor: "rgba(244, 67, 54, 0.08)",
+            iconBorderColor: "rgba(244, 67, 54, 0.16)",
             name: "Trigger: Form submitted",
             alt: "Form Submitted"
         },

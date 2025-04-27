@@ -94,8 +94,8 @@ window.conditionalRoutingData = {
                             icon: "public/icons/approval-workflow.svg",
                             alt: "Approval",
                             name: "Approve with legal",
-                            iconBgColor: "rgba(154, 68, 169, 0.08)",
-                            iconBorderColor: "rgba(154, 68, 169, 0.16)"
+                            iconBgColor: "rgba(255, 152, 0, 0.08)",
+                            iconBorderColor: "rgba(255, 152, 0, 0.16)"
                         }
                     ]
                 },

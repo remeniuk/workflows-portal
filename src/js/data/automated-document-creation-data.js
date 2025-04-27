@@ -17,8 +17,8 @@ window.automatedDocumentCreationData = {
         },
         {
             icon: "public/icons/trigger.svg",
-            iconBgColor: "rgba(36, 174, 97, 0.08)",
-            iconBorderColor: "rgba(36, 174, 97, 0.16)",
+            iconBgColor: "rgba(244, 67, 54, 0.08)",
+            iconBorderColor: "rgba(244, 67, 54, 0.16)",
             name: "Trigger: Proposal accepted",
             alt: "Proposal Accepted"
         },

@@ -1,6 +1,6 @@
 const documentManagementData = {
-    title: "Document Management Automation",
-    name: "Document Management Automation",
+    title: "Document Storage Management",
+    name: "Document Storage Management",
     plans: "Business (or Enterprise for advanced features)",
     description: `Automatically organize and manage documents within PandaDoc. Create folders, move documents based on status or metadata, rename files, and maintain a clean document workspace. Improve organization, accessibility, and compliance with automated document management workflows.`,
     example: `A sales team automatically organizes their documents into folders based on deal stage and quarter. When a document's status changes, it's automatically moved to the appropriate folder. Documents are renamed consistently using predefined patterns, and old versions are automatically archived. This keeps the workspace clean and makes it easy to find the right document at any time.`,

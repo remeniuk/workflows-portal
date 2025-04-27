@@ -28,10 +28,10 @@ const twoWaySyncCrmData = {
     steps: [
         {
             name: "Pull data from CRM",
-            icon: "public/icons/api-integration.svg",
+            icon: "public/icons/api-or-integration.svg",
             alt: "Pull from CRM",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         },
         {
             name: "Create document",
@@ -49,24 +49,24 @@ const twoWaySyncCrmData = {
         },
         {
             name: "Update data in CRM",
-            icon: "public/icons/api-integration.svg",
+            icon: "public/icons/api-or-integration.svg",
             alt: "Update CRM",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         },
         {
             name: "Upload document",
-            icon: "public/icons/api-integration.svg",
+            icon: "public/icons/api-or-integration.svg",
             alt: "Upload Document",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         },
         {
             name: "Change deal stage",
-            icon: "public/icons/api-integration.svg",
+            icon: "public/icons/api-or-integration.svg",
             alt: "Change Deal Stage",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         }
     ],
     features: [

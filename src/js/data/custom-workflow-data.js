@@ -30,15 +30,15 @@ const customWorkflowData = {
             name: "Custom Integration",
             icon: "public/icons/storage.svg",
             alt: "Custom Integration",
-            iconBgColor: "rgba(68, 169, 154, 0.08)",
-            iconBorderColor: "rgba(68, 169, 154, 0.16)"
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         },
         {
             name: "Customer Processing Logic",
             icon: "public/icons/storage.svg",
             alt: "Customer Processing Logic",
-            iconBgColor: "rgba(68, 169, 154, 0.08)",
-            iconBorderColor: "rgba(68, 169, 154, 0.16)"
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         },
         {
             name: "Create Document",

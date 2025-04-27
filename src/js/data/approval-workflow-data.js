@@ -19,8 +19,8 @@ const approvalWorkflowData = {
             name: "Route for approval",
             icon: "public/icons/approval-workflow.svg",
             alt: "Approval",
-            iconBgColor: "rgba(154, 68, 169, 0.08)",
-            iconBorderColor: "rgba(154, 68, 169, 0.16)"
+            iconBgColor: "rgba(255, 152, 0, 0.08)",
+            iconBorderColor: "rgba(255, 152, 0, 0.16)"
         },
         {
             name: "Send to client",

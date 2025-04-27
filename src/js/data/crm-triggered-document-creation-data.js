@@ -10,15 +10,15 @@ window.crmTriggeredDocumentCreationData = {
     steps: [
         {
             icon: "public/icons/crm.svg",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)",
+            iconBgColor: "rgba(244, 67, 54, 0.08)",
+            iconBorderColor: "rgba(244, 67, 54, 0.16)",
             name: "CRM status change",
             alt: "CRM Status Change"
         },
         {
             icon: "public/icons/trigger.svg",
-            iconBgColor: "rgba(36, 174, 97, 0.08)",
-            iconBorderColor: "rgba(36, 174, 97, 0.16)",
+            iconBgColor: "rgba(244, 67, 54, 0.08)",
+            iconBorderColor: "rgba(244, 67, 54, 0.16)",
             name: "Trigger: Status update",
             alt: "Status Update Trigger"
         },
