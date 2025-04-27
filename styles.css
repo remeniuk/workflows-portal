@@ -343,6 +343,10 @@ body {
     color: #44A99A;
 }
 
+.app-icon.light-red {
+    background: rgba(244, 67, 54, 0.08);
+}
+
 .card-content h3 {
     font-family: 'Graphik LC Web', sans-serif;
     font-weight: 700;

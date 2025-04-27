@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Creation (Mass Personalized Docs) - PandaDoc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header"></div>
+        <main class="automation-details">
+            <div class="breadcrumbs">
+                <div class="breadcrumb-item">
+                    <a href="automations.html" style="color: inherit; text-decoration: none;"><span>Workflow templates</span></a>
+                    <img src="public/icons/arrow-light-right.svg" alt=">" class="breadcrumb-arrow">
+                </div>
+                <div class="breadcrumb-item">
+                    <span>Bulk Creation</span>
+                </div>
+            </div>
+
+            <div class="automation-content side-by-side">
+                <div class="workflow-visualization dotted-bg" style="min-height: 420px; height: 480px; display: flex; align-items: center;">
+                    <div class="workflow-steps-vertical" id="workflow-steps">
+                        <!-- Steps will be rendered here -->
+                    </div>
+                </div>
+                <div class="automation-right-content">
+                    <div class="automation-info" style="padding-right: 0;">
+                        <div style="margin: 24px 0 16px; font-weight: 600; color: #248567; font-size: 16px;">Required Plan: Business, Enterprise</div>
+                        <h1 class="automation-title">Bulk Creation</h1>
+                        <p class="automation-description">
+                            Generate a large number of individualized documents simultaneously from a single template and a data source (like a CSV or integrated list). Each document is populated with unique recipient data. Essential for mass communications requiring personalization and individual tracking/signatures.
+                            <br><br>
+                            <b>Example:</b> A company needs to send personalized compensation letters to 500 employees. Using Bulk Creation, they upload a CSV with employee data and a template. The system automatically generates 500 unique documents, each populated with the specific employee's salary, bonus, and personal details, ready for individual review and signature.
+                        </p>
+                        <button class="button-primary" style="margin-top: 24px; font-size: 16px; padding: 12px 32px; border-radius: 6px;">Try it</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <h2 class="feature-title">Mass Personalization Made Simple</h2>
+                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
+                        Transform your bulk document needs into a streamlined, automated process. Perfect for HR, sales, finance, and marketing teams that need to send personalized documents at scale.
+                    </p>
+
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">Data Source Flexibility</h3>
+                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                            Upload CSV files or connect to integrated systems to source your recipient data. Support for various data formats and structures.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">Smart Field Mapping</h3>
+                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                            Intuitive interface to map data fields to document placeholders. Preview how data will populate in your documents before generation.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">Bulk Processing</h3>
+                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                            Generate hundreds or thousands of documents simultaneously. Monitor progress and handle any errors or exceptions efficiently.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="font-size: 18px; margin-bottom: 16px;">Individual Tracking</h3>
+                        <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                            Track each document's status, signature progress, and completion independently. Maintain full audit trail for compliance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item" style="margin-top: 32px;">
+                    <h2 class="feature-title">Document Types & Scenarios</h2>
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse:separate; border-spacing:0; font-size: 15px; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(36,36,36,0.04);">
+                            <thead>
+                                <tr style="background:#f8f9fa;">
+                                    <th style="padding:14px 12px; border-bottom:2px solid #e0e0e0; min-width:220px; text-align:left; font-size:15px; font-weight:700;">Document Type</th>
+                                    <th style="border-bottom:2px solid #e0e0e0; min-width:340px; text-align:left; font-size:15px; font-weight:700;">Scenario</th>
+                                </tr>
+                            </thead>
+                            <tbody id="document-types">
+                                <!-- Document types will be rendered here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Request your PandaDoc demo today</h2>
+                <p>Discover how easy your agreement process can be.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary">Request a demo</button>
+                    <button class="cta-button secondary">Start free 14-day trial</button>
+                </div>
+                <p class="cta-caption">No credit card required</p>
+            </div>
+        </section>
+    </div>
+    <div id="footer"></div>
+    <script src="src/js/template-renderer.js"></script>
+    <script src="src/js/data/bulk-creation-data.js"></script>
+    <script>
+        // Load header and footer
+        ['header', 'footer'].forEach(function(part) {
+            fetch(part + '.html')
+                .then(res => res.text())
+                .then(html => document.getElementById(part).innerHTML = html);
+        });
+
+        // Render workflow steps
+        document.addEventListener('DOMContentLoaded', function() {
+            const stepsContainer = document.getElementById('workflow-steps');
+            const documentTypesContainer = document.getElementById('document-types');
+            
+            // Render steps
+            bulkCreationData.steps.forEach((step, index) => {
+                const stepHtml = `
+                    <div class="step-vertical">
+                        <div class="step-content-vertical">
+                            <div class="step-icon" style="background-color: ${step.iconBgColor}; border-color: ${step.iconBorderColor};">
+                                <img src="${step.icon}" alt="${step.alt}">
+                            </div>
+                            <span>${step.name}</span>
+                        </div>
+                    </div>
+                    ${index < bulkCreationData.steps.length - 1 ? `
+                        <div class="step-arrow-vertical">
+                            <img src="public/icons/arrow-down.svg" alt="↓">
+                        </div>
+                    ` : ''}
+                `;
+                stepsContainer.innerHTML += stepHtml;
+            });
+
+            // Render document types
+            bulkCreationData.documentTypes.forEach((type, index) => {
+                const rowHtml = `
+                    <tr style="background:${index % 2 === 0 ? '#fff' : '#fcfcfc'};">
+                        <td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">${type.name}</td>
+                        <td style="border-bottom:1px solid #f3f3f3;">${type.scenario}</td>
+                    </tr>
+                `;
+                documentTypesContainer.innerHTML += rowHtml;
+            });
+
+            // Adjust workflow canvas height
+            function adjustWorkflowHeight() {
+                const right = document.querySelector('.automation-right-content');
+                const canvas = document.querySelector('.workflow-visualization');
+                if (right && canvas) {
+                    const rightHeight = right.offsetHeight;
+                    canvas.style.minHeight = (rightHeight + 40) + 'px';
+                }
+            }
+            adjustWorkflowHeight();
+            window.addEventListener('resize', adjustWorkflowHeight);
+        });
+    </script>
+</body>
+</html> 
