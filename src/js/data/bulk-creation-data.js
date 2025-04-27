@@ -1,4 +1,4 @@
-const bulkCreationData = {
+window.bulkCreationData = {
     title: "Bulk Creation (Mass Personalized Docs)",
     name: "Bulk Creation",
     plans: "Business, Enterprise",
@@ -48,44 +48,13 @@ const bulkCreationData = {
             description: "Track each document's status, signature progress, and completion independently. Maintain full audit trail for compliance."
         }
     ],
-    documentTypes: [
-        {
-            name: "HR Compensation Letters/Bonus Letters",
-            scenario: "Generate unique letters for each employee with their specific salary/bonus details from a master list/HRIS export."
-        },
-        {
-            name: "Annual Renewals (Simple/Standardized)",
-            scenario: "Generate individual renewal agreements/notices for hundreds/thousands of clients, populated with their specific account details/dates."
-        },
-        {
-            name: "Policy Updates/Acknowledgments",
-            scenario: "Send updated policy documents requiring individual acknowledgment, personalized with employee name/ID."
-        },
-        {
-            name: "Mass Personalized Offers/Promotions",
-            scenario: "Marketing sends targeted offers where specific terms or codes vary per recipient segment, generated from a customer list."
-        },
-        {
-            name: "Tax Forms/Engagement Letters (Annual)",
-            scenario: "Accounting firms generate personalized engagement letters or requests for info for tax clients en masse at year-end."
-        },
-        {
-            name: "Investor Updates/Statements",
-            scenario: "Generate individual statements or updates for investors based on their holdings/account data."
-        },
-        {
-            name: "Simple Contracts/Agreements (Mass Rollout)",
-            scenario: "Rolling out a standard agreement to a large group (e.g., all vendors, all contractors) with personalized details."
-        }
-    ],
-    exampleCustomers: [
-        "Tax Professional Group",
-        "Padgett Advisors",
-        "employer.com",
-        "Making Waves Academy",
-        "Marketing Diversified",
-        "Optimatics"
-    ]
-};
-
-window.bulkCreationData = bulkCreationData; 
+    workflowDocumentScenarios: {
+        "Employment Contract": "Generate unique letters for each employee with their specific salary/bonus details from a master list/HRIS export.",
+        "Sales Contracts": "Generate individual renewal agreements/notices for hundreds/thousands of clients, populated with their specific account details/dates.",
+        "Compliance Policies": "Send updated policy documents requiring individual acknowledgment, personalized with employee name/ID.",
+        "Sales & Marketing Collateral": "Marketing sends targeted offers where specific terms or codes vary per recipient segment, generated from a customer list.",
+        "Tax Forms": "Accounting firms generate personalized engagement letters or requests for info for tax clients en masse at year-end.",
+        "Invoices & Payments": "Generate individual statements or updates for investors based on their holdings/account data.",
+        "Service Agreements": "Rolling out a standard agreement to a large group (e.g., all vendors, all contractors) with personalized details."
+    }
+}; 

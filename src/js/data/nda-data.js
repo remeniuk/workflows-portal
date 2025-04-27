@@ -66,8 +66,8 @@ const ndaData = {
     ],
     relatedWorkflows: [
         {
-            title: "Form-based Triggered",
-            description: "Automatically trigger workflows when a form is submitted. Perfect for collecting information and starting document processes.",
+            title: "Form-Triggered Document Creation",
+            description: "Automatically generate documents when a form is submitted. Perfect for collecting information from customers or employees and instantly creating personalized documents.",
             url: "form-triggered-document-creation.html",
             icons: [
                 {
@@ -88,7 +88,7 @@ const ndaData = {
             ]
         },
         {
-            title: "Bulk Send",
+            title: "Bulk Creation",
             description: "Send multiple documents at once with personalized content. Ideal for mass communications and batch processing.",
             url: "bulk-creation.html",
             icons: [
@@ -117,4 +117,12 @@ const ndaData = {
     userRating: 0 // Placeholder for user rating, static for now
 };
 
-window.ndaData = ndaData; 
+window.ndaData = ndaData;
+
+window.ndaData.workflowDocumentScenarios = {
+    "Sales & Business Development": "Pull contact/deal data, generate NDA, update CRM with NDA status.",
+    "Employee & Contractor": "Pull employee/contractor data, generate NDA, update HR system with NDA status.",
+    "Product Development": "Pull product/partner data, generate NDA, update product system with NDA status.",
+    "Vendor & Supplier": "Pull vendor data, generate NDA, update vendor system with NDA status.",
+    "Investment & M&A": "Pull deal data, generate NDA, update deal system with NDA status."
+}; 

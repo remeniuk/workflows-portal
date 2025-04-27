@@ -1,65 +1,73 @@
-window.guidedDocumentCreationData = {
+const guidedDocumentCreationData = {
     title: "Guided Document Creation",
     name: "Guided Document Creation",
-    plans: "Enterprise (or Business with Automations add-on)",
-    description: `Streamline your document creation process with smart content and guided workflows. Create dynamic documents that automatically adapt to your customer's needs using conditional content, placeholders, and pre-selected collateral. Save time and reduce errors by leveraging smart variables that populate based on CRM data, customer characteristics, and predefined rules.`,
-    useCase: "Ideal for sales teams who want to create personalized documents quickly while maintaining consistency and accuracy.",
-    example: `A sales rep starts creating a proposal. The system automatically populates company information from the CRM, suggests relevant case studies based on the industry, and adjusts pricing based on the customer's location. The rep only needs to review and send the document.`,
-    featuresTitle: "Smart Document Creation with Guided Workflows",
-    featuresIntro: "Transform your document creation process with intelligent automation and smart content. Create personalized documents in minutes while ensuring consistency and accuracy across your team.",
-    forms: {
-        title: "Smart Forms & Questionnaires",
-        description: `Create intelligent forms that adapt to user responses using smart content. Use conditional logic to show or hide questions based on previous answers, automatically populate fields from your CRM, and guide users through a personalized document creation experience. Smart forms help you gather the right information while maintaining a smooth user experience.`,
-        features: [
-            {
-                title: "Conditional Logic",
-                description: "Show or hide questions based on previous answers, creating a dynamic form experience."
-            },
-            {
-                title: "CRM Integration",
-                description: "Auto-populate form fields with data from your CRM, reducing manual entry."
-            },
-            {
-                title: "Smart Validation",
-                description: "Validate responses in real-time and provide instant feedback to users."
-            }
-        ]
-    },
+    plans: "Business, Enterprise",
+    description: "Create documents with confidence using guided templates that walk you through the process step by step. Perfect for complex documents that require specific information and formatting.",
+    useCase: "Ideal for sales proposals, contracts, service agreements, and other documents that need to be created with specific information and formatting.",
+    example: "When creating a sales proposal, the system guides you through each section, ensuring you include all necessary information and format it correctly.",
+    featuresTitle: "Guided Document Creation",
+    featuresIntro: "Create documents with confidence using guided templates that walk you through the process step by step.",
     steps: [
         {
-            icon: "public/icons/form.svg",
-            iconBgColor: "rgba(154, 68, 169, 0.08)",
-            iconBorderColor: "rgba(154, 68, 169, 0.16)",
-            name: "Fill out a form",
-            alt: "Form"
-        },
-        {
+            name: "Select Template",
             icon: "public/icons/document.svg",
+            alt: "Document",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)",
-            name: "Generate document",
-            alt: "Document"
+            iconBorderColor: "rgba(33, 103, 198, 0.16)"
         },
         {
-            icon: "public/icons/send.svg",
+            name: "Fill Information",
+            icon: "public/icons/form.svg",
+            alt: "Form",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)",
-            name: "Send document",
-            alt: "Send"
+            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+        },
+        {
+            name: "Review & Send",
+            icon: "public/icons/send.svg",
+            alt: "Send",
+            iconBgColor: "rgba(33, 103, 198, 0.08)",
+            iconBorderColor: "rgba(33, 103, 198, 0.16)"
         }
     ],
-    documentTypes: [
-        { name: "Statements of Work (SOWs - Modular)", scenario: "Select modules, add specifics, no template access needed" },
-        { name: "Change Orders", scenario: "Detail changes, cost, reference contract, faster than editing doc" },
-        { name: "Simple Service Agreements/Contracts", scenario: "Input client info, select packages, define dates, no template navigation" },
-        { name: "Internal Requests (PO, Funding, HR)", scenario: "Employee details request, justification, amounts, ensures all info captured" },
-        { name: "HR Action Forms (Comp Change, etc.)", scenario: "Manager inputs employee and change details, ensures consistency" },
-        { name: "Sales Proposals (Modular/Simple)", scenario: "Select content blocks, add client specifics, less ideal for high customization" },
-        { name: "Simple Contracts (Internal Initiation)", scenario: "Generate standard contract variations by form" },
-        { name: "Vendor/Contractor Setup Forms", scenario: "Input vendor details, service, payment info, populate standard agreement" },
-        { name: "Onboarding Checklists", scenario: "Standardize onboarding steps and documentation for new hires or vendors" },
-        { name: "Expense Reports", scenario: "Employees submit expenses via form, auto-generate report for approval" },
-        { name: "Sales Contracts (Complex)", scenario: "High variability, needs template/content library interaction" },
-        { name: "NDAs", scenario: "Often triggered by CRM or sent via template, form adds little efficiency" }
+    features: [
+        {
+            title: "Step-by-Step Guidance",
+            description: "Follow a guided process to create documents, ensuring you include all necessary information and format it correctly."
+        },
+        {
+            title: "Template Library",
+            description: "Access a library of pre-built templates for common document types, saving time and ensuring consistency."
+        },
+        {
+            title: "Customizable Templates",
+            description: "Create and customize templates to match your specific business needs and branding."
+        },
+        {
+            title: "Real-time Preview",
+            description: "See how your document will look as you create it, ensuring it meets your requirements before sending."
+        }
     ]
+};
+
+window.guidedDocumentCreationData = guidedDocumentCreationData;
+
+window.guidedDocumentCreationData.workflowDocumentScenarios = {
+    "Sales Proposals": "Create persuasive proposals to win new business and close deals faster.",
+    "Sales Contracts": "Formalize agreements with clients to ensure clear terms and conditions for every sale.",
+    "Service Agreements": "Outline the scope, deliverables, and terms for services provided to clients.",
+    "Sales Quotes": "Provide clients with detailed pricing and terms for products or services.",
+    "Sales & Marketing Collateral": "Share branded materials to support sales and marketing efforts.",
+    "Invoices & Payments": "Request and track payments for goods or services rendered.",
+    "NDA": "Protect confidential information shared during business processes.",
+    "Employment Contract": "Define the terms and conditions of employment for new hires.",
+    "Compensation Change Forms": "Document and approve changes to employee compensation.",
+    "Offer Letters": "Extend formal job offers to candidates with key terms outlined.",
+    "Contractor Agreements": "Set clear expectations and terms for contractor engagements.",
+    "Government Forms": "Complete required government documentation for compliance.",
+    "Compliance Policies": "Communicate company policies to ensure regulatory compliance.",
+    "Liability Waivers": "Limit company liability by having participants acknowledge risks.",
+    "Service Requests": "Submit and track requests for internal or external services.",
+    "Purchase Orders": "Authorize and document the purchase of goods or services.",
+    "Tax Forms": "Report and file necessary tax information with authorities."
 }; 

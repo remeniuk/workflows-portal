@@ -70,5 +70,24 @@ window.formTriggeredDocumentCreationData = {
         "Marketing Diversified",
         "Milestones",
         "We Are The Women"
-    ]
+    ],
+    workflowDocumentScenarios: {
+        // Website Contact/Request Form
+        "Sales & Marketing Collateral": "Generate a basic quote or informational document based on details submitted via website form.",
+        
+        // Event Registration Form
+        "Sales Contracts": "Generate a participation agreement or invoice upon event registration form submission.",
+        
+        // Applicant/Candidate Form
+        "Employment Contract": "Populate an internal candidate summary or parts of an employment agreement based on application form data.",
+        
+        // Client/Patient Intake Form
+        "Service Agreements": "Generate necessary service agreements or consent forms populated with data submitted during intake.",
+        
+        // Standardized Internal Request Form
+        "Purchase Orders": "Generate a formal internal document for approval based on an employee submitting a standardized request form.",
+        
+        // Partner/Reseller Application Form
+        "Contractor Agreements": "Generate a standard partner agreement or internal checklist based on data submitted through an application form."
+    }
 }; 

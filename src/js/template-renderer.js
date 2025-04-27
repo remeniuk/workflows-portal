@@ -177,13 +177,30 @@ class AutomationDetailsRenderer {
         }
 
         // Replace document types
-        if (data.documentTypes) {
-            const documentTypesHtml = data.documentTypes.map((type, index) => `
-                <tr style="background:${index % 2 === 0 ? '#fff' : '#fcfcfc'};">
-                    <td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">${type.name}</td>
-                    <td style="border-bottom:1px solid #f3f3f3;">${type.scenario}</td>
-                </tr>
-            `).join('');
+        if (data.workflowDocumentScenarios) {
+            // Get document types from catalog that are relevant to this workflow
+            const filteredTypes = window.documentTypesCatalog.filter(type => 
+                data.workflowDocumentScenarios[type.name]
+            );
+
+            const documentTypesHtml = `
+                ${filteredTypes.map((type, idx) => `
+                    <div class="template-card${idx > 2 ? ' hidden-document' : ''}">
+                        <div class="card-image">
+                            <img src="${type.image}" alt="${type.name}">
+                        </div>
+                        <div class="card-content">
+                            <h3>${type.name}</h3>
+                            <p>${data.workflowDocumentScenarios[type.name]}</p>
+                        </div>
+                    </div>
+                `).join('')}
+                ${filteredTypes.length > 3 ? `
+                    <div class="see-more">
+                        <button class="btn-text-icon" id="show-more-documents-btn">Show more documents</button>
+                    </div>
+                ` : ''}
+            `;
             html = html.replace(/<!-- TEMPLATE_DOCUMENT_TYPES -->/, documentTypesHtml);
         }
 
@@ -275,12 +292,24 @@ class DocumentDetailsRenderer {
 
         // Replace document types
         if (data.documentTypes) {
-            const documentTypesHtml = data.documentTypes.map((type, index) => `
-                <tr style="background:${index % 2 === 0 ? '#fff' : '#fcfcfc'};">
-                    <td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">${type.name}</td>
-                    <td style="border-bottom:1px solid #f3f3f3;">${type.scenario}</td>
-                </tr>
-            `).join('');
+            const documentTypesHtml = `
+                ${data.documentTypes.map((type, idx) => `
+                    <div class="template-card${idx > 2 ? ' hidden-document' : ''}">
+                        <div class="card-image">
+                            <img src="${type.image}" alt="${type.name}">
+                        </div>
+                        <div class="card-content">
+                            <h3>${type.name}</h3>
+                            <p>${type.scenario}</p>
+                        </div>
+                    </div>
+                `).join('')}
+                ${data.documentTypes.length > 3 ? `
+                    <div class="see-more">
+                        <button class="btn-text-icon" id="show-more-documents-btn">Show more documents</button>
+                    </div>
+                ` : ''}
+            `;
             html = html.replace(/<!-- TEMPLATE_DOCUMENT_TYPES -->/, documentTypesHtml);
         }
 

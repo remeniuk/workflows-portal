@@ -57,22 +57,11 @@ window.externalStorageData = {
             { src: "public/images/dropbox.svg", alt: "Dropbox" }
         ]
     },
-    documentTypes: [
-        {
-            name: "Contracts",
-            scenario: "Automatically archive signed contracts to a dedicated folder in your cloud storage"
-        },
-        {
-            name: "Proposals",
-            scenario: "Store finalized proposals in a structured folder hierarchy"
-        },
-        {
-            name: "NDAs",
-            scenario: "Maintain a secure archive of all signed non-disclosure agreements"
-        },
-        {
-            name: "Invoices",
-            scenario: "Organize paid invoices by date and client in cloud storage"
-        }
-    ]
+    workflowDocumentScenarios: {
+        "Sales Contracts": "Automatically archive signed contracts to a dedicated folder in your cloud storage",
+        "Sales Proposals": "Store finalized proposals in a structured folder hierarchy",
+        "NDA (Sales Administration)": "Maintain a secure archive of all signed non-disclosure agreements",
+        "Invoices & Payments": "Organize paid invoices by date and client in cloud storage",
+        "Service Agreements": "Archive completed service agreements with proper versioning and access control"
+    }
 }; 

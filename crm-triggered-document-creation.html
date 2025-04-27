@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM-Triggered Document Creation - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="src/js/template-renderer.js"></script>
+    <script src="src/js/data/document-types-catalog.js"></script>
+    <script src="src/js/data/crm-triggered-document-creation-data.js"></script>
 </head>
 <body>
     <div class="container">
         <div id="header"></div>
-        <main class="automation-details">
+        <main class="automation-details" id="automation-content">
             <div class="breadcrumbs">
                 <div class="breadcrumb-item">
                     <a href="automations.html" style="color: inherit; text-decoration: none;"><span>Workflow templates</span></a>
@@ -81,8 +84,6 @@
         </section>
     </div>
     <div id="footer"></div>
-    <script src="src/js/template-renderer.js"></script>
-    <script src="src/js/data/crm-triggered-document-creation-data.js"></script>
     <script>
         // Load header and footer
         ['header', 'footer'].forEach(function(part) {
@@ -91,53 +92,48 @@
                 .then(html => document.getElementById(part).innerHTML = html);
         });
 
-        // Render workflow steps
-        document.addEventListener('DOMContentLoaded', function() {
-            const stepsContainer = document.getElementById('workflow-steps');
-            const documentTypesContainer = document.getElementById('document-types');
-            
-            // Render steps
-            crmTriggeredDocumentCreationData.steps.forEach((step, index) => {
-                const stepHtml = `
-                    <div class="step-vertical">
-                        <div class="step-content-vertical">
-                            <div class="step-icon" style="background-color: ${step.iconBgColor}; border-color: ${step.iconBorderColor};">
-                                <img src="${step.icon}" alt="${step.alt}">
-                            </div>
-                            <span>${step.name}</span>
-                        </div>
-                    </div>
-                    ${index < crmTriggeredDocumentCreationData.steps.length - 1 ? `
-                        <div class="step-arrow-vertical">
-                            <img src="public/icons/arrow-down.svg" alt="↓">
-                        </div>
-                    ` : ''}
-                `;
-                stepsContainer.innerHTML += stepHtml;
-            });
-
-            // Render document types
-            crmTriggeredDocumentCreationData.documentTypes.forEach((type, index) => {
-                const rowHtml = `
-                    <tr style="background:${index % 2 === 0 ? '#fff' : '#fcfcfc'};">
-                        <td style="padding:12px 12px; border-bottom:1px solid #f3f3f3;">${type.name}</td>
-                        <td style="border-bottom:1px solid #f3f3f3;">${type.scenario}</td>
-                    </tr>
-                `;
-                documentTypesContainer.innerHTML += rowHtml;
-            });
+        // Render the automation content using the template
+        window.addEventListener('DOMContentLoaded', async function() {
+            const renderer = new AutomationDetailsRenderer('template-details.html');
+            const content = await renderer.render(window.crmTriggeredDocumentCreationData);
+            document.getElementById('automation-content').innerHTML = content;
 
             // Adjust workflow canvas height
             function adjustWorkflowHeight() {
-                const right = document.querySelector('.automation-right-content');
-                const canvas = document.querySelector('.workflow-visualization');
+                var right = document.querySelector('.automation-right-content');
+                var canvas = document.querySelector('.workflow-visualization');
                 if (right && canvas) {
-                    const rightHeight = right.offsetHeight;
-                    canvas.style.minHeight = (rightHeight + 40) + 'px';
+                    var rightHeight = right.offsetHeight;
+                    canvas.style.minHeight = (rightHeight + 40) + 'px'; // 40px taller
                 }
             }
             adjustWorkflowHeight();
             window.addEventListener('resize', adjustWorkflowHeight);
+
+            // Show more documents button logic
+            function setupShowMoreButton() {
+                const btn = document.getElementById('show-more-documents-btn');
+                if (btn) {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.hidden-document').forEach(function(card) {
+                            card.classList.remove('hidden-document');
+                        });
+                        btn.style.display = 'none';
+                    });
+                }
+            }
+            // Try to set up the button immediately
+            setupShowMoreButton();
+            // Also set up a mutation observer to catch when the button is added to the DOM
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length) {
+                        setupShowMoreButton();
+                    }
+                });
+            });
+            // Start observing the document with the configured parameters
+            observer.observe(document.body, { childList: true, subtree: true });
         });
     </script>
 </body>

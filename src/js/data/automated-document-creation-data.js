@@ -37,10 +37,10 @@ window.automatedDocumentCreationData = {
             alt: "Send Contract"
         }
     ],
-    documentTypes: [
-        { name: "Sales Proposal (Completed)", scenario: "Automatically generate the formal contract once the client accepts the proposal." },
-        { name: "Service Agreement (Completed)", scenario: "Automatically generate the first invoice or a welcome/setup checklist upon signing." },
-        { name: "SOW / Change Order (Completed)", scenario: "Automatically generate invoice for the work specified or an internal work ticket." },
-        { name: "Initial Form/Packet (Completed)", scenario: "Generate a secondary document based on completion of an initial intake process." }
-    ]
+    workflowDocumentScenarios: {
+        "Sales Proposals": "Trigger contract generation upon proposal acceptance, pull deal/product data, generate contract with terms, update deal stage.",
+        "Sales Contracts": "Trigger invoice/welcome doc upon agreement signing, pull service details, generate next steps document, update service status.",
+        "Service Agreements": "Trigger invoice/work ticket upon SOW completion, pull work details, generate billing document, update project status.",
+        "Sales Quotes": "Trigger secondary doc upon form completion, pull submitted data, generate next-step document, update process status."
+    }
 }; 

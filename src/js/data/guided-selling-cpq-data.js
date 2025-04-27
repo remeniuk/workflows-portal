@@ -48,32 +48,14 @@ window.guidedSellingCpqData = {
             iconBorderColor: "rgba(33, 103, 198, 0.16)"
         }
     ],
-    documentTypes: [
-        {
-            name: "Complex Equipment Quotes",
-            scenario: "Guide sales reps through configuring multi-component systems with required accessories and service packages"
-        },
-        {
-            name: "Service Proposals",
-            scenario: "Create customized service proposals with tiered pricing, optional add-ons, and compliance requirements"
-        },
-        {
-            name: "Renewal Quotes",
-            scenario: "Generate renewal quotes with automatic pricing adjustments and optional upgrade paths"
-        },
-        {
-            name: "Statements of Work (SOW)",
-            scenario: "Build detailed SOWs with proper scoping, deliverables, and pricing based on selected services"
-        },
-        {
-            name: "Subscription Quotes",
-            scenario: "Configure subscription packages with proper billing cycles, add-ons, and volume discounts"
-        },
-        {
-            name: "Channel Partner Quotes",
-            scenario: "Create partner-specific quotes with appropriate margins, terms, and co-marketing options"
-        }
-    ],
+    workflowDocumentScenarios: {
+        "Sales Proposals": "Guide sales reps through configuring multi-component systems with required accessories and service packages",
+        "Service Agreements": "Create customized service proposals with tiered pricing, optional add-ons, and compliance requirements",
+        "Sales Contracts": "Generate renewal quotes with automatic pricing adjustments and optional upgrade paths",
+        "SOW": "Build detailed SOWs with proper scoping, deliverables, and pricing based on selected services",
+        "Sales Quotes": "Configure subscription packages with proper billing cycles, add-ons, and volume discounts",
+        "NDA (Sales Administration)": "Create partner-specific quotes with appropriate margins, terms, and co-marketing options"
+    },
     targetCustomers: [
         "Complex product/service catalogs",
         "Configurable offerings",

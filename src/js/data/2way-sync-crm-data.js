@@ -101,12 +101,24 @@ const twoWaySyncCrmData = {
         ]
     },
     documentTypes: [
-        { name: "Quotes & Proposals", scenario: "Sync line items, pricing, and custom fields between PandaDoc and CRM." },
-        { name: "Contracts", scenario: "Push signed contract data and status updates back to CRM records." },
-        { name: "Order Forms", scenario: "Automatically update order details and statuses in both systems." },
-        { name: "Onboarding Documents", scenario: "Sync onboarding data and progress between PandaDoc and CRM." },
-        { name: "NDAs & Agreements", scenario: "Ensure all signed agreements are reflected in CRM instantly." }
+        { name: "Sales Proposals", scenario: "Sync line items, pricing, and custom fields between PandaDoc and CRM." },
+        { name: "Sales Quotes", scenario: "Sync line items, pricing, and custom fields between PandaDoc and CRM." },
+        { name: "Sales Contracts", scenario: "Push signed contract data and status updates back to CRM records." },
+        { name: "Service Agreements", scenario: "Push signed agreement data and status updates back to CRM records." },
+        { name: "Invoices & Payments", scenario: "Sync invoice data and payment status between PandaDoc and CRM." },
+        { name: "NDA (Sales Administration)", scenario: "Ensure all signed agreements are reflected in CRM instantly." },
+        { name: "Vendor Agreements", scenario: "Sync vendor agreement data and status between PandaDoc and CRM." }
     ]
 };
 
-window.twoWaySyncCrmData = twoWaySyncCrmData; 
+window.twoWaySyncCrmData = twoWaySyncCrmData;
+
+window.twoWaySyncCrmData.workflowDocumentScenarios = {
+    "Sales Proposals": "Pull deal/product/contact data, push quote details back, update deal stage on acceptance, trigger follow-ups based on status (viewed, completed).",
+    "Sales Quotes": "Pull deal/product/contact data, push quote details back, update deal stage on acceptance, trigger follow-ups based on status (viewed, completed).",
+    "Sales Contracts": "Pull all relevant data from CRM deal/account, auto-attach signed PDF to CRM record, update deal stage to Closed Won, sync key contract terms back to CRM.",
+    "Service Agreements": "Pull all relevant data from CRM deal/account, auto-attach signed PDF to CRM record, update deal stage to Closed Won, sync key contract terms back to CRM.",
+    "Invoices & Payments": "Trigger invoice generation upon deal closure in CRM, potentially sync payment status back to a CRM field.",
+    "NDA (Sales Administration)": "Auto-generate from CRM contact/deal, update custom field in CRM with NDA status, attach signed NDA.",
+    "Vendor Agreements": "If vendors are managed as CRM records, pull data for agreements, store signed docs, track status."
+}; 

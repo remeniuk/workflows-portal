@@ -66,7 +66,14 @@ const documentManagementData = {
         { name: "Onboarding Documents", scenario: "Create employee-specific folders and organize onboarding documents by type and status." },
         { name: "Compliance Documents", scenario: "Maintain organized records with proper versioning and automatic archiving of old versions." },
         { name: "Project Documentation", scenario: "Keep project-related documents organized by project, phase, and document type." }
-    ]
+    ],
+    workflowDocumentScenarios: {
+        "Sales Proposals": "Automatically organize proposals by quarter and deal stage, with consistent naming and versioning",
+        "Sales Contracts": "Manage contracts by status and automatically move them to appropriate folders",
+        "Service Agreements": "Organize service agreements by client and status, with automatic versioning",
+        "Sales & Marketing Collateral": "Maintain organized marketing materials with proper versioning and access control",
+        "Invoices & Payments": "Track and organize financial documents by status and date"
+    }
 };
 
 window.documentManagementData = documentManagementData; 

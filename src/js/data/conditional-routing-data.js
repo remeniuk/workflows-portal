@@ -37,40 +37,6 @@ window.conditionalRoutingData = {
             }
         ]
     },
-    documentTypes: [
-        {
-            name: "Sales Quotes/Proposals",
-            scenario: "Route for approval only if discount > X%, route to different manager based on region, include specific terms based on product type."
-        },
-        {
-            name: "Sales Contracts/Agreements/SOWs",
-            scenario: "Route to legal only if non-standard clauses used, apply different T&Cs based on client location, trigger different onboarding paths."
-        },
-        {
-            name: "HR Action Forms",
-            scenario: "Route to higher-level approver based on % increase, require additional justification if outside policy."
-        },
-        {
-            name: "Purchase Orders/Internal Requests",
-            scenario: "Route to different budget approvers based on amount/department, require additional sign-off for capital expenditure."
-        },
-        {
-            name: "Vendor Agreements",
-            scenario: "Route to different internal reviewers based on vendor risk level or contract value."
-        },
-        {
-            name: "Change Orders",
-            scenario: "Require additional approvals if change order value exceeds a certain threshold relative to original contract."
-        },
-        {
-            name: "Offer Letters",
-            scenario: "Include location-specific benefits info, route non-standard offers for executive approval."
-        },
-        {
-            name: "Intake Forms",
-            scenario: "Route submitted form to different internal teams based on service requested or client type selected."
-        }
-    ],
     steps: [
         {
             icon: "public/icons/document.svg",
@@ -113,5 +79,13 @@ window.conditionalRoutingData = {
                 }
             ]
         }
-    ]
+    ],
+    workflowDocumentScenarios: {
+        "Sales Proposals": "Route for approval only if discount > X%, route to different manager based on region, include specific terms based on product type",
+        "Sales Contracts": "Route to legal only if non-standard clauses used, apply different T&Cs based on client location, trigger different onboarding paths",
+        "Service Agreements": "Route based on service type and value, apply different terms based on client requirements",
+        "Sales & Marketing Collateral": "Route to different approvers based on content type and target audience",
+        "Invoices & Payments": "Route to different approvers based on amount and department, require additional sign-off for large payments",
+        "Vendor Agreements": "Route to different internal reviewers based on vendor risk level or contract value"
+    }
 }; 

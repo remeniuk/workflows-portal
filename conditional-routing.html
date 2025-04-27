@@ -6,6 +6,7 @@
     <title>Conditional Execution & Routing - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
     <script src="src/js/template-renderer.js"></script>
+    <script src="src/js/data/document-types-catalog.js"></script>
     <script src="src/js/data/conditional-routing-data.js"></script>
 </head>
 <body>
@@ -41,6 +42,31 @@
             }
             adjustWorkflowHeight();
             window.addEventListener('resize', adjustWorkflowHeight);
+
+            // Show more documents button logic
+            function setupShowMoreButton() {
+                const btn = document.getElementById('show-more-documents-btn');
+                if (btn) {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.hidden-document').forEach(function(card) {
+                            card.classList.remove('hidden-document');
+                        });
+                        btn.style.display = 'none';
+                    });
+                }
+            }
+            // Try to set up the button immediately
+            setupShowMoreButton();
+            // Also set up a mutation observer to catch when the button is added to the DOM
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length) {
+                        setupShowMoreButton();
+                    }
+                });
+            });
+            // Start observing the document with the configured parameters
+            observer.observe(document.body, { childList: true, subtree: true });
         });
     </script>
 </body>

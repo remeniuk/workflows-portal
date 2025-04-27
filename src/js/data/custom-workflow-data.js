@@ -55,12 +55,12 @@ const customWorkflowData = {
             iconBorderColor: "rgba(33, 103, 198, 0.16)"
         }
     ],
-    documentTypes: [
-        { name: "Custom Pricing Documents", scenario: "Generate documents with real-time pricing based on custom calculations and external data sources" },
-        { name: "Industry-Specific Contracts", scenario: "Create specialized contracts that integrate with industry-specific software and databases" },
-        { name: "Custom Integration Documents", scenario: "Build documents that automatically sync with proprietary systems and custom-built software" },
-        { name: "Complex Workflow Documents", scenario: "Implement unique document flows with custom triggers and actions" }
-    ]
+    workflowDocumentScenarios: {
+        "Sales Proposals": "Generate dynamic proposals with real-time pricing and custom calculations",
+        "Sales Contracts": "Create specialized contracts that integrate with your custom systems",
+        "Service Agreements": "Build service agreements that automatically sync with your business logic",
+        "Vendor Agreements": "Implement unique document flows with custom triggers and actions"
+    }
 };
 
 window.customWorkflowData = customWorkflowData; 

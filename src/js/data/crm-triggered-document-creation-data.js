@@ -1,66 +1,64 @@
 window.crmTriggeredDocumentCreationData = {
-    title: "Automated Document Creation (Integration Trigger)",
+    title: "CRM-Triggered Document Creation",
     name: "CRM-Triggered Document Creation",
-    plans: "Business, Enterprise (with Automations add-on)",
-    description: `Generates a PandaDoc document automatically based on an event occurring in an external integrated system (most commonly a CRM Deal Stage change, HRIS status update, ERP order status). This is a cornerstone of cross-system workflow automation, eliminating manual document initiation.`,
-    useCase: "Heavy users of integrated systems (CRM, HRIS, ERP), high-volume processes tied to stages in those systems, strong desire to eliminate manual initiation steps and reduce delays.",
-    example: `A company's CRM system automatically triggers document creation when a deal reaches "Closed Won" status. The system generates a detailed contract with all the agreed terms and sends it to the client for signature. This automation eliminates manual steps between deal closure and contract generation, ensuring a smooth transition from sales to contracting without any delays in the process.`,
-    featuresTitle: "Cross-System Document Automation",
-    featuresIntro: "Automatically generate documents based on events in your integrated systems. Perfect for sales, HR, and operations workflows that require seamless handoffs between systems.",
+    plans: "Business, Enterprise",
+    description: "Automatically generate documents based on specific triggers in your CRM, ATS, HRIS, or other business systems. Perfect for sales, HR, and operations teams that need to ensure timely document creation when key business events occur.",
+    useCase: "Sales teams needing contracts when deals close, HR teams requiring offer letters when candidates are approved, Operations teams needing shipping documents when orders are processed. Any scenario where document creation should be triggered by a specific system event.",
+    example: "A sales rep closes a deal in Salesforce. The system automatically generates a contract with the client's details, terms, and pricing, ready for review and signature. No manual document creation required.",
+    featuresTitle: "Automated Document Generation",
+    featuresIntro: "Transform your document creation process into an automated workflow that responds to your business systems' events.",
     steps: [
         {
-            icon: "public/icons/crm.svg",
-            iconBgColor: "rgba(244, 67, 54, 0.08)",
-            iconBorderColor: "rgba(244, 67, 54, 0.16)",
-            name: "CRM status change",
-            alt: "CRM Status Change"
-        },
-        {
+            name: "Select Trigger",
             icon: "public/icons/trigger.svg",
-            iconBgColor: "rgba(244, 67, 54, 0.08)",
-            iconBorderColor: "rgba(244, 67, 54, 0.16)",
-            name: "Trigger: Status update",
-            alt: "Status Update Trigger"
+            alt: "Trigger",
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
         },
         {
+            name: "Create Document",
             icon: "public/icons/document.svg",
+            alt: "Create Document",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)",
-            name: "Generate document",
-            alt: "Generate Document"
+            iconBorderColor: "rgba(33, 103, 198, 0.16)"
         },
         {
+            name: "Send Document",
             icon: "public/icons/send.svg",
+            alt: "Send Document",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)",
-            name: "Send document",
-            alt: "Send Document"
+            iconBorderColor: "rgba(33, 103, 198, 0.16)"
         }
     ],
-    documentTypes: [
-        { 
-            name: "Sales Contract / Service Agreement",
-            scenario: "Automatically generate the contract when the deal is marked as won or ready for contracting in CRM."
+    features: [
+        {
+            title: "System Integration",
+            description: "Connect with your CRM, ATS, HRIS, or other business systems to monitor for specific events that should trigger document creation."
         },
-        { 
-            name: "Offer Letter / Employment Contract",
-            scenario: "Automatically generate the offer letter once internal approvals are complete in the hiring system."
+        {
+            title: "Event-Based Triggers",
+            description: "Configure triggers based on specific status changes, stage transitions, or other events in your connected systems."
         },
-        { 
-            name: "Onboarding Packet / HR Forms",
-            scenario: "Automatically generate the necessary onboarding paperwork when a new employee record is finalized in HRIS."
+        {
+            title: "Data Mapping",
+            description: "Automatically populate documents with relevant data from the triggering system, ensuring accuracy and consistency."
         },
-        { 
-            name: "Shipping Documents / Packing List",
-            scenario: "Automatically generate shipping documentation when an order is processed in the ERP."
-        },
-        { 
-            name: "NDA",
-            scenario: "Automatically generate an NDA when a deal progresses to a stage requiring confidentiality."
-        },
-        { 
-            name: "Change Order / SOW",
-            scenario: "Automatically generate a formal Change Order document when a change request task is marked approved."
+        {
+            title: "Workflow Automation",
+            description: "Set up complete document workflows that include generation, review, and distribution based on system events."
         }
-    ]
+    ],
+    workflowDocumentScenarios: {
+        "Sales Contracts": "Automatically generate the contract when the deal is marked as won or ready for contracting in CRM.",
+        "Service Agreements": "Automatically generate the contract when the deal is marked as won or ready for contracting in CRM.",
+        "Offer Letters": "Automatically generate the offer letter once internal approvals are complete in the hiring system.",
+        "Employment Contract": "Automatically generate the offer letter once internal approvals are complete in the hiring system.",
+        "Onboarding Packet": "Automatically generate the necessary onboarding paperwork when a new employee record is finalized in HRIS.",
+        "HR Forms": "Automatically generate the necessary onboarding paperwork when a new employee record is finalized in HRIS.",
+        "Shipping Documents": "Automatically generate shipping documentation when an order is processed in the ERP.",
+        "Packing List": "Automatically generate shipping documentation when an order is processed in the ERP.",
+        "NDA": "Automatically generate an NDA when a deal progresses to a stage requiring confidentiality.",
+        "Change Order": "Automatically generate a formal Change Order document when a change request task is marked approved.",
+        "SOW": "Automatically generate a formal Change Order document when a change request task is marked approved."
+    }
 }; 

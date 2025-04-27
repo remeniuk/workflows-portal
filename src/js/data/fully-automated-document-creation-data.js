@@ -95,5 +95,23 @@ window.fullyAutomatedDocumentCreationData = {
             name: "Legal Documents",
             scenario: "Generate jurisdiction-specific legal documents with appropriate clauses and requirements."
         }
-    ]
+    ],
+    workflowDocumentScenarios: {
+        "Sales Contracts": "Dynamically include/exclude clauses based on location/service type (smart content), populate pricing terms based on selected plan (lookup/pricing).",
+        "Service Agreements": "Dynamically include/exclude clauses based on location/service type (smart content), populate pricing terms based on selected plan (lookup/pricing).",
+        "Sales & Marketing Collateral": "Use Smart Content to manage variations in standard clauses based on client type or governing law.",
+        "SOW": "Build SOWs dynamically by selecting service components; Smart Content inserts relevant descriptions/tasks; Lookups/Pricing provide costs.",
+        "Employment Contract": "Use Smart Content to include country-specific legal language, benefits info, or tax forms based on employee location.",
+        "Offer Letters": "Use Smart Content to include country-specific legal language, benefits info, or tax forms based on employee location.",
+        "NDA (Sales Administration)": "Smart Content adjusts terms, commission structures, or product access based on partner tier or region.",
+        "Compensation Change Forms": "Use Smart Content to include country-specific legal language, benefits info, or tax forms based on employee location.",
+        "Candidate Applications": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills.",
+        "Contractor Agreements": "Smart Content adjusts terms, commission structures, or product access based on partner tier or region.",
+        "Government Forms (HR Administration)": "Use Smart Content to include country-specific legal language, benefits info, or tax forms based on employee location.",
+        "Liability Waivers": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills.",
+        "Service Requests": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills.",
+        "Purchase Orders": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills.",
+        "Tax Forms": "Use Smart Content to include country-specific legal language, benefits info, or tax forms based on employee location.",
+        "Invoices & Payments": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills."
+    }
 }; 

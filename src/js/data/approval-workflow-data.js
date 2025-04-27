@@ -72,49 +72,26 @@ const approvalWorkflowData = {
                 description: "Route documents based on user roles rather than specific individuals, making your workflows more flexible and maintainable as your organization grows."
             }
         ]
-    },
-    documentTypes: [
-        {
-            name: "Sales Quotes/Proposals (Discounted)",
-            scenario: "Route quotes/proposals exceeding certain discount thresholds or total values to managers/finance for approval before sending to the client."
-        },
-        {
-            name: "Sales Contracts/MSAs/SOWs",
-            scenario: "Route agreements for legal, finance, or operational review based on complexity, value, or non-standard terms before final signature."
-        },
-        {
-            name: "Purchase Orders",
-            scenario: "Route internal POs for budget holder or finance department approval before sending to the vendor."
-        },
-        {
-            name: "HR Action Forms (Comp Change, etc.)",
-            scenario: "Route salary changes, promotions, or significant policy exceptions through management/HR leadership for approval."
-        },
-        {
-            name: "Vendor Agreements/Contracts",
-            scenario: "Ensure procurement/legal/finance reviews and approves agreements with new or existing vendors before they are finalized."
-        },
-        {
-            name: "Change Orders",
-            scenario: "Route significant change orders (affecting scope or budget) for project manager or client approval."
-        },
-        {
-            name: "Offer Letters (Exec/High Value)",
-            scenario: "High-level or non-standard offer letters may require multiple internal approvals before being extended."
-        },
-        {
-            name: "Expense Reports/Internal Requests",
-            scenario: "Automate the approval routing for internal financial requests based on amount or department policy."
-        },
-        {
-            name: "NDAs (Standard)",
-            scenario: "Standard NDAs often have pre-approved terms and may not require an instance-by-instance approval workflow."
-        },
-        {
-            name: "Compliance Policies (Acknowledgment)",
-            scenario: "Typically sent for signature/acknowledgment, not usually requiring a pre-send approval workflow for the standardized policy document itself."
-        }
-    ]
+    }
 };
 
-window.approvalWorkflowData = approvalWorkflowData; 
+window.approvalWorkflowData = approvalWorkflowData;
+
+window.approvalWorkflowData.workflowDocumentScenarios = {
+    "Sales Proposals": "Pull proposal data, route to approvers based on value/terms, update proposal status in system.",
+    "Sales Contracts": "Pull contract data, route to legal/finance, update contract status in system.",
+    "Service Agreements": "Pull agreement data, route to approvers, update agreement status in system.",
+    "Sales Quotes": "Pull quote data, route based on discount/value, update quote status in system.",
+    "Invoices & Payments": "Pull invoice data, route to finance, update payment status in system.",
+    "Employment Contract": "Pull contract data, route to HR/legal, update contract status in system.",
+    "Compensation Change Forms": "Pull form data, route to HR/finance, update compensation status in system.",
+    "Offer Letters": "Pull offer data, route to HR/management, update offer status in system.",
+    "Contractor Agreements": "Pull agreement data, route to legal/HR, update agreement status in system.",
+    "Government Forms": "Pull form data, route to HR/legal, update form status in system.",
+    "Compliance Policies": "Pull policy data, route to legal/compliance, update policy status in system.",
+    "NDA": "Pull NDA data, route to legal, update NDA status in system.",
+    "Liability Waivers": "Pull waiver data, route to legal, update waiver status in system.",
+    "Service Requests": "Pull request data, route to approvers, update request status in system.",
+    "Purchase Orders": "Pull PO data, route to finance, update PO status in system.",
+    "Tax Forms": "Pull form data, route to finance, update form status in system."
+}; 

@@ -56,5 +56,18 @@ window.automatedDocumentCreationByScheduleData = {
     ],
     demoLink: "Workflow Automation/Scheduling Placeholder",
     plans: "Business or Enterprise",
-    example: "Monthly/Quarterly reporting, annual renewals, compliance attestations, and scheduled audits."
+    example: "Monthly/Quarterly reporting, annual renewals, compliance attestations, and scheduled audits.",
+    workflowDocumentScenarios: {
+        // Monthly/Quarterly Reporting
+        "Sales & Marketing Collateral": "Automatically generate a template for a recurring client report, perhaps pulling some static data, ready for manual additions.",
+        
+        // Simple Annual Renewals
+        "Sales Contracts": "Automatically generate a standard renewal notice or basic agreement shortly before the contract expiration date.",
+        
+        // Periodic Compliance/Attestations
+        "Employment Contract": "Automatically generate and send annual policy acknowledgment forms or compliance questionnaires.",
+        
+        // Scheduled Internal Audits/Reviews
+        "NDA (Sales Administration)": "Generate forms needed for scheduled internal processes."
+    }
 }; 

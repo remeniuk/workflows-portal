@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2-Way Sync with CRM - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="src/js/data/document-types-catalog.js"></script>
     <script src="src/js/template-renderer.js"></script>
     <script src="src/js/data/2way-sync-crm-data.js"></script>
 </head>
@@ -41,6 +42,20 @@
             }
             adjustWorkflowHeight();
             window.addEventListener('resize', adjustWorkflowHeight);
+
+            // Show more documents button logic (robust)
+            const checkButton = setInterval(function() {
+                var btn = document.getElementById('show-more-documents-btn');
+                if (btn) {
+                    clearInterval(checkButton);
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.hidden-document').forEach(function(card) {
+                            card.classList.remove('hidden-document');
+                        });
+                        btn.style.display = 'none';
+                    });
+                }
+            }, 100);
         });
     </script>
 </body>
