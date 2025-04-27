@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!-- TEMPLATE_TITLE --> - PandaDoc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header"></div>
+        <main class="document-details">
+            <div class="breadcrumbs">
+                <div class="breadcrumb-item">
+                    <a href="documents.html" style="color: inherit; text-decoration: none;"><span>Document templates</span></a>
+                    <img src="public/icons/arrow-light-right.svg" alt=">" class="breadcrumb-arrow">
+                </div>
+                <div class="breadcrumb-item">
+                    <span><!-- TEMPLATE_NAME --></span>
+                </div>
+            </div>
+
+            <div class="nda-figma-layout">
+                <div class="nda-figma-screenshot">
+                    <img src="<!-- TEMPLATE_SCREENSHOT -->" alt="<!-- TEMPLATE_NAME --> Preview" class="document-screenshot">
+                </div>
+                <div class="nda-figma-workflow-card">
+                    <div class="workflow-card-header">Document workflow</div>
+                    <div class="workflow-card-desc">Define the key steps your team will follow when preparing and sending documents.</div>
+                    <div class="workflow-card-steps">
+                        <!-- TEMPLATE_STEPS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <h2 class="feature-title"><!-- TEMPLATE_FEATURES_TITLE --></h2>
+                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
+                        <!-- TEMPLATE_FEATURES_INTRO -->
+                    </p>
+                    <!-- TEMPLATE_FEATURES -->
+                </div>
+            </div>
+        </main>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Request your PandaDoc demo today</h2>
+                <p>Discover how easy your agreement process can be.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary">Request a demo</button>
+                    <button class="cta-button secondary">Start free 14-day trial</button>
+                </div>
+                <p class="cta-caption">No credit card required</p>
+            </div>
+        </section>
+    </div>
+    <div id="footer"></div>
+    <script>
+      ['header', 'footer'].forEach(function(part) {
+        fetch(part + '.html')
+          .then(res => res.text())
+          .then(html => document.getElementById(part).innerHTML = html);
+      });
+    </script>
+</body>
+</html> 
