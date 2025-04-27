@@ -25,23 +25,46 @@
                     <img src="<!-- TEMPLATE_SCREENSHOT -->" alt="<!-- TEMPLATE_NAME --> Preview" class="document-screenshot">
                 </div>
                 <div class="nda-figma-workflow-card">
-                    <div class="workflow-card-header">Document workflow</div>
-                    <div class="workflow-card-desc">Define the key steps your team will follow when preparing and sending documents.</div>
+                    <div class="workflow-card-header" style="font-size: 32px; line-height: 1.2; margin-bottom: 8px;">NDA workflow</div>
+                    <div class="nda-template-meta" style="margin-bottom: 18px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                            <img src="public/icons/downloads.svg" alt="Used" style="width: 18px; height: 18px; opacity: 0.7;">
+                            <span style="font-size: 15px; color: #242424;">Used <b><!-- USAGE_COUNT --></b> times</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                            <img src="public/icons/star.svg" alt="Rating" style="width: 20px; height: 20px; opacity: 0.7; vertical-align: middle; display: inline-block;">
+                            <span style="font-size: 15px; color: #242424;"><b><!-- RATING --></b> Rating (<!-- REVIEWS_COUNT --> reviews)</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                            <img src="public/icons/ai.gif" alt="AI assistant included" style="width: 18px; height: 18px;">
+                            <span style="font-size: 15px; color: #242424;">AI assistant included</span>
+                        </div>
+                    </div>
                     <div class="workflow-card-steps">
                         <!-- TEMPLATE_STEPS -->
+                    </div>
+                    <button class="button-primary" style="margin-top: 24px; font-size: 16px; padding: 12px 32px; border-radius: 6px; background-color: #248567; color: white; border: none; cursor: pointer;">Try It</button>
+                    <div class="nda-template-rating" style="background: #F7F7F7; border-radius: 8px; padding: 16px 12px; margin-top: 18px;">
+                        <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px; color: #242424;">Care to rate this template?</div>
+                        <div style="font-size: 14px; color: #666; margin-bottom: 8px;">Your rating will help others.</div>
+                        <div style="display: flex; gap: 4px;">
+                            <img src='public/icons/star.svg' style='width: 28px; height: 28px;' alt='Star'>
+                            <img src='public/icons/star.svg' style='width: 28px; height: 28px;' alt='Star'>
+                            <img src='public/icons/star.svg' style='width: 28px; height: 28px;' alt='Star'>
+                            <img src='public/icons/star.svg' style='width: 28px; height: 28px;' alt='Star'>
+                            <img src='public/icons/star.svg' style='width: 28px; height: 28px;' alt='Star'>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="features">
-                <div class="feature-item">
-                    <h2 class="feature-title"><!-- TEMPLATE_FEATURES_TITLE --></h2>
-                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
-                        <!-- TEMPLATE_FEATURES_INTRO -->
-                    </p>
-                    <!-- TEMPLATE_FEATURES -->
+            <div class="related-workflows">
+                <h2 class="related-workflows-title">Related Workflows</h2>
+                <div class="related-workflows-grid">
+                    <!-- TEMPLATE_RELATED_WORKFLOWS -->
                 </div>
             </div>
+
         </main>
 
         <section class="cta-section">

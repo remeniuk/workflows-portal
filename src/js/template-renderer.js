@@ -223,19 +223,41 @@ class DocumentDetailsRenderer {
         html = html.replace(/<!-- TEMPLATE_SCREENSHOT -->/g, data.screenshot);
         html = html.replace(/<!-- TEMPLATE_DESCRIPTION -->/g, data.description);
         html = html.replace(/<!-- TEMPLATE_EXAMPLE -->/g, data.example);
-        html = html.replace(/<!-- TEMPLATE_FEATURES_TITLE -->/g, data.featuresTitle || "");
-        html = html.replace(/<!-- TEMPLATE_FEATURES_INTRO -->/g, data.featuresIntro || "");
+        html = html.replace(/<!-- USAGE_COUNT -->/g, data.usageCount ? data.usageCount.toLocaleString() : "-");
+        html = html.replace(/<!-- RATING -->/g, data.rating ? data.rating.toFixed(1) : "-");
+        html = html.replace(/<!-- REVIEWS_COUNT -->/g, data.reviewsCount ? data.reviewsCount : "0");
+        if (!data.aiAssistantIncluded) {
+            html = html.replace(/<div style=\"display: flex; align-items: center; gap: 10px; margin-bottom: 8px;\">[\s\S]*?AI assistant included<\/span>[\s\S]*?<\/div>/, "");
+        }
+
+        // Replace related workflows
+        if (data.relatedWorkflows && data.relatedWorkflows.length > 0) {
+            const relatedWorkflowsHtml = data.relatedWorkflows.map(workflow => `
+                <a href="${workflow.url}" class="template-card workflow-card">
+                    <div class="card-icons">
+                        ${workflow.icons.map(icon => `
+                            <div class="app-icon ${icon.color}">
+                                <img src="${icon.src}" alt="${icon.alt}">
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="card-content">
+                        <h3>${workflow.title}</h3>
+                        <p>${workflow.description}</p>
+                    </div>
+                </a>
+            `).join('');
+            html = html.replace(/<!-- TEMPLATE_RELATED_WORKFLOWS -->/, relatedWorkflowsHtml);
+        } else {
+            // If no related workflows, remove the entire section
+            html = html.replace(/<div class="related-workflows">[\s\S]*?<\/div>\s*<\/div>/, '');
+        }
         
         // Render workflow steps as Figma card rows
         if (data.steps) {
             let stepsHtml = '';
             for (let idx = 0; idx < data.steps.length; idx++) {
                 const step = data.steps[idx];
-                // Choose action label based on step index or data
-                let actionLabel = 'Set up';
-                if (step.name.toLowerCase().includes('edit') || step.name.toLowerCase().includes('sync')) {
-                    actionLabel = 'Edit';
-                }
                 stepsHtml += `
                     <div class="workflow-card-step">
                         <div class="workflow-card-step-left">
@@ -244,24 +266,11 @@ class DocumentDetailsRenderer {
                             </div>
                             <span class="workflow-card-step-label">${step.name}</span>
                         </div>
-                        <button class="workflow-card-step-action">${actionLabel}</button>
+                        ${data.isWorkflowTemplate ? `<button class="workflow-card-step-action">Set up</button>` : ''}
                     </div>
                 `;
             }
             html = html.replace(/<!-- TEMPLATE_STEPS -->/, stepsHtml);
-        }
-
-        // Replace features
-        if (data.features && data.features.length > 0) {
-            const featuresHtml = data.features.map(feature => `
-                <div style="margin-bottom: 32px;">
-                    <h3 style="font-size: 18px; margin-bottom: 16px;">${feature.title}</h3>
-                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
-                        ${feature.description}
-                    </p>
-                </div>
-            `).join('');
-            html = html.replace(/<!-- TEMPLATE_FEATURES -->/, featuresHtml);
         }
 
         // Replace document types

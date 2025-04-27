@@ -5,47 +5,41 @@ const ndaData = {
     screenshot: "public/images/nda-large-screenshot.png",
     description: `Streamline your confidential information protection with PandaDoc's NDA templates. Our templates are designed to be flexible and comprehensive, covering various scenarios from sales discussions to employee onboarding. Each NDA template can be customized to match your specific requirements while maintaining legal compliance.`,
     example: `A technology company uses PandaDoc's NDA template to protect sensitive information during sales discussions. The template automatically adapts based on the type of information being shared, includes appropriate jurisdiction-specific clauses, and can be signed electronically in minutes. This ensures both parties are protected while maintaining a smooth business process.`,
-    featuresTitle: "Comprehensive NDA Solutions",
-    featuresIntro: "Protect your confidential information with professionally crafted NDA templates that adapt to your specific needs.",
     steps: [
         {
-            name: "Select NDA Type",
+            name: "Trigger in integrated system",
+            icon: "public/icons/trigger.svg",
+            alt: "Trigger",
+            iconBgColor: "rgba(36, 174, 97, 0.08)",
+            iconBorderColor: "rgba(36, 174, 97, 0.16)"
+        },
+        {
+            name: "Create document",
             icon: "public/icons/document.svg",
             alt: "Document",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
             iconBorderColor: "rgba(33, 103, 198, 0.16)"
         },
         {
-            name: "Customize Terms",
-            icon: "public/icons/edit.svg",
-            alt: "Edit",
-            iconBgColor: "rgba(154, 68, 169, 0.08)",
-            iconBorderColor: "rgba(154, 68, 169, 0.16)"
-        },
-        {
-            name: "Send for Signature",
+            name: "Send document",
             icon: "public/icons/send.svg",
             alt: "Send",
             iconBgColor: "rgba(68, 169, 154, 0.08)",
             iconBorderColor: "rgba(68, 169, 154, 0.16)"
-        }
-    ],
-    features: [
-        {
-            title: "Multiple NDA Types",
-            description: "Choose from various NDA templates including mutual, unilateral, and industry-specific agreements."
         },
         {
-            title: "Smart Customization",
-            description: "Automatically adapt clauses based on jurisdiction, industry, and type of information being protected."
+            name: "Trigger on document signed",
+            icon: "public/icons/trigger.svg",
+            alt: "Trigger Signed",
+            iconBgColor: "rgba(255, 152, 0, 0.08)",
+            iconBorderColor: "rgba(255, 152, 0, 0.16)"
         },
         {
-            title: "Electronic Signatures",
-            description: "Enable quick and legally binding signatures from all parties involved."
-        },
-        {
-            title: "Version Control",
-            description: "Track changes and maintain a clear audit trail of all NDA versions."
+            name: "Store the document in cloud",
+            icon: "public/icons/external-storage.svg",
+            alt: "Store in Cloud",
+            iconBgColor: "rgba(154, 68, 169, 0.08)",
+            iconBorderColor: "rgba(154, 68, 169, 0.16)"
         }
     ],
     documentTypes: [
@@ -69,7 +63,58 @@ const ndaData = {
             name: "Investment & M&A",
             scenario: "Maintain confidentiality during investment discussions and merger/acquisition processes."
         }
-    ]
+    ],
+    relatedWorkflows: [
+        {
+            title: "Form-based Triggered",
+            description: "Automatically trigger workflows when a form is submitted. Perfect for collecting information and starting document processes.",
+            url: "form-triggered-document-creation.html",
+            icons: [
+                {
+                    src: "public/icons/form.svg",
+                    alt: "Form",
+                    color: "blue"
+                },
+                {
+                    src: "public/icons/trigger.svg",
+                    alt: "Trigger",
+                    color: "green"
+                },
+                {
+                    src: "public/icons/document.svg",
+                    alt: "Document",
+                    color: "blue"
+                }
+            ]
+        },
+        {
+            title: "Bulk Send",
+            description: "Send multiple documents at once with personalized content. Ideal for mass communications and batch processing.",
+            url: "bulk-creation.html",
+            icons: [
+                {
+                    src: "public/icons/send.svg",
+                    alt: "Send",
+                    color: "blue"
+                },
+                {
+                    src: "public/icons/trigger.svg",
+                    alt: "Trigger",
+                    color: "green"
+                },
+                {
+                    src: "public/icons/document.svg",
+                    alt: "Document",
+                    color: "blue"
+                }
+            ]
+        }
+    ],
+    usageCount: 13434,
+    rating: 4.3,
+    reviewsCount: 21,
+    aiAssistantIncluded: true,
+    userRating: 0 // Placeholder for user rating, static for now
 };
 
 window.ndaData = ndaData; 

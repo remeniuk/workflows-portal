@@ -1309,7 +1309,7 @@ body {
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
-  min-height: 520px;
+  min-height: unset;
   margin-bottom: 64px;
 }
 .nda-figma-screenshot {
@@ -1322,20 +1322,23 @@ body {
   background: #f4f4f4;
   border-radius: 24px 0 0 24px;
   overflow: hidden;
-  min-height: 420px;
-  height: 520px;
+  min-height: 0;
+  height: auto;
 }
 .nda-figma-screenshot img.document-screenshot {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 24px 0 0 24px;
+  min-height: 0;
+  max-height: none;
 }
 .nda-figma-workflow-card {
   flex: 0 0 400px;
   max-width: 400px;
   width: 400px;
-  height: 520px;
+  height: auto;
+  min-height: 0;
   background: #fff;
   border-radius: 0 24px 24px 0;
   /* No shadow */
@@ -1346,7 +1349,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  gap: 18px;
+  gap: 10px;
 }
 .workflow-card-header {
   font-family: 'Graphik LC Web', sans-serif;
@@ -1365,7 +1368,7 @@ body {
 .workflow-card-steps {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 .workflow-card-step {
   display: flex;
@@ -1373,10 +1376,12 @@ body {
   background: #fff;
   border: 1px solid #EFEFEF;
   border-radius: 8px;
-  padding: 12px 16px;
+  padding: 8px 16px;
   box-shadow: none;
   gap: 12px;
   justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .workflow-card-step-left {
   display: flex;
@@ -1466,5 +1471,101 @@ body {
 .document-template-workflow-card .workflow-card-step-icon {
   background: none !important;
   border-radius: 0 !important;
+}
+
+.nda-figma-screenshot {
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.nda-figma-layout {
+  align-items: stretch;
+}
+
+.related-workflows {
+    margin: 48px auto;
+    padding: 0 24px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.related-workflows-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #242424;
+    text-align: center;
+    font-family: 'Graphik LC Web', sans-serif;
+    line-height: 1.2;
+}
+
+.related-workflows-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    justify-content: center;
+}
+
+.related-workflows .template-card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+    width: 100%;
+}
+
+.related-workflows .template-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.related-workflows .template-card:hover .card-content h3 {
+    color: #41806A;
+}
+
+.related-workflows .card-icons {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.related-workflows .app-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.related-workflows .app-icon.blue {
+    background: rgba(33, 103, 198, 0.08);
+}
+
+.related-workflows .app-icon.green {
+    background: rgba(36, 174, 97, 0.08);
+}
+
+.related-workflows .card-content h3 {
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.375;
+    color: #2F2F2F;
+    margin-bottom: 6px;
+}
+
+.related-workflows .card-content p {
+    font-family: 'Graphik LC Web', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666666;
 }
 
