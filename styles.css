@@ -327,6 +327,22 @@ body {
     color: #C9994B;
 }
 
+.app-icon.green {
+    background: rgba(36, 174, 97, 0.08);
+}
+
+.app-icon.green img {
+    color: #24AE61;
+}
+
+.app-icon.teal {
+    background: rgba(68, 169, 154, 0.08);
+}
+
+.app-icon.teal img {
+    color: #44A99A;
+}
+
 .card-content h3 {
     font-family: 'Graphik LC Web', sans-serif;
     font-weight: 700;
@@ -1031,5 +1047,11 @@ body {
 }
 .workflow-card:hover .card-content h3 {
     color: #41806A;
+}
+
+.templates-grid .see-more {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
 }
 

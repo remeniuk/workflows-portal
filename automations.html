@@ -36,11 +36,14 @@
                     <!-- Template Card 1 - 2-Way CRM Sync -->
                     <a href="2way-sync-crm.html" class="template-card workflow-card">
                         <div class="card-icons">
-                            <div class="app-icon green">
+                            <div class="app-icon blue">
                                 <img src="public/icons/api-integration.svg" alt="API Integration">
                             </div>
-                            <div class="app-icon purple">
-                                <img src="public/icons/data-sync.svg" alt="Data Sync">
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
+                            </div>
+                            <div class="app-icon blue">
+                                <img src="public/icons/send.svg" alt="Send">
                             </div>
                         </div>
                         <div class="card-content">
@@ -52,14 +55,14 @@
                     <!-- Template Card 2 - Approval Workflow -->
                     <a href="approval-workflow.html" class="template-card workflow-card">
                         <div class="card-icons">
-                            <div class="app-icon orange">
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
+                            </div>
+                            <div class="app-icon purple">
                                 <img src="public/icons/approval-workflow.svg" alt="Approval Workflow">
                             </div>
                             <div class="app-icon blue">
-                                <img src="public/icons/conditional-routing.svg" alt="Conditional Routing">
-                            </div>
-                            <div class="app-icon green">
-                                <img src="public/icons/custom-logic.svg" alt="Custom Logic">
+                                <img src="public/icons/send.svg" alt="Send">
                             </div>
                         </div>
                         <div class="card-content">
@@ -77,8 +80,8 @@
                             <div class="app-icon blue">
                                 <img src="public/icons/crm-integration.svg" alt="CRM Integration">
                             </div>
-                            <div class="app-icon orange">
-                                <img src="public/icons/document-generation.svg" alt="Document Generation">
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document Generation">
                             </div>
                         </div>
                         <div class="card-content">
@@ -90,11 +93,14 @@
                     <!-- Template Card 4 -->
                     <a href="custom-workflow.html" class="template-card workflow-card">
                         <div class="card-icons">
-                            <div class="app-icon purple">
+                            <div class="app-icon teal">
                                 <img src="public/icons/storage.svg" alt="Storage">
                             </div>
-                            <div class="app-icon red">
-                                <img src="public/icons/cloud-storage.svg" alt="Cloud Storage">
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
+                            </div>
+                            <div class="app-icon blue">
+                                <img src="public/icons/send.svg" alt="Send">
                             </div>
                         </div>
                         <div class="card-content">
@@ -107,10 +113,13 @@
                     <a href="document-management.html" class="template-card workflow-card">
                         <div class="card-icons">
                             <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
+                                <img src="public/icons/trigger.svg" alt="Trigger">
                             </div>
                             <div class="app-icon purple">
-                                <img src="public/icons/data-sync.svg" alt="Data Sync">
+                                <img src="public/icons/document-storage.svg" alt="Document Storage">
+                            </div>
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
                             </div>
                         </div>
                         <div class="card-content">
@@ -122,11 +131,11 @@
                     <!-- Template Card 6 - External Storage Integration -->
                     <a href="external-storage.html" class="template-card workflow-card">
                         <div class="card-icons">
-                            <div class="app-icon green">
-                                <img src="public/icons/external-storage.svg" alt="External Storage">
+                            <div class="app-icon blue">
+                                <img src="public/icons/trigger.svg" alt="Trigger">
                             </div>
-                            <div class="app-icon red">
-                                <img src="public/icons/dropbox.svg" alt="Dropbox">
+                            <div class="app-icon teal">
+                                <img src="public/icons/external-storage.svg" alt="External Storage">
                             </div>
                         </div>
                         <div class="card-content">
@@ -139,7 +148,13 @@
                     <a href="conditional-routing.html" class="template-card workflow-card">
                         <div class="card-icons">
                             <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
+                            </div>
+                            <div class="app-icon blue">
                                 <img src="public/icons/routing.svg" alt="Routing">
+                            </div>
+                            <div class="app-icon purple">
+                                <img src="public/icons/approval-workflow.svg" alt="Approval Workflow">
                             </div>
                         </div>
                         <div class="card-content">
@@ -148,29 +163,51 @@
                         </div>
                     </a>
 
-                    <!-- Template Card 8 -->
-                    <div class="template-card workflow-card">
+                    <!-- Template Card 8 - Automated Document Creation -->
+                    <a href="automated-document-creation.html" class="template-card workflow-card">
                         <div class="card-icons">
                             <div class="app-icon blue">
-                                <img src="public/icons/proposal.svg" alt="Proposal">
-                            </div>
-                            <div class="app-icon purple">
-                                <img src="public/icons/template.svg" alt="Template">
+                                <img src="public/icons/send.svg" alt="Send">
                             </div>
                             <div class="app-icon green">
-                                <img src="public/icons/automation.svg" alt="Automation">
+                                <img src="public/icons/trigger.svg" alt="Trigger">
+                            </div>
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
                             </div>
                         </div>
                         <div class="card-content">
-                            <h3>Streamlined Proposals</h3>
-                            <p>Speed up standard proposal creation by leveraging templates, forms, and CRM data.</p>
+                            <h3>Automated Document Creation</h3>
+                            <p>Automatically generate the next document in your workflow when a PandaDoc document reaches a specific status (e.g., Proposal signed triggers Contract creation).</p>
                         </div>
+                    </a>
+
+                    <!-- Template Card 9 - CRM-Triggered Document Creation -->
+                    <a href="automated-document-creation-integration.html" class="template-card workflow-card">
+                        <div class="card-icons">
+                            <div class="app-icon blue">
+                                <img src="public/icons/crm.svg" alt="CRM">
+                            </div>
+                            <div class="app-icon green">
+                                <img src="public/icons/trigger.svg" alt="Trigger">
+                            </div>
+                            <div class="app-icon blue">
+                                <img src="public/icons/document.svg" alt="Document">
+                            </div>
+                            <div class="app-icon blue">
+                                <img src="public/icons/send.svg" alt="Send">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>CRM-Triggered Document Creation</h3>
+                            <p>Automatically generate documents based on events in your CRM, HRIS, or ERP system. Perfect for sales, HR, and operations workflows that require seamless handoffs between systems.</p>
+                        </div>
+                    </a>
+
+                    <div class="see-more">
+                        <button class="btn-text-icon">See more workflows</button>
                     </div>
                 </div>
-            </div>
-
-            <div class="see-more">
-                <button class="btn-text-icon">See more automations</button>
             </div>
         </main>
 

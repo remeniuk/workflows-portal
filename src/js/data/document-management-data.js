@@ -9,7 +9,7 @@ const documentManagementData = {
     steps: [
         {
             name: "Document created",
-            icon: "public/icons/data-sync.svg",
+            icon: "public/icons/trigger.svg",
             alt: "Document",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
             iconBorderColor: "rgba(33, 103, 198, 0.16)"

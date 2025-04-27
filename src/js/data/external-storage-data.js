@@ -10,21 +10,21 @@ window.externalStorageData = {
     steps: [
         {
             name: "Document Created",
-            icon: "public/icons/data-sync.svg",
+            icon: "public/icons/trigger.svg",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
             iconBorderColor: "rgba(33, 103, 198, 0.16)",
             alt: "Document"
         },
         {
             name: "Create Folder in Cloud",
-            icon: "public/icons/dropbox.svg",
+            icon: "public/icons/external-storage.svg",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
             iconBorderColor: "rgba(33, 103, 198, 0.16)",
             alt: "Create Folder"
         },
         {
             name: "Save PDF to Cloud",
-            icon: "public/icons/dropbox.svg",
+            icon: "public/icons/external-storage.svg",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
             iconBorderColor: "rgba(33, 103, 198, 0.16)",
             alt: "Save PDF"
@@ -54,7 +54,7 @@ window.externalStorageData = {
         logos: [
             { src: "public/images/google-drive.svg", alt: "Google Drive" },
             { src: "public/images/sharepoint.svg", alt: "SharePoint" },
-            { src: "public/images/dropbox.svg", alt: "Dropbox" }
+            { src: "public/images/external-storage.svg", alt: "Dropbox" }
         ]
     },
     documentTypes: [
