@@ -1,12 +1,12 @@
 window.automatedDocumentCreationData = {
-    title: "Automated Document Creation (Internal Trigger)",
-    name: "Automated Document Creation",
+    title: "Document Status-Triggered Creation",
+    name: "Document Status-Triggered Creation",
     plans: "Business, Enterprise (with Automations add-on)",
-    description: `Creates a new PandaDoc document automatically when another PandaDoc document reaches a specific status (typically 'Completed'). Connects sequential steps within a purely PandaDoc-driven workflow (e.g., signed Proposal triggers Contract, signed Contract triggers Invoice).`,
+    description: `Creates a new PandaDoc document automatically when another PandaDoc document's status changes (typically 'Completed'). Connects sequential steps within a purely PandaDoc-driven workflow (e.g., signed Proposal triggers Contract, signed Contract triggers Invoice).`,
     useCase: "Multi-stage document processes where one signed document logically leads to the next step/document, desire to keep workflow automated within PandaDoc ecosystem.",
     example: `A company sends a proposal for a project to their client. When the client accepts the proposal, the system automatically generates a detailed contract with all the agreed terms and sends it to the client for final review and signature. This automation eliminates manual steps between proposal acceptance and contract generation, ensuring a smooth transition from proposal to contract without any delays in the sales process.`,
-    featuresTitle: "Automated Document Creation & Chaining",
-    featuresIntro: "Automatically generate the next document in your workflow when a PandaDoc document reaches a specific status. Perfect for sales, onboarding, and service workflows that require seamless handoffs.",
+    featuresTitle: "Document Status-Triggered Creation & Chaining",
+    featuresIntro: "Automatically generate the next document in your workflow when a PandaDoc document's status changes. Perfect for sales, onboarding, and service workflows that require seamless handoffs.",
     steps: [
         {
             icon: "public/icons/send.svg",

@@ -54,7 +54,7 @@ window.externalStorageData = {
         logos: [
             { src: "public/images/google-drive.svg", alt: "Google Drive" },
             { src: "public/images/sharepoint.svg", alt: "SharePoint" },
-            { src: "public/images/external-storage.svg", alt: "Dropbox" }
+            { src: "public/images/dropbox.svg", alt: "Dropbox" }
         ]
     },
     documentTypes: [
