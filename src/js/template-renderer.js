@@ -26,22 +26,96 @@ class AutomationDetailsRenderer {
                 if (step.type === 'condition' && step.branches && step.branches.length === 2) {
                     stepsHtml += `
                         <div class="branching-block">
-                            <div class="diamond-row">
-                                <div class="condition-diamond">
-                                    <img src="${step.icon}" alt="${step.alt}">
-                                </div>
+                            <div class="step-arrow-vertical">
+                                <img src="public/icons/arrow-down.svg" alt="↓">
                             </div>
-                            <div class="branch-chips-row">
-                                <div class="branch-chip">${step.branches[0].label}</div>
-                                <div class="branch-chip fallback">${step.branches[1].label}</div>
+                            <div class="branch-arrow-row" style="display: flex; justify-content: center; align-items: center; margin-bottom: 4px;">
+                                <img src="${step.icon}" alt="${step.alt}" style="width: 64px; height: 64px; display: block;" />
+                            </div>
+                            <!--<div class="branch-connectors-row">
+                                <svg width="340" height="48" style="overflow:visible;" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M170 0 V16" stroke="#248567" stroke-width="1" fill="none"/>
+                                    <path d="M170 16 C170 28, 70 28, 50 40" stroke="#248567" stroke-width="1" fill="none"/>
+                                    <path d="M170 16 C170 28, 270 28, 290 40" stroke="#ADADAD" stroke-width="1" fill="none"/>
+                                </svg>
+                            </div>-->
+                            <div class="branch-chips-row" style="width:340px; margin:0 auto; display:flex; flex-direction:row; align-items:flex-start; gap:40px; justify-content:center;">
+                                <div class="branch-chip-with-plus">
+                                    <div class="step-arrow-vertical">
+                                        <img src="public/icons/arrow-down.svg" alt="↓">
+                                    </div>
+                                    <div class="branch-chip">${step.branches[0].label}</div>
+                                    <div class="step-arrow-vertical">
+                                        <img src="public/icons/arrow-down.svg" alt="↓">
+                                    </div>
+                                    ${step.branches[0].steps && step.branches[0].steps.length > 0 ?
+                                        step.branches[0].steps.map(branchStep => `
+                                            <div class='step-vertical'>
+                                                <div class='step-content-vertical'>
+                                                    <div class='step-icon' style='background-color: ${branchStep.iconBgColor}; border-color: ${branchStep.iconBorderColor};'>
+                                                        <img src='${branchStep.icon}' alt='${branchStep.alt}'>
+                                                    </div>
+                                                    <span>${branchStep.name}</span>
+                                                </div>
+                                            </div>
+                                            <div class='step-arrow-vertical'>
+                                                <img src='public/icons/arrow-down.svg' alt='↓'>
+                                            </div>
+                                        `).join('')
+                                        :
+                                        `<button class='branch-plus-btn' tabindex='-1' aria-label='Add step'>
+                                            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M12 7v10M7 12h10' stroke='#248567' stroke-width='2' stroke-linecap='round'/>
+                                            </svg>
+                                        </button>
+                                        <div class='step-arrow-vertical'>
+                                            <img src='public/icons/arrow-down.svg' alt='↓'>
+                                        </div>`
+                                    }
+                                </div>
+                                <div class="branch-chip-with-plus">
+                                    <div class="step-arrow-vertical">
+                                        <img src="public/icons/arrow-down.svg" alt="↓">
+                                    </div>
+                                    <div class="branch-chip fallback">${step.branches[1].label}</div>
+                                    <div class="step-arrow-vertical">
+                                        <img src="public/icons/arrow-down.svg" alt="↓">
+                                    </div>
+                                    ${step.branches[1].steps && step.branches[1].steps.length > 0 ?
+                                        step.branches[1].steps.map(branchStep => `
+                                            <div class='step-vertical'>
+                                                <div class='step-content-vertical'>
+                                                    <div class='step-icon' style='background-color: ${branchStep.iconBgColor}; border-color: ${branchStep.iconBorderColor};'>
+                                                        <img src='${branchStep.icon}' alt='${branchStep.alt}'>
+                                                    </div>
+                                                    <span>${branchStep.name}</span>
+                                                </div>
+                                            </div>
+                                            <div class='step-arrow-vertical'>
+                                                <img src='public/icons/arrow-down.svg' alt='↓'>
+                                            </div>
+                                        `).join('')
+                                        :
+                                        `<button class='branch-plus-btn' tabindex='-1' aria-label='Add step'>
+                                            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M12 7v10M7 12h10' stroke='#248567' stroke-width='2' stroke-linecap='round'/>
+                                            </svg>
+                                        </button>
+                                        <div class='step-arrow-vertical'>
+                                            <img src='public/icons/arrow-down.svg' alt='↓'>
+                                        </div>`
+                                    }
+                                </div>
                             </div>
                         </div>
                     `;
-                    // Only add arrow down if not last step
+                    // Remove the arrow down after branching block since we now have arrows in each branch
                     if (idx < data.steps.length - 1) {
-                        stepsHtml += `<div class="step-arrow-vertical">
-                            <img src="public/icons/arrow-down.svg" alt="↓">
-                        </div>`;
+                        if (!data.steps[idx + 1].type || data.steps[idx + 1].type !== 'condition') {
+                            stepsHtml += `<div class="step-arrow-vertical">
+                                <img src="public/icons/arrow-down.svg" alt="↓">
+                            </div>`;
+                        }
                     }
                 } else {
                     // Render normal step

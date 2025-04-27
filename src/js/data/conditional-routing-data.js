@@ -73,15 +73,15 @@ window.conditionalRoutingData = {
     ],
     steps: [
         {
-            icon: "public/icons/integration.svg",
-            alt: "Integration",
-            name: "Pull data from integration",
+            icon: "public/icons/document.svg",
+            alt: "Document",
+            name: "Generate document",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
             iconBorderColor: "rgba(33, 103, 198, 0.16)"
         },
         {
             type: "condition",
-            icon: "public/icons/condition.svg",
+            icon: "public/images/branch.png",
             alt: "Condition",
             name: "Conditional Branch",
             iconBgColor: "rgba(33, 103, 198, 0.08)",
@@ -89,20 +89,29 @@ window.conditionalRoutingData = {
             branches: [
                 {
                     label: "Branch A",
-                    steps: []
+                    steps: [
+                        {
+                            icon: "public/icons/approval-workflow.svg",
+                            alt: "Approval",
+                            name: "Approve with legal",
+                            iconBgColor: "rgba(33, 103, 198, 0.08)",
+                            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+                        }
+                    ]
                 },
                 {
                     label: "Fallback",
-                    steps: []
+                    steps: [
+                        {
+                            icon: "public/icons/send.svg",
+                            alt: "Send",
+                            name: "Send document",
+                            iconBgColor: "rgba(33, 103, 198, 0.08)",
+                            iconBorderColor: "rgba(33, 103, 198, 0.16)"
+                        }
+                    ]
                 }
             ]
-        },
-        {
-            icon: "public/icons/quote.svg",
-            alt: "Quote",
-            name: "Create or update quote",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
         }
     ]
 }; 

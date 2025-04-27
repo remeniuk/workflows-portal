@@ -914,13 +914,58 @@ body {
   height: 28px;
 }
 
+.branch-connectors-row {
+  width: 180px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 0px;
+  position: relative;
+  z-index: 1;
+}
+
 .branch-chips-row {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 12px;
+  align-items: flex-start;
+  gap: 60px;
   margin: 0;
   justify-content: center;
+  width: 180px;
+}
+
+.branch-chip-with-plus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.branch-plus-btn {
+  background: #fff;
+  border: 1.5px solid #E4E4E4;
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 4px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 1px 2px 0px rgba(47, 47, 47, 0.08);
+  transition: box-shadow 0.2s;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.branch-plus-btn svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.branch-plus-btn:active svg circle,
+.branch-plus-btn:focus svg circle {
+  filter: brightness(0.95);
 }
 
 .branch-chip {
@@ -929,7 +974,7 @@ body {
   background: #EDF5F3;
   border: 1px solid #248567;
   border-radius: 16px;
-  padding: 0 8px 0 16px;
+  padding: 0 20px 0 16px;
   height: 32px;
   font-family: 'Graphik LC Web', sans-serif;
   font-weight: 600;
@@ -938,13 +983,16 @@ body {
   box-sizing: border-box;
   box-shadow: none;
   letter-spacing: 0;
+  white-space: nowrap;
+  min-width: 90px;
 }
 
 .branch-chip.fallback {
   border: 1px solid #E4E4E4;
   color: #2F2F2F;
   background: #FFFFFF;
-  padding: 0 16px 0 16px;
+  padding: 0 20px 0 16px;
+  box-shadow: none;
 }
 /* --- End Improved Figma-style Branching Chips and Block --- */
 
