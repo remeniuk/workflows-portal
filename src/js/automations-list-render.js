@@ -15,7 +15,18 @@
     const plan = selectedPlan;
     const availability = selectedAvailability;
     const filtered = window.automationsList.filter(card => {
-      const planMatch = !plan || plan === 'All' || card.plan === plan;
+      let planMatch = false;
+      if (!plan || plan === 'All') {
+        planMatch = true;
+      } else if (plan === 'Business') {
+        planMatch = card.plan === 'Business' || card.plan === 'Starter';
+      } else if (plan === 'Enterprise') {
+        planMatch = card.plan === 'Enterprise' || card.plan === 'Business' || card.plan === 'Starter';
+      } else if (plan === 'CPQ Add-on') {
+        planMatch = true; // includes all plans
+      } else {
+        planMatch = card.plan === plan;
+      }
       const availabilityMatch = !availability || availability === 'All' || card.availability === availability;
       const typeMatch = !type || type === 'All' ? true : card.type === type;
       return planMatch && availabilityMatch && typeMatch;
