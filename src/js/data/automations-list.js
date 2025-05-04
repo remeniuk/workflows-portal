@@ -1,6 +1,45 @@
 // List of automation workflow cards for dynamic rendering
 window.automationsList = [
   {
+    title: "Move Document to Folder After Send or Completion",
+    description: "Automatically file documents in the right folder after sending or signing.",
+    icons: [
+      { src: "public/icons/trigger.svg", color: "green" },
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/document-storage.svg", color: "teal" }
+    ],
+    link: "move-document-to-folder.html",
+    plan: "Starter",
+    availability: "Generally Available",
+    type: "Document management"
+  },
+  {
+    title: "Post-Signature Follow-Up Document",
+    description: "Send the next document automatically after a contract is signed.",
+    icons: [
+      { src: "public/icons/trigger.svg", color: "green" },
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/send.svg", color: "blue" }
+    ],
+    link: "post-signature-follow-up.html",
+    plan: "Starter",
+    availability: "Generally Available",
+    type: "Workflow execution & routing"
+  },
+  {
+    title: "Contract Naming & Tagging Standardization",
+    description: "Auto-name, tag, and organize contracts for easy search and compliance.",
+    icons: [
+      { src: "public/icons/trigger.svg", color: "green" },
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/document-storage.svg", color: "teal" }
+    ],
+    link: "contract-naming-tagging.html",
+    plan: "Starter",
+    availability: "Generally Available",
+    type: "Document management"
+  },
+  {
     title: "2-Way CRM Sync",
     description: "Keep PandaDoc and your CRM (HubSpot, Salesforce, Pipedrive, etc.) perfectly aligned with automated 2-way data sync for fields, products, and documents.",
     icons: [
