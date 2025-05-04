@@ -207,18 +207,5 @@ window.automationsList = [
     plan: "Business",
     availability: "In Plans",
     type: "Trigger-based automation"
-  },
-  {
-    title: "Conditional Approvals Workflow",
-    description: "Automate document approvals with dynamic routing based on value, discounts, or custom variables. Trigger reviews only when needed.",
-    icons: [
-      { src: "public/icons/document.svg", color: "blue" },
-      { src: "public/icons/approval-workflow.svg", color: "purple" },
-      { src: "public/icons/send.svg", color: "blue" }
-    ],
-    link: "conditional-approvals.html",
-    plan: "Business (add-on), Enterprise",
-    availability: "Generally Available",
-    type: "Workflow execution & routing"
   }
 ]; 
