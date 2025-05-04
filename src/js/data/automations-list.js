@@ -126,7 +126,7 @@ window.automationsList = [
     ],
     link: "custom-workflow.html",
     plan: "Enterprise",
-    availability: "Closed Beta",
+    availability: "Early Access",
     type: "Integrations & custom logic"
   },
   {
