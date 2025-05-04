@@ -21,288 +21,42 @@
 
             <div class="content-body">
                 <aside class="sidebar">
+                    <div class="filter-header">Workflows</div>
                     <nav class="side-nav">
-                        <a href="#" class="side-nav-item active">Featured</a>
-                        <a href="#" class="side-nav-item">Document management</a>
-                        <a href="#" class="side-nav-item">Workflow execution & routing</a>
-                        <a href="#" class="side-nav-item">AI-Driven automation</a>
-                        <a href="#" class="side-nav-item">Trigger-based automation</a>
-                        <a href="#" class="side-nav-item">Document generation</a>
-                        <a href="#" class="side-nav-item">Integrations & custom logic</a>
+                        <a href="#" class="side-nav-item active" data-type="All">All</a>
+                        <a href="#" class="side-nav-item" data-type="Document management">Document management</a>
+                        <a href="#" class="side-nav-item" data-type="Workflow execution & routing">Workflow execution & routing</a>
+                        <a href="#" class="side-nav-item" data-type="AI-Driven automation">AI-Driven automation</a>
+                        <a href="#" class="side-nav-item" data-type="Trigger-based automation">Trigger-based automation</a>
+                        <a href="#" class="side-nav-item" data-type="Document generation">Document generation</a>
+                        <a href="#" class="side-nav-item" data-type="Integrations & custom logic">Integrations & custom logic</a>
                     </nav>
-                </aside>
-
-                <div class="templates-grid">
-                    <!-- Template Card 1 - 2-Way CRM Sync -->
-                    <a href="2way-sync-crm.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/api-or-integration.svg" alt="API Integration">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/send.svg" alt="Send">
+                    <div class="sidebar-filters">
+                        <div class="filter-group">
+                            <div class="filter-header">Plans</div>
+                            <div class="pill-group" id="planPills">
+                                <button type="button" class="pill-btn" data-value="All" aria-pressed="true">All</button>
+                                <button type="button" class="pill-btn" data-value="Starter" aria-pressed="false">Starter</button>
+                                <button type="button" class="pill-btn" data-value="Business" aria-pressed="false">Business</button>
+                                <button type="button" class="pill-btn" data-value="Enterprise" aria-pressed="false">Enterprise</button>
+                                <button type="button" class="pill-btn" data-value="CPQ Add-on" aria-pressed="false">CPQ Add-on</button>
+                                <button type="button" class="pill-btn" data-value="Add-on" aria-pressed="false">Add-on</button>
                             </div>
                         </div>
-                        <div class="card-content">
-                            <h3>2-Way CRM Sync</h3>
-                            <p>Keep PandaDoc and your CRM (HubSpot, Salesforce, Pipedrive, etc.) perfectly aligned with automated 2-way data sync for fields, products, and documents.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 2 - Approval Workflow -->
-                    <a href="approval-workflow.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                            <div class="app-icon purple">
-                                <img src="public/icons/approval-workflow.svg" alt="Approval Workflow">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/send.svg" alt="Send">
+                        <div class="filter-group">
+                            <div class="filter-header">Availability</div>
+                            <div class="pill-group" id="availabilityPills">
+                                <button type="button" class="pill-btn" data-value="All" aria-pressed="true">All</button>
+                                <button type="button" class="pill-btn" data-value="Generally Available" aria-pressed="false">Generally Available</button>
+                                <button type="button" class="pill-btn" data-value="Early Access" aria-pressed="false">Early Access</button>
+                                <button type="button" class="pill-btn" data-value="Closed Beta" aria-pressed="false">Closed Beta</button>
+                                <button type="button" class="pill-btn" data-value="In Development" aria-pressed="false">In Development</button>
+                                <button type="button" class="pill-btn" data-value="In Plans" aria-pressed="false">In Plans</button>
                             </div>
                         </div>
-                        <div class="card-content">
-                            <h3>Approval Workflow</h3>
-                            <p>Automate internal reviews and approvals based on predefined rules to ensure compliance, transparency, and speed.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 3 - Document Storage Management -->
-                    <a href="document-management.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/trigger.svg" alt="Trigger">
-                            </div>
-                            <div class="app-icon purple">
-                                <img src="public/icons/document-storage.svg" alt="Document Storage">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Document Storage Management</h3>
-                            <p>Automatically organize and manage documents within PandaDoc. Create folders, move documents based on status or metadata, rename files, and maintain a clean document workspace.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 4 - External Storage Integration -->
-                    <a href="external-storage.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/trigger.svg" alt="Trigger">
-                            </div>
-                            <div class="app-icon teal">
-                                <img src="public/icons/external-storage.svg" alt="External Storage">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>External Storage Integration</h3>
-                            <p>Archive finalized documents automatically to platforms like Google Drive, SharePoint, or Dropbox.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 5 - Form-Triggered Document Creation -->
-                    <a href="form-triggered-document-creation.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/form.svg" alt="Form">
-                            </div>
-                            <div class="app-icon green">
-                                <img src="public/icons/trigger.svg" alt="Trigger">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Form-Triggered Document Creation</h3>
-                            <p>Automatically generate documents when a form is submitted. Perfect for collecting information from customers or employees and instantly creating personalized documents.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 6 - Guided Selling (CPQ) -->
-                    <a href="guided-selling-cpq.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon purple">
-                                <img src="public/icons/form.svg" alt="Form">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/rules.svg" alt="Rules">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Guided Selling (CPQ)</h3>
-                            <p>Guide sales reps through complex quote configuration with rules-based validation, pricing automation, and compliant document generation.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 7 - Custom Logic & API Integration -->
-                    <a href="custom-workflow.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon teal">
-                                <img src="public/icons/storage.svg" alt="Storage">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/send.svg" alt="Send">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Custom Logic & API Integration</h3>
-                            <p>Build custom automations with PandaDoc's API or logic steps to support proprietary systems or advanced workflows.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 8 - Bulk Creation -->
-                    <a href="bulk-creation.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon green">
-                                <img src="public/icons/lookup-table.svg" alt="Lookup Table">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Create Batch">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/send.svg" alt="Send Batch">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Bulk Creation</h3>
-                            <p>Generate hundreds or thousands of personalized documents in minutes. Perfect for mass communications, renewals, or any scenario requiring many similar documents.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 9 - Guided Document Creation -->
-                    <a href="guided-document-creation.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon purple">
-                                <img src="public/icons/workflow-automation.svg" alt="Workflow Automation">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/crm-integration.svg" alt="CRM Integration">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document Generation">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Guided Document Creation</h3>
-                            <p>Transform complex document creation into simple guided workflows. Help users create perfect documents every time with smart forms that automatically populate and customize content based on their inputs.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 10 - Conditional Execution & Routing -->
-                    <a href="conditional-routing.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/routing.svg" alt="Routing">
-                            </div>
-                            <div class="app-icon purple">
-                                <img src="public/icons/approval-workflow.svg" alt="Approval Workflow">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Conditional Execution & Routing</h3>
-                            <p>Enables workflows to branch or take different paths based on document data, metadata, or external triggers. Perfect for managing complex approval processes with varying requirements.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 11 - Document Status-Triggered Creation -->
-                    <a href="automated-document-creation.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/send.svg" alt="Send">
-                            </div>
-                            <div class="app-icon green">
-                                <img src="public/icons/trigger.svg" alt="Trigger">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Document Status-Triggered Creation</h3>
-                            <p>Automatically generate the next document in your workflow when a PandaDoc document's status changes (e.g., Proposal signed triggers Contract creation). Perfect for workflows that stay entirely within the PandaDoc ecosystem.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 12 - CRM-Triggered Document Creation -->
-                    <a href="crm-triggered-document-creation.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon light-red">
-                                <img src="public/icons/crm.svg" alt="CRM">
-                            </div>
-                            <div class="app-icon green">
-                                <img src="public/icons/trigger.svg" alt="Trigger">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>CRM-Triggered Document Creation</h3>
-                            <p>Automatically generate documents when specific events occur in your CRM (e.g., deal stage changes, status updates). Perfect for sales and customer success workflows.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 13 - Automated Generation based on Data Tables -->
-                    <a href="fully-automated-document-creation.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon blue">
-                                <img src="public/icons/api-or-integration.svg" alt="API Integration">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/lookup-table.svg" alt="Lookup Table">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/rules.svg" alt="Rules">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Automated Generation based on Data Tables</h3>
-                            <p>Enable single-click creation of complex documents through PandaDoc's enterprise features. The system automatically applies business rules and generates fully compliant documents with minimal user intervention.</p>
-                        </div>
-                    </a>
-
-                    <!-- Template Card 14 - Automated Document Creation (by Schedule) -->
-                    <a href="automated-document-creation-by-schedule.html" class="template-card workflow-card">
-                        <div class="card-icons">
-                            <div class="app-icon green">
-                                <img src="public/icons/trigger.svg" alt="Trigger">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/document.svg" alt="Document">
-                            </div>
-                            <div class="app-icon blue">
-                                <img src="public/icons/send.svg" alt="Send">
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Automated Document Creation (by Schedule)</h3>
-                            <p>Automatically generates documents based on a predefined time schedule (e.g., monthly, quarterly, annually). Perfect for recurring reports, renewals, and compliance documents.</p>
-                        </div>
-                    </a>
-
-                    <div class="see-more">
-                        <button class="btn-text-icon">See more workflows</button>
                     </div>
-                </div>
+                </aside>
+                <div class="templates-grid" id="templatesGrid"></div>
             </div>
         </main>
 
@@ -326,5 +80,7 @@
           .then(html => document.getElementById(part).innerHTML = html);
       });
     </script>
+    <script src="src/js/data/automations-list.js"></script>
+    <script src="src/js/automations-list-render.js"></script>
 </body>
 </html> 

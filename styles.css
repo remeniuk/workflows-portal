@@ -227,10 +227,11 @@ body {
     padding: 40px 64px;
     border-radius: 0;
     box-shadow: none;
+    align-items: flex-start !important;
 }
 
 .sidebar {
-    width: 220px;
+    width: 230px;
     flex-shrink: 0;
 }
 
@@ -240,43 +241,57 @@ body {
 }
 
 .side-nav-item {
-    padding: 7px 10px;
+    font-family: 'Graphik LC Web', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     color: #242424;
+    background: none;
+    border: none;
     text-decoration: none;
-    font-family: 'Graphik LC Web', sans-serif;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.side-nav-item.active,
+.side-nav-item:focus {
+    background: #e7ebed;
     font-weight: 600;
     font-size: 14px;
-    line-height: 1.2857;
-    border-radius: 4px;
-}
-
-.side-nav-item.active {
-    background: #E7EBED;
 }
 
 .templates-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
-    flex: 1;
-}
-
-.templates-grid.three-column {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    max-width: 1200px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    height: auto !important;
+    min-height: 0 !important;
 }
 
 .template-card {
     background: #fff;
     border-radius: 4px;
+    box-shadow: 0px 1px 4px 0px rgba(47,47,47,0.12), 0px 0px 1px 0px rgba(47,47,47,0.04);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    min-width: 0;
+    text-decoration: none !important;
+}
+
+.template-card * {
+    text-decoration: none !important;
+}
+
+.template-card h3,
+.template-card p {
     text-decoration: none;
-    color: inherit;
-    display: block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: none;
 }
 
 .template-card:hover {
@@ -291,10 +306,38 @@ body {
     color: #41806A;
 }
 
+.template-card a,
+.template-card a:link,
+.template-card a:visited,
+.template-card a:hover,
+.template-card a:active {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.card-header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
 .card-icons {
     display: flex;
     gap: 4px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    position: static;
+    top: auto;
+    right: auto;
+    z-index: 2;
 }
 
 .app-icon {
@@ -365,6 +408,7 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: #666666;
+    margin: 0;
 }
 
 .see-more {
@@ -1582,5 +1626,137 @@ body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Sidebar filter headers */
+.filter-header {
+  font-family: 'Graphik LC Web', Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+/* Pill group for plans/availability */
+.pill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 16px;
+}
+
+.pill-btn {
+  font-family: 'Graphik LC Web', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #242424;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pill-btn.active,
+.pill-btn:focus {
+  background: #e7ebed;
+  font-weight: 600;
+}
+
+/* Add spacing between filter groups */
+.sidebar-filters .filter-group {
+  margin-top: 24px;
+}
+
+/* Remove box/pill/inline styling from pills */
+.pill-btn {
+  box-shadow: none;
+  border: none;
+}
+
+@media (max-width: 700px) {
+  .templates-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.card-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border-radius: 2px;
+  font-size: 9px;
+  font-family: 'Graphik LC Web', sans-serif;
+  font-weight: 600;
+  line-height: 1.18;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  height: 16px;
+  min-width: 32px;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+}
+
+/* Plan tags */
+.plan-tag {
+  background: #EDF3FB;
+  color: #1A529E;
+}
+.plan-tag[data-plan="Enterprise"] {
+  background: #FCF9EF;
+  color: #AA8C2C;
+}
+.plan-tag[data-plan="Business"] {
+  background: #EDF3FB;
+  color: #1A529E;
+}
+.plan-tag[data-plan="Starter"] {
+  background: #F4F4F4;
+  color: #474747;
+}
+.plan-tag[data-plan*="Add-on"],
+.plan-tag[data-plan*="add-on"],
+.plan-tag[data-plan*="CPQ"] {
+  background: #EDF5F3;
+  color: #1D6A52;
+}
+
+/* Availability tags */
+.availability-tag {
+  background: #F4F4F4;
+  color: #474747;
+}
+.availability-tag[data-availability="Generally Available"] {
+  background: #F4F4F4;
+  color: #474747;
+}
+.availability-tag[data-availability="Early Access"] {
+  background: #F4F4F4;
+  color: #474747;
+}
+.availability-tag[data-availability="Closed Beta"] {
+  background: #F4F4F4;
+  color: #474747;
+}
+.availability-tag[data-availability="In Development"] {
+  background: #F4F4F4;
+  color: #474747;
+}
+.availability-tag[data-availability="In Plans"] {
+  background: #F4F4F4;
+  color: #474747;
 }
 
