@@ -1623,9 +1623,16 @@ body {
   width: 100%;
 }
 .templates-grid.three-column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.templates-grid.three-column .template-card {
+  box-shadow: none !important;
 }
 
 /* Sidebar filter headers */
