@@ -48,13 +48,13 @@ window.automationsList = [
       { src: "public/icons/send.svg", color: "blue" }
     ],
     link: "2way-sync-crm.html",
-    plan: "Enterprise",
+    plan: "Business",
     availability: "Generally Available",
     type: "Integrations & custom logic"
   },
   {
-    title: "Approval Workflow",
-    description: "Automate internal reviews and approvals based on predefined rules to ensure compliance, transparency, and speed.",
+    title: "Basic Document Approval Workflow",
+    description: "Route documents to designated approvers before sending. Ensure compliance and transparency with approval order and group approvals.",
     icons: [
       { src: "public/icons/document.svg", color: "blue" },
       { src: "public/icons/approval-workflow.svg", color: "purple" },
@@ -66,21 +66,21 @@ window.automationsList = [
     type: "Workflow execution & routing"
   },
   {
-    title: "Document Storage Management",
-    description: "Automatically organize and manage documents within PandaDoc. Create folders, move documents based on status or metadata, rename files, and maintain a clean document workspace.",
+    title: "Conditional & Multi-Step Approval Workflow",
+    description: "Automate approvals with conditions and multi-step routing. Trigger approvals only when criteria are met for advanced compliance.",
     icons: [
-      { src: "public/icons/trigger.svg", color: "blue" },
-      { src: "public/icons/document-storage.svg", color: "purple" },
-      { src: "public/icons/document.svg", color: "blue" }
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/approval-workflow.svg", color: "purple" },
+      { src: "public/icons/send.svg", color: "blue" }
     ],
-    link: "document-management.html",
-    plan: "Business",
+    link: "conditional-approvals.html",
+    plan: "Enterprise",
     availability: "Generally Available",
-    type: "Document management"
+    type: "Workflow execution & routing"
   },
   {
-    title: "External Storage Integration",
-    description: "Archive finalized documents automatically to platforms like Google Drive, SharePoint, or Dropbox.",
+    title: "Auto-Save Documents to Cloud Storage",
+    description: "Automatically save finalized documents to Google Drive, SharePoint, Dropbox, and more.",
     icons: [
       { src: "public/icons/trigger.svg", color: "blue" },
       { src: "public/icons/external-storage.svg", color: "teal" }
@@ -100,7 +100,7 @@ window.automationsList = [
     ],
     link: "form-triggered-document-creation.html",
     plan: "Business",
-    availability: "Generally Available",
+    availability: "In Plans",
     type: "Trigger-based automation"
   },
   {
@@ -113,8 +113,8 @@ window.automationsList = [
     ],
     link: "guided-selling-cpq.html",
     plan: "CPQ Add-on",
-    availability: "Early Access",
-    type: "AI-Driven automation"
+    availability: "Generally Available",
+    type: "Workflow execution & routing"
   },
   {
     title: "Custom Logic & API Integration",
@@ -139,7 +139,7 @@ window.automationsList = [
     ],
     link: "bulk-creation.html",
     plan: "Business",
-    availability: "Generally Available",
+    availability: "In Plans",
     type: "Document generation"
   },
   {
@@ -164,22 +164,9 @@ window.automationsList = [
       { src: "public/icons/approval-workflow.svg", color: "purple" }
     ],
     link: "conditional-routing.html",
-    plan: "Enterprise",
+    plan: "Business",
     availability: "In Development",
     type: "Workflow execution & routing"
-  },
-  {
-    title: "Document Status-Triggered Creation",
-    description: "Automatically generate the next document in your workflow when a PandaDoc document's status changes (e.g., Proposal signed triggers Contract creation). Perfect for workflows that stay entirely within the PandaDoc ecosystem.",
-    icons: [
-      { src: "public/icons/send.svg", color: "blue" },
-      { src: "public/icons/trigger.svg", color: "green" },
-      { src: "public/icons/document.svg", color: "blue" }
-    ],
-    link: "automated-document-creation.html",
-    plan: "Add-on",
-    availability: "Generally Available",
-    type: "Trigger-based automation"
   },
   {
     title: "CRM-Triggered Document Creation",
@@ -191,7 +178,7 @@ window.automationsList = [
     ],
     link: "crm-triggered-document-creation.html",
     plan: "Business",
-    availability: "Generally Available",
+    availability: "In Plans",
     type: "Trigger-based automation"
   },
   {
@@ -205,7 +192,7 @@ window.automationsList = [
     ],
     link: "fully-automated-document-creation.html",
     plan: "Enterprise",
-    availability: "Early Access",
+    availability: "In Plans",
     type: "AI-Driven automation"
   },
   {
@@ -220,5 +207,18 @@ window.automationsList = [
     plan: "Business",
     availability: "In Plans",
     type: "Trigger-based automation"
+  },
+  {
+    title: "Conditional Approvals Workflow",
+    description: "Automate document approvals with dynamic routing based on value, discounts, or custom variables. Trigger reviews only when needed.",
+    icons: [
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/approval-workflow.svg", color: "purple" },
+      { src: "public/icons/send.svg", color: "blue" }
+    ],
+    link: "conditional-approvals.html",
+    plan: "Business (add-on), Enterprise",
+    availability: "Generally Available",
+    type: "Workflow execution & routing"
   }
 ]; 

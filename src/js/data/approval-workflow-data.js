@@ -1,55 +1,37 @@
 const approvalWorkflowData = {
-    title: "Approval Workflow",
-    name: "Approval Workflow",
+    title: "Basic Document Approval Workflow",
+    name: "Basic Document Approval Workflow",
     plans: "Business, Enterprise",
-    description: "Ensure every document is error-free and compliant before it reaches your clients with PandaDoc Approval Workflows. Automate the review process by assigning approvers at the template level and setting approval orders to route documents to the right stakeholders at the right time.",
-    useCase: "Ideal for contracts, MSAs, NDAs, hiring packages, project scopes, and proposals that require internal review before sending externally.",
-    example: "When sending a services agreement, the legal team is automatically prompted to review and approve the document if specific clauses or high contract values are included — saving time, avoiding manual follow-ups, and ensuring full compliance.",
+    description: "Route documents to designated approvers before sending to recipients. Ensure compliance and transparency by automating internal reviews and approval orders at the template level.",
+    useCase: "Ideal for contracts, NDAs, proposals, and other documents that require internal review before being sent externally.",
+    example: "When sending a contract, the legal team is automatically prompted to review and approve the document before it goes to the client.",
     featuresTitle: "Streamline Your Document Approval Process",
-    featuresIntro: "Stop chasing down key stakeholders and sending countless reminder emails. Automate the approval process and define a clear path for every document you create.",
+    featuresIntro: "Automate the approval process and define a clear path for every document you create. Set up approval order and groups, and track every step with audit trails and notifications.",
     steps: [
-        {
-            name: "Create document",
-            icon: "public/icons/document.svg",
-            alt: "Document",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
-        },
-        {
-            name: "Route for approval",
-            icon: "public/icons/approval-workflow.svg",
-            alt: "Approval",
-            iconBgColor: "rgba(255, 152, 0, 0.08)",
-            iconBorderColor: "rgba(255, 152, 0, 0.16)"
-        },
-        {
-            name: "Send to client",
-            icon: "public/icons/send.svg",
-            alt: "Send",
-            iconBgColor: "rgba(33, 103, 198, 0.08)",
-            iconBorderColor: "rgba(33, 103, 198, 0.16)"
-        }
+        { name: "Create document", icon: "public/icons/document.svg", alt: "Document", iconBgColor: "rgba(33, 103, 198, 0.08)", iconBorderColor: "rgba(33, 103, 198, 0.16)" },
+        { name: "Approval", icon: "public/icons/approval-workflow.svg", alt: "Approval", iconBgColor: "rgba(255, 152, 0, 0.08)", iconBorderColor: "rgba(255, 152, 0, 0.16)" },
+        { name: "Send to client", icon: "public/icons/send.svg", alt: "Send", iconBgColor: "rgba(33, 103, 198, 0.08)", iconBorderColor: "rgba(33, 103, 198, 0.16)" }
     ],
     features: [
         {
-            title: "Create a Seamless Document Approval Process",
-            description: "Make sure the right people review your document at the right time. Set up an approval order in your template to ensure the right people are looped in automatically. To have the same person review a document at different stages, you can add them as an approver multiple times."
+            title: "Template-Level Approvals",
+            description: "Enable and manage approval workflows directly on your document templates. Set up approval order and groups for flexible routing."
         },
         {
-            title: "Customize Approval Processes",
-            description: "Set up an automated internal workflow with designated approvers before sending to recipients. Designated approvers receive a document only when certain conditions are met, such as a specific document value or when adding a discount."
+            title: "Approval Groups & Order",
+            description: "Add individual approvers or groups. Only one approval is needed per group. Set approval order for multi-stage reviews."
         },
         {
-            title: "Notifications & Audit Trails",
-            description: "Reviewers receive an email notification when a document is ready to approve. Audit trails and latest activity tiles track a document's approval status, so you always know where you are in the process."
+            title: "Notifications & Audit Trail",
+            description: "Approvers receive email notifications. All approval actions are tracked in the audit trail and latest activity."
         },
         {
-            title: "Improve Communication and Collaboration",
-            description: "Approvers can leave comments directly in the document. If a document is rejected, the sender must make edits and resend for review. Documents never go to clients before they're ready and bottlenecks are identified and easily eliminated."
+            title: "Approve on Behalf",
+            description: "Admins and Managers can approve documents on behalf of others if needed."
         },
         {
-            title: "Keep Documents Moving",
-            description: "Set up an approval order, send your document for review, and lock sensitive content while tracking changes easily."
+            title: "Easy Editing",
+            description: "Edit or remove approvers and groups at any time before sending for approval."
         }
     ],
     enterpriseFeatures: {

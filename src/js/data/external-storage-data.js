@@ -1,6 +1,6 @@
 window.externalStorageData = {
-    title: "External Storage Integration",
-    name: "External Storage Integration",
+    title: "Auto-Save Documents to Cloud Storage",
+    name: "Auto-Save Documents to Cloud Storage",
     plans: "Business, Enterprise",
     description: "Provides a simple, automated way to archive final, signed documents into common cloud storage platforms (Google Drive, SharePoint, OneDrive, Dropbox, Box). Addresses the fundamental need for centralized, accessible long-term storage outside of PandaDoc.",
     useCase: "Automatically archive signed documents to your preferred cloud storage platform",
