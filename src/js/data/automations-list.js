@@ -24,7 +24,7 @@ window.automationsList = [
     link: "post-signature-follow-up.html",
     plan: "Starter",
     availability: "Generally Available",
-    type: "Workflow execution & routing"
+    type: "Trigger-based automation"
   },
   {
     title: "Contract Naming & Tagging Standardization",
@@ -87,7 +87,7 @@ window.automationsList = [
     ],
     link: "external-storage.html",
     plan: "Business",
-    availability: "Generally Available",
+    availability: "Coming Soon",
     type: "Document management"
   },
   {
@@ -100,7 +100,7 @@ window.automationsList = [
     ],
     link: "form-triggered-document-creation.html",
     plan: "Business",
-    availability: "In Plans",
+    availability: "Coming Soon",
     type: "Trigger-based automation"
   },
   {
@@ -114,7 +114,7 @@ window.automationsList = [
     link: "guided-selling-cpq.html",
     plan: "CPQ Add-on",
     availability: "Generally Available",
-    type: "Workflow execution & routing"
+    type: "Document generation"
   },
   {
     title: "Custom Logic & API Integration",
@@ -139,7 +139,7 @@ window.automationsList = [
     ],
     link: "bulk-creation.html",
     plan: "Business",
-    availability: "In Plans",
+    availability: "Coming Soon",
     type: "Document generation"
   },
   {
@@ -165,7 +165,7 @@ window.automationsList = [
     ],
     link: "conditional-routing.html",
     plan: "Business",
-    availability: "In Development",
+    availability: "Coming Soon",
     type: "Workflow execution & routing"
   },
   {
@@ -178,7 +178,7 @@ window.automationsList = [
     ],
     link: "crm-triggered-document-creation.html",
     plan: "Business",
-    availability: "In Plans",
+    availability: "Coming Soon",
     type: "Trigger-based automation"
   },
   {
@@ -192,8 +192,8 @@ window.automationsList = [
     ],
     link: "fully-automated-document-creation.html",
     plan: "Enterprise",
-    availability: "In Plans",
-    type: "AI-Driven automation"
+    availability: "Coming Soon",
+    type: "Document generation"
   },
   {
     title: "Automated Document Creation (by Schedule)",
@@ -205,7 +205,72 @@ window.automationsList = [
     ],
     link: "automated-document-creation-by-schedule.html",
     plan: "Business",
-    availability: "In Plans",
+    availability: "Coming Soon",
     type: "Trigger-based automation"
+  },
+  {
+    title: "AI-Powered Quoting (Deal Desk)",
+    description: "Generate accurate quotes with zero setup—no rules required. The DealDesk Agent uses your sales playbooks (Docs, Excel, etc.) to build quotes from sales rep instructions, acting as your automated quoting expert.",
+    icons: [
+      { src: "public/icons/ai_icon_only.svg" },
+      { src: "public/icons/form.svg", color: "blue" },
+      { src: "public/icons/document.svg", color: "blue" }
+    ],
+    link: "ai-powered-quoting.html",
+    plan: "Enterprise",
+    availability: "Coming Soon",
+    type: "AI-Driven automation"
+  },
+  {
+    title: "AI-Powered Approvals (Playbook-Based)",
+    description: "AI reviews document changes, compares them to your template, and routes for approval based on your playbook—no rules setup required.",
+    icons: [
+      { src: "public/icons/ai_icon_only.svg" },
+      { src: "public/icons/approval-workflow.svg", color: "purple" },
+      { src: "public/icons/document.svg", color: "blue" }
+    ],
+    link: "ai-powered-approvals.html",
+    plan: "Enterprise",
+    availability: "Coming Soon",
+    type: "AI-Driven automation"
+  },
+  {
+    title: "AI Discovery Assistant",
+    description: "Turn any sales call or meeting notes into a tailored solution brief. The agent reads notes, call transcripts, or raw text and matches customer pain points to your product capabilities—outputting a summary or proposal draft.",
+    icons: [
+      { src: "public/icons/ai_icon_only.svg" },
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/send.svg", color: "blue" }
+    ],
+    link: "ai-discovery-assistant.html",
+    plan: "Enterprise",
+    availability: "Coming Soon",
+    type: "AI-Driven automation"
+  },
+  {
+    title: "AI Contract Review & Risk Flagging",
+    description: "Instantly detect redlines and risks in customer-sent contracts. The agent compares the document to your preferred terms and flags unusual clauses, missing sections, or high-risk changes.",
+    icons: [
+      { src: "public/icons/ai_icon_only.svg" },
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/approval-workflow.svg", color: "purple" }
+    ],
+    link: "ai-contract-review.html",
+    plan: "Enterprise",
+    availability: "Coming Soon",
+    type: "AI-Driven automation"
+  },
+  {
+    title: "AI Proposal Writer",
+    description: "Auto-generate a complete proposal draft from just a few inputs. Based on customer info and high-level goals, the agent writes a full proposal using your best-performing templates and positioning language.",
+    icons: [
+      { src: "public/icons/ai_icon_only.svg" },
+      { src: "public/icons/document.svg", color: "blue" },
+      { src: "public/icons/send.svg", color: "blue" }
+    ],
+    link: "ai-proposal-writer.html",
+    plan: "Enterprise",
+    availability: "Coming Soon",
+    type: "AI-Driven automation"
   }
 ]; 
