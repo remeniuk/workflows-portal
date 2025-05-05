@@ -214,6 +214,7 @@ window.automationsList = [
       }
     ],
     "link": "2way-sync-crm.html",
+    "id": "2way-sync-crm",
     "plan": "Business",
     "availability": "Generally Available",
     "type": "Integrations & custom logic",
@@ -466,7 +467,8 @@ window.automationsList = [
       "Service Requests": "Pull request data, route to approvers, update request status in system.",
       "Purchase Orders": "Pull PO data, route to finance, update PO status in system.",
       "Tax Forms": "Pull form data, route to finance, update form status in system."
-    }
+    },
+    "id": "basic-document-approval-workflow"
   },
   {
     "title": "Conditional & Multi-Step Approval Workflow",
@@ -546,7 +548,8 @@ window.automationsList = [
       "Quotes": "If discount > 15%, require Finance approval; otherwise, only Sales Manager approval needed.",
       "Purchase Orders": "If PO is for IT equipment, route to IT Manager; if over $10,000, also require Finance approval.",
       "Service Agreements": "If agreement duration > 2 years, require Legal review; otherwise, send to client after Manager approval."
-    }
+    },
+    "id": "conditional-multi-step-approval-workflow"
   },
   {
     "title": "Auto-Save Documents to Cloud Storage",
@@ -636,7 +639,8 @@ window.automationsList = [
       "NDA (Sales Administration)": "Maintain a secure archive of all signed non-disclosure agreements",
       "Invoices & Payments": "Organize paid invoices by date and client in cloud storage",
       "Service Agreements": "Archive completed service agreements with proper versioning and access control"
-    }
+    },
+    "id": "auto-save-documents-to-cloud-storage"
   },
   {
     "title": "Automated Document Creation (Form Trigger)",
@@ -736,7 +740,8 @@ window.automationsList = [
       "Service Agreements": "Generate necessary service agreements or consent forms populated with data submitted during intake.",
       "Purchase Orders": "Generate a formal internal document for approval based on an employee submitting a standardized request form.",
       "Contractor Agreements": "Generate a standard partner agreement or internal checklist based on data submitted through an application form."
-    }
+    },
+    "id": "form-triggered-document-creation"
   },
   {
     "title": "Guided Selling (CPQ)",
@@ -829,7 +834,8 @@ window.automationsList = [
       "SchoolAI",
       "coboworx GmbH",
       "Servers Australia"
-    ]
+    ],
+    "id": "guided-selling-cpq"
   },
   {
     "title": "Custom Logic & API Integration",
@@ -911,7 +917,8 @@ window.automationsList = [
       "Sales Contracts": "Create specialized contracts that integrate with your custom systems",
       "Service Agreements": "Build service agreements that automatically sync with your business logic",
       "Vendor Agreements": "Implement unique document flows with custom triggers and actions"
-    }
+    },
+    "id": "custom-logic-api-integration"
   },
   {
     "title": "Bulk Creation (Mass Personalized Docs)",
@@ -989,7 +996,8 @@ window.automationsList = [
       "Tax Forms": "Accounting firms generate personalized engagement letters or requests for info for tax clients en masse at year-end.",
       "Invoices & Payments": "Generate individual statements or updates for investors based on their holdings/account data.",
       "Service Agreements": "Rolling out a standard agreement to a large group (e.g., all vendors, all contractors) with personalized details."
-    }
+    },
+    "id": "bulk-creation"
   },
   {
     "title": "Guided Document Creation",
@@ -1077,7 +1085,8 @@ window.automationsList = [
       "Service Requests": "Submit and track requests for internal or external services.",
       "Purchase Orders": "Authorize and document the purchase of goods or services.",
       "Tax Forms": "Report and file necessary tax information with authorities."
-    }
+    },
+    "id": "guided-document-creation"
   },
   {
     "title": "Conditional Execution & Routing - PandaDoc",
@@ -1186,7 +1195,8 @@ window.automationsList = [
       "Sales & Marketing Collateral": "Route to different approvers based on content type and target audience",
       "Invoices & Payments": "Route to different approvers based on amount and department, require additional sign-off for large payments",
       "Vendor Agreements": "Route to different internal reviewers based on vendor risk level or contract value"
-    }
+    },
+    "id": "conditional-execution-routing-pandadoc"
   },
   {
     "title": "CRM-Triggered Document Creation",
@@ -1268,7 +1278,8 @@ window.automationsList = [
       "NDA": "Automatically generate an NDA when a deal progresses to a stage requiring confidentiality.",
       "Change Order": "Automatically generate a formal Change Order document when a change request task is marked approved.",
       "SOW": "Automatically generate a formal Change Order document when a change request task is marked approved."
-    }
+    },
+    "id": "crm-triggered-document-creation"
   },
   {
     "title": "Automated Generation based on Data Tables",
@@ -1407,7 +1418,8 @@ window.automationsList = [
       "Purchase Orders": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills.",
       "Tax Forms": "Use Smart Content to include country-specific legal language, benefits info, or tax forms based on employee location.",
       "Invoices & Payments": "Less need for complex conditional logic or dynamic tables if the document is largely static or only requires basic variable fills."
-    }
+    },
+    "id": "automated-generation-based-on-data-tables"
   },
   {
     "title": "Automated Document Creation (by Schedule)",
@@ -1492,7 +1504,8 @@ window.automationsList = [
       "Sales Contracts": "Automatically generate a standard renewal notice or basic agreement shortly before the contract expiration date.",
       "Employment Contract": "Automatically generate and send annual policy acknowledgment forms or compliance questionnaires.",
       "NDA (Sales Administration)": "Generate forms needed for scheduled internal processes."
-    }
+    },
+    "id": "automated-document-creation-by-schedule"
   },
   {
     "title": "AI-Powered Quoting (Deal Desk)",
@@ -1513,7 +1526,8 @@ window.automationsList = [
     "link": "ai-powered-quoting.html",
     "plan": "Enterprise",
     "availability": "Coming Soon",
-    "type": "AI-Driven automation"
+    "type": "AI-Driven automation",
+    "id": "ai-powered-quoting-deal-desk"
   },
   {
     "title": "AI-Powered Approvals (Playbook-Based)",
@@ -1613,7 +1627,8 @@ window.automationsList = [
           "description": "Maintain a complete, exportable record of all approval actions and decisions for compliance."
         }
       ]
-    }
+    },
+    "id": "ai-powered-approvals-playbook-based"
   },
   {
     "title": "AI Discovery Assistant",
@@ -1634,7 +1649,8 @@ window.automationsList = [
     "link": "ai-discovery-assistant.html",
     "plan": "Enterprise",
     "availability": "Coming Soon",
-    "type": "AI-Driven automation"
+    "type": "AI-Driven automation",
+    "id": "ai-discovery-assistant"
   },
   {
     "title": "AI Contract Review & Risk Flagging",
@@ -1655,7 +1671,8 @@ window.automationsList = [
     "link": "ai-contract-review.html",
     "plan": "Enterprise",
     "availability": "Coming Soon",
-    "type": "AI-Driven automation"
+    "type": "AI-Driven automation",
+    "id": "ai-contract-review-risk-flagging"
   },
   {
     "title": "AI Proposal Writer",
@@ -1676,6 +1693,7 @@ window.automationsList = [
     "link": "ai-proposal-writer.html",
     "plan": "Enterprise",
     "availability": "Coming Soon",
-    "type": "AI-Driven automation"
+    "type": "AI-Driven automation",
+    "id": "ai-proposal-writer"
   }
 ];
