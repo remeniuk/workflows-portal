@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Detail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="header"></div>
+        <main class="automation-details" id="automation-content"></main>
+        <div id="footer"></div>
+    </div>
+    <script>
+      ['header', 'footer'].forEach(function(part) {
+        fetch(part + '.html')
+          .then(res => res.text())
+          .then(html => document.getElementById(part).innerHTML = html);
+      });
+    </script>
+    <script src="src/js/data/automations-list.js"></script>
+    <script src="src/js/data/document-types-catalog.js"></script>
+    <script src="src/js/template-renderer.js"></script>
+    <script>
+      function renderSteps(steps) {
+        if (!steps) return '';
+        let html = '';
+        for (let idx = 0; idx < steps.length; idx++) {
+          const step = steps[idx];
+          if (step.type === 'condition' && step.branches && step.branches.length === 2) {
+            html += `
+              <div class="branching-block">
+                <div class="step-arrow-vertical"><img src="public/icons/arrow-down.svg" alt="↓"></div>
+                <div class="branch-arrow-row" style="display: flex; justify-content: center; align-items: center; margin-bottom: 4px;">
+                  <img src="${step.icon}" alt="${step.alt}" style="width: 64px; height: 64px; display: block;" />
+                </div>
+                <div class="branch-chips-row" style="width:340px; margin:0 auto; display:flex; flex-direction:row; align-items:flex-start; gap:40px; justify-content:center;">
+                  ${step.branches.map((branch, bidx) => `
+                    <div class="branch-chip-with-plus">
+                      <div class="step-arrow-vertical"><img src="public/icons/arrow-down.svg" alt="↓"></div>
+                      <div class="branch-chip${bidx === 1 ? ' fallback' : ''}">${branch.label}</div>
+                      <div class="step-arrow-vertical"><img src="public/icons/arrow-down.svg" alt="↓"></div>
+                      ${(branch.steps || []).map(branchStep => `
+                        <div class='step-vertical'>
+                          <div class='step-content-vertical'>
+                            <div class='step-icon' style='background-color: ${branchStep.iconBgColor}; border-color: ${branchStep.iconBorderColor};'>
+                              <img src='${branchStep.icon}' alt='${branchStep.alt}'>
+                            </div>
+                            <span>${branchStep.name}</span>
+                          </div>
+                        </div>
+                        <div class='step-arrow-vertical'><img src='public/icons/arrow-down.svg' alt='↓'></div>
+                      `).join('')}
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `;
+          } else {
+            html += `
+              <div class="step-vertical">
+                <div class="step-content-vertical">
+                  <div class="step-icon" style="background-color: ${step.iconBgColor}; border-color: ${step.iconBorderColor};">
+                    <img src="${step.icon}" alt="${step.alt}">
+                  </div>
+                  <span>${step.name}</span>
+                </div>
+              </div>
+            `;
+            if (idx < steps.length - 1 && (!steps[idx + 1].type || steps[idx + 1].type !== 'condition')) {
+              html += `<div class="step-arrow-vertical"><img src="public/icons/arrow-down.svg" alt="↓"></div>`;
+            }
+          }
+        }
+        return html;
+      }
+
+      function renderFeatures(features) {
+        if (!features || !features.length) return '';
+        return features.map(feature => `
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">${feature.title}</h3>
+            <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">${feature.description}</p>
+          </div>
+        `).join('');
+      }
+
+      function renderEnterpriseFeatures(enterpriseFeatures) {
+        if (!enterpriseFeatures) return '';
+        return `
+          <div style="margin-bottom: 32px;">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">Enterprise Plan Features</h3>
+            <p style="font-size: 15px; line-height: 1.6; margin-bottom: 16px;">${enterpriseFeatures.description}</p>
+            <ul style="margin: 16px 0; padding-left: 24px; font-size: 15px; line-height: 1.6;">
+              ${(enterpriseFeatures.features || []).map(f => `<li style="margin-bottom: 8px;"><b>${f.title}:</b> ${f.description}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      }
+
+      function renderDocumentTypes(workflowDocumentScenarios) {
+        if (!workflowDocumentScenarios || !window.documentTypesCatalog) return '';
+        const filteredTypes = window.documentTypesCatalog.filter(type => workflowDocumentScenarios[type.name]);
+        let html = '';
+        filteredTypes.forEach((type, idx) => {
+          html += `
+            <div class="template-card${idx > 2 ? ' hidden-document' : ''}">
+              <div class="card-image"><img src="${type.image}" alt="${type.name}"></div>
+              <div class="card-content">
+                <h3>${type.name}</h3>
+                <p>${workflowDocumentScenarios[type.name]}</p>
+              </div>
+            </div>
+          `;
+        });
+        if (filteredTypes.length > 3) {
+          html += `<div class="see-more"><button class="btn-text-icon" id="show-more-documents-btn">Show more documents</button></div>`;
+        }
+        return html;
+      }
+
+      window.addEventListener('DOMContentLoaded', async function() {
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const workflow = window.automationsList.find(wf => wf.id === id);
+        if (!workflow) {
+          document.getElementById('automation-content').innerHTML = '<p>Workflow not found.</p>';
+          return;
+        }
+        const renderer = new AutomationDetailsRenderer('template-details.html');
+        const content = await renderer.render(workflow);
+        document.getElementById('automation-content').innerHTML = content;
+        // Adjust workflow canvas height
+        function adjustWorkflowHeight() {
+          var right = document.querySelector('.automation-right-content');
+          var canvas = document.querySelector('.workflow-visualization');
+          if (right && canvas) {
+            var rightHeight = right.offsetHeight;
+            canvas.style.minHeight = (rightHeight + 40) + 'px'; // 40px taller
+          }
+        }
+        adjustWorkflowHeight();
+        window.addEventListener('resize', adjustWorkflowHeight);
+        // Show more documents button logic (robust)
+        const checkButton = setInterval(function() {
+          var btn = document.getElementById('show-more-documents-btn');
+          if (btn) {
+            clearInterval(checkButton);
+            btn.addEventListener('click', function() {
+              document.querySelectorAll('.hidden-document').forEach(function(card) {
+                card.classList.remove('hidden-document');
+              });
+              btn.style.display = 'none';
+            });
+          }
+        }, 100);
+      });
+    </script>
+</body>
+</html> 

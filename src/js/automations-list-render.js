@@ -14,6 +14,7 @@
     const type = selectedType;
     const plan = selectedPlan;
     const availability = selectedAvailability;
+    const planOrder = ['Starter', 'Business', 'Enterprise'];
     const filtered = window.automationsList.filter(card => {
       let planMatch = false;
       if (!plan || plan === 'All') {
@@ -30,6 +31,15 @@
       const availabilityMatch = !availability || availability === 'All' || card.availability === availability;
       const typeMatch = !type || type === 'All' ? true : card.type === type;
       return planMatch && availabilityMatch && typeMatch;
+    })
+    // Sort by plan order: Starter, Business, Enterprise, then Rest
+    .sort((a, b) => {
+      const aIdx = planOrder.indexOf(a.plan);
+      const bIdx = planOrder.indexOf(b.plan);
+      if (aIdx === -1 && bIdx === -1) return 0;
+      if (aIdx === -1) return 1;
+      if (bIdx === -1) return -1;
+      return aIdx - bIdx;
     });
     grid.innerHTML = filtered.length ? filtered.map(card => cardHtml(card)).join('') : '<div style="padding:2rem;">No workflows found for selected filters.</div>';
   }
@@ -38,7 +48,7 @@
     const showPlan = card.plan && card.plan !== 'Starter';
     const showAvailability = card.availability && card.availability !== 'Generally Available';
     return `
-      <a href="${card.link}" class="template-card workflow-card">
+      <a href="workflow-detail.html?id=${card.id}" class="template-card workflow-card">
         <div class="card-header-row">
           <div class="card-icons">
             ${card.icons.map(icon => `<div class="app-icon ${icon.color}"><img src="${icon.src}" alt=""></div>`).join('')}
@@ -50,7 +60,7 @@
         </div>
         <div class="card-content">
           <h3>${card.title}</h3>
-          <p>${card.description}</p>
+          <p>${card.shortDescription || card.description}</p>
         </div>
       </a>
     `;

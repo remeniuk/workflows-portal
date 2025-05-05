@@ -66,47 +66,23 @@ const ndaData = {
     ],
     relatedWorkflows: [
         {
-            title: "Form-Triggered Document Creation",
-            description: "Automatically generate documents when a form is submitted. Perfect for collecting information from customers or employees and instantly creating personalized documents.",
-            url: "form-triggered-document-creation.html",
+            title: "Move Document to Folder After Send or Completion",
+            description: "Automatically file documents in the right folder after sending or signing. This workflow ensures your workspace stays organized and documents are always easy to find.",
+            url: "workflow-detail.html?id=move-document-to-folder-after-send-or-completion",
             icons: [
-                {
-                    src: "public/icons/form.svg",
-                    alt: "Form",
-                    color: "blue"
-                },
-                {
-                    src: "public/icons/trigger.svg",
-                    alt: "Trigger",
-                    color: "green"
-                },
-                {
-                    src: "public/icons/document.svg",
-                    alt: "Document",
-                    color: "blue"
-                }
+                { src: "public/icons/trigger.svg", alt: "Trigger", color: "green" },
+                { src: "public/icons/document.svg", alt: "Document", color: "blue" },
+                { src: "public/icons/document-storage.svg", alt: "Folder", color: "teal" }
             ]
         },
         {
-            title: "Bulk Creation",
-            description: "Send multiple documents at once with personalized content. Ideal for mass communications and batch processing.",
-            url: "bulk-creation.html",
+            title: "Post-Signature Follow-Up Document",
+            description: "Send the next document automatically after a contract is signed. This workflow helps you keep business moving by instantly generating and sending the next required document.",
+            url: "workflow-detail.html?id=post-signature-follow-up",
             icons: [
-                {
-                    src: "public/icons/send.svg",
-                    alt: "Send",
-                    color: "blue"
-                },
-                {
-                    src: "public/icons/trigger.svg",
-                    alt: "Trigger",
-                    color: "green"
-                },
-                {
-                    src: "public/icons/document.svg",
-                    alt: "Document",
-                    color: "blue"
-                }
+                { src: "public/icons/trigger.svg", alt: "Trigger", color: "green" },
+                { src: "public/icons/document.svg", alt: "Document", color: "blue" },
+                { src: "public/icons/send.svg", alt: "Send", color: "blue" }
             ]
         }
     ],
