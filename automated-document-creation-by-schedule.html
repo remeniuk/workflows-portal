@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="src/js/template-renderer.js"></script>
     <script src="src/js/data/document-types-catalog.js"></script>
-    <script src="src/js/data/automated-document-creation-by-schedule-data.js"></script>
+    <script src="src/js/data/automations-list.js"></script>
     <style>
         .show-more-documents {
             display: block;
@@ -52,7 +52,9 @@
         // Render the automation content using the template
         window.addEventListener('DOMContentLoaded', async function() {
             const renderer = new AutomationDetailsRenderer('template-details.html');
-            const content = await renderer.render(window.automatedDocumentCreationByScheduleData);
+            // Find the workflow in automationsList by link
+            const workflow = window.automationsList.find(wf => wf.link === 'automated-document-creation-by-schedule.html');
+            const content = await renderer.render(workflow);
             document.getElementById('automation-content').innerHTML = content;
 
             // Adjust workflow canvas height

@@ -6,9 +6,9 @@
     <title>Document Status-Triggered Creation - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
     <script src="src/js/template-renderer.js"></script>
+<script src="src/js/data/automations-list.js"></script>
     <script src="src/js/data/document-types-catalog.js"></script>
-    <script src="src/js/data/automated-document-creation-data.js"></script>
-</head>
+    </head>
 <body>
     <div class="container">
         <div id="header"></div>
@@ -28,7 +28,7 @@
         // Render the automation content using the template
         window.addEventListener('DOMContentLoaded', async function() {
             const renderer = new AutomationDetailsRenderer('template-details.html');
-            const content = await renderer.render(window.automatedDocumentCreationData);
+            const content = await renderer.render(window.automationsList.find(wf => wf.link === 'automated-document-creation.html'));
             document.getElementById('automation-content').innerHTML = content;
 
             // Adjust workflow canvas height

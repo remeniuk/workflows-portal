@@ -6,8 +6,8 @@
     <title>Streamlined Document Fillout - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
     <script src="src/js/template-renderer.js"></script>
-    <script src="src/js/data/streamlined-document-fillout-data.js"></script>
-</head>
+<script src="src/js/data/automations-list.js"></script>
+    </head>
 <body>
     <div class="container">
         <div id="header"></div>
@@ -27,7 +27,7 @@
         // Render the automation content using the template
         window.addEventListener('DOMContentLoaded', async function() {
             const renderer = new AutomationDetailsRenderer('template-details.html');
-            const content = await renderer.render(window.streamlinedDocumentFilloutData);
+            const content = await renderer.render(window.automationsList.find(wf => wf.link === 'streamlined-document-fillout.html'));
             document.getElementById('automation-content').innerHTML = content;
 
             // Adjust workflow canvas height

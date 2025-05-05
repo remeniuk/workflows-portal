@@ -6,9 +6,9 @@
     <title>Form-Triggered Document Creation - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
     <script src="src/js/template-renderer.js"></script>
+<script src="src/js/data/automations-list.js"></script>
     <script src="src/js/data/document-types-catalog.js"></script>
-    <script src="src/js/data/form-triggered-document-creation-data.js"></script>
-    <style>
+        <style>
         .show-more-documents {
             display: block;
             width: 100%;
@@ -52,7 +52,7 @@
         // Render the automation content using the template
         window.addEventListener('DOMContentLoaded', async function() {
             const renderer = new AutomationDetailsRenderer('template-details.html');
-            const content = await renderer.render(window.formTriggeredDocumentCreationData);
+            const content = await renderer.render(window.automationsList.find(wf => wf.link === 'form-triggered-document-creation.html'));
             document.getElementById('automation-content').innerHTML = content;
 
             // Adjust workflow canvas height
