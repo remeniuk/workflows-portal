@@ -91,5 +91,18 @@ export default {
     "coboworx GmbH",
     "Servers Australia"
   ],
-  "shortDescription": "Guide sales reps to create accurate, compliant quotes and proposals with smart forms and rules."
+  "shortDescription": "Guide sales reps to create accurate, compliant quotes and proposals with smart forms and rules.",
+  "aiAssistant": {
+    "title": "AI Onboarding Agent for Quoting & Proposal Workflows",
+    "shortDescription": "Setting up CPQ can take weeks or months—your team knows your process, but not the CPQ platform. The AI agent bridges this gap, building your ideal workflow from your requirements and unstructured data.",
+    "messages": [
+      { "role": "user", "text": "I have an Excel file with our quoting process. Can you help onboard it to PandaDoc?" },
+      { "role": "assistant", "text": "Sure! Upload your Excel or CSV file and I'll extract SKUs, price lists, and rules." },
+      { "role": "user", "text": "[uploads file]" },
+      { "role": "assistant", "text": "I've found SKUs, price lists, and discount rules. Ready to create them in PandaDoc and share your onboarding plan. Proceed?" },
+      { "role": "user", "text": "Yes, proceed." },
+      { "role": "assistant", "text": "Done! Your catalog and rules are set up. Check your onboarding plan and test everything when ready." }
+    ],
+    "input": { "placeholder": "Upload your quote spreadsheet or ask about onboarding..." }
+  }
 };

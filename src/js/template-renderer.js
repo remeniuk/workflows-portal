@@ -220,6 +220,59 @@ class AutomationDetailsRenderer {
             html = html.replace(/<!-- TEMPLATE_INTEGRATIONS -->/, integrationsHtml);
         }
 
+        // Render AI assistant block if present
+        if (data.aiAssistant) {
+            // Use dynamic title and description if present
+            const aiTitle = data.aiAssistant.title || 'Let AI build your workflow';
+            const aiDesc = data.aiAssistant.shortDescription || data.aiAssistant.subtitle || `Describe what you need — and your AI assistant will generate the workflow steps for you.<br><br>From data collection to approvals and more, it's all automatically structured to fit your process.`;
+            const aiLink = `<a href='workflow-detail.html?id=${data.id}' class='ai-link-bold' style='display:inline-block;margin-top:18px;'>Know more <img src="public/icons/arrow-light-right.svg" alt="arrow right" style="vertical-align:middle;margin-left:4px;"></a>`;
+            // Chat bubbles: assistant left, user right
+            function renderChat(messages) {
+                return (messages || []).map(msg => {
+                    if (msg.role === 'assistant') {
+                        return `<div style="display: flex; justify-content: flex-start; margin-bottom: 8px;">
+                            <div style="background: #ECEBF9; color: #242424; border-radius: 16px 16px 16px 0px; padding: 12px 18px; font-size: 15px; max-width: 260px; box-shadow: 0 1px 2px rgba(36,24,120,0.04);">${msg.text}</div>
+                        </div>`;
+                    } else {
+                        return `<div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+                            <div style="background: #F4F4F4; color: #242424; border-radius: 16px 16px 0px 16px; padding: 12px 18px; font-size: 15px; max-width: 260px; box-shadow: 0 1px 2px rgba(36,24,120,0.04);">${msg.text}</div>
+                        </div>`;
+                    }
+                }).join('');
+            }
+            let aiBlockHtml = `
+                <section style="background: #EEE8FF; padding: 60px 0 48px 0; border-radius: 8px; margin-top: -16px; margin-bottom: 72px; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+                  <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 120px; max-width: 1080px; margin: 0 auto; min-height: 320px;">
+                    <div style="flex: 1; min-width: 320px; max-width: 465px;">
+                      <h1 style="font-size: 32px; font-weight: 700; color: #242424; margin-bottom: 18px; text-align: left; font-family: 'Graphik LC Web', Arial, sans-serif;">${aiTitle}</h1>
+                      <div style="font-size: 18px; color: #242424; text-align: left; line-height: 1.5; font-family: 'Graphik LC Web', Arial, sans-serif;">${aiDesc}</div>
+                      ${aiLink}
+                    </div>
+                    <aside style="background: #fff; border-radius: 8px; box-shadow: 0px 4px 16px 0px rgba(47, 47, 47, 0.12), 0px 2px 4px 0px rgba(47, 47, 47, 0.04); padding: 24px; width: 364px; min-width: 320px; display: flex; flex-direction: column; gap: 0;">
+                      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px;">
+                        <span style="background: #6453CF; border-radius: 8px; padding: 6px; display: flex; align-items: center;"><img src="public/icons/ai_icon_only.svg" alt="AI Sparkle" style="width:20px; height:20px;"></span>
+                        <span style="font-weight: 600; font-size: 18px; color: #181818; font-family: 'Graphik LC Web', Arial, sans-serif;">AI assistant</span>
+                      </div>
+                      <div style="flex: 1; min-height: 180px; margin-bottom: 12px;">
+                        ${renderChat(data.aiAssistant.messages)}
+                        ${data.aiAssistant.card ? `<div id="aiWorkflowCard">${data.aiAssistant.card}</div>` : ''}
+                      </div>
+                      ${data.aiAssistant.input ? `
+                        <form class="ai-input-row" autocomplete="off" onsubmit="return false;" style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                            <input type="text" placeholder="${data.aiAssistant.input.placeholder || 'Type here...'}" style="background: #fff; border: 1px solid #E4E4E4; border-radius: 2px; flex: 1; padding: 12px 14px; font-size: 15px; font-family: 'Graphik LC Web', Arial, sans-serif;" />
+                            <button type="submit" aria-label="Send" style="background: none; border: none; padding: 0 8px;">
+                                <img src="public/icons/send.svg" alt="Send">
+                            </button>
+                        </form>` : ''}
+                    </aside>
+                  </div>
+                </section>
+            `;
+            html = html.replace(/<!-- TEMPLATE_AI_BLOCK -->/, aiBlockHtml);
+        } else {
+            html = html.replace(/<!-- TEMPLATE_AI_BLOCK -->/, '');
+        }
+
         return html;
     }
 }
