@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workflow Templates - PandaDoc</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+      .ai-chat {
+        gap: 4px !important;
+      }
+      .ai-chat .ai-bubble-user,
+      .ai-chat .ai-bubble-assistant {
+        margin-bottom: 2px !important;
+        padding: 10px 16px !important;
+        font-size: 15px !important;
+      }
+      #aiWorkflowCard {
+        margin: 6px 0 !important;
+      }
+    </style>
 </head>
 <body>
     <div class="container automations-home-container">
@@ -14,8 +28,11 @@
                 <main class="ai-main">
                     <section class="ai-banner">
                         <div>
-                            <h1>AI agent will help you building your workflows</h1>
-                            <p>AI agent will analyse the document you're working on, will take into account the data about the integrations and process you have, and will guide you through setting up a workflow in PandaDoc.</p>
+                            <h1>Apply Workflows to Your Documents</h1>
+                            <p>
+                                For any document you have uploaded into PandaDoc or created from scratch, you can empower it with powerful, industry-specific workflows—automating approvals, data collection, routing, and more, all in a single click.<br><br>
+                                Explore our collection of ready-to-use workflow templates for every industry and use case. Move from simple uploads to full automation—effortlessly.
+                            </p>
                         </div>
                         <a href="#" class="ai-link-bold">
                             Try It
@@ -28,28 +45,19 @@
                             <span>AI assistant</span>
                         </div>
                         <div class="ai-chat">
+                            <div class="ai-bubble-assistant" style="background: #ECEBF9; color: #000;">
+                                Hey! I can see you're working on an NDA document. Do you want to add an approval workflow?
+                            </div>
+                            <div id="aiWorkflowCard"></div>
                             <div class="ai-bubble-user">
-                                I'm working on an NDA, and I want to have a fully automated workflow. Help me building it.
+                                Yes, let's do it!
                             </div>
-                            <div class="ai-bubble-assistant">
-                                Sure, here are the recommended elements you'd need to configure next.
-                            </div>
-                            <div class="ai-steps">
-                                <div class="ai-step">
-                                    <span class="icon form"><img src="public/icons/form.svg" alt="Form" style="width:20px; height:22px; opacity:0.8;"></span>
-                                    <span>Collect form data</span>
-                                </div>
-                                <div class="ai-step">
-                                    <span class="icon approval"><img src="public/icons/approval.svg" alt="Approval" style="width:26px; height:16px; opacity:0.8;"></span>
-                                    <span>Get approval</span>
-                                </div>
-                            </div>
-                            <div class="ai-bubble-assistant">
-                                Who needs to approve the NDA before it's sent out? Type down their email addresses
+                            <div class="ai-bubble-assistant" style="background: #ECEBF9; color: #000;">
+                                Great! Let me help you configure it. Let's start with the email addresses of the approvers.
                             </div>
                             <form class="ai-input-row" autocomplete="off" onsubmit="return false;">
-                                <input type="text" placeholder="Type email addresses..." />
-                                <button type="submit" aria-label="Send">
+                                <input type="text" placeholder="Type email addresses..." style="background: #fff; border: 1px solid #E4E4E4; border-radius: 2px;" />
+                                <button type="submit" aria-label="Send" style="background: none; border: none; padding: 0 8px;">
                                     <img src="public/icons/send.svg" alt="Send">
                                 </button>
                             </form>
@@ -115,6 +123,33 @@
           .then(res => res.text())
           .then(html => document.getElementById(part).innerHTML = html);
       });
+
+      // Render the workflow card in the AI assistant area using the same structure as the gallery
+      function renderAIWorkflowCard() {
+        if (!window.automationsList) return;
+        // Find the workflow most relevant to NDA automation (using 'Basic Document Approval Workflow')
+        const workflow = window.automationsList.find(w => w.id === 'basic-document-approval-workflow');
+        if (!workflow) return;
+        const card = document.getElementById('aiWorkflowCard');
+        card.innerHTML = `
+          <a href="workflow-detail.html?id=${workflow.id}" class="template-card workflow-card" style="pointer-events: none; cursor: default;">
+            <div class="card-header-row">
+              <div class="card-icons">
+                ${workflow.icons.map(icon => `<div class="app-icon ${icon.color || ''}"><img src="${icon.src}" alt=""></div>`).join('')}
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>${workflow.title}</h3>
+              <p>${workflow.shortDescription || workflow.description}</p>
+            </div>
+          </a>
+        `;
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderAIWorkflowCard);
+      } else {
+        renderAIWorkflowCard();
+      }
     </script>
     <script src="src/js/data/automations-list.js"></script>
     <script src="src/js/automations-list-render.js"></script>
