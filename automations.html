@@ -10,16 +10,55 @@
     <div class="container automations-home-container">
         <div id="header"></div>
         <main class="main-content">
-            <div class="content-header">
-                <h1>Workflow templates</h1>
-                <div class="search-box">
-                    <img src="public/images/search-icon.svg" alt="Search" class="search-icon">
-                    <input type="text" placeholder="Search templates" class="search-input">
-                </div>
-                <p class="subtitle">Discover ready-to-use workflow templates to streamline your document workflows, save hours of manual work, and scale your processes.</p>
-            </div>
+            <section class="ai-hero-section">
+                <main class="ai-main">
+                    <section class="ai-banner">
+                        <div>
+                            <h1>AI agent will help you building your workflows</h1>
+                            <p>AI agent will analyse the document you're working on, will take into account the data about the integrations and process you have, and will guide you through setting up a workflow in PandaDoc.</p>
+                        </div>
+                        <a href="#" class="ai-link-bold">
+                            Try It
+                            <img src="public/icons/arrow-light-right.svg" alt="arrow right">
+                        </a>
+                    </section>
+                    <aside class="ai-assistant-card">
+                        <div class="ai-assistant-header">
+                            <span class="icon"><img src="public/icons/ai_icon_only.svg" alt="AI Sparkle" style="width:20px; height:20px;"></span>
+                            <span>AI assistant</span>
+                        </div>
+                        <div class="ai-chat">
+                            <div class="ai-bubble-user">
+                                I'm working on an NDA, and I want to have a fully automated workflow. Help me building it.
+                            </div>
+                            <div class="ai-bubble-assistant">
+                                Sure, here are the recommended elements you'd need to configure next.
+                            </div>
+                            <div class="ai-steps">
+                                <div class="ai-step">
+                                    <span class="icon form"><img src="public/icons/form.svg" alt="Form" style="width:20px; height:22px; opacity:0.8;"></span>
+                                    <span>Collect form data</span>
+                                </div>
+                                <div class="ai-step">
+                                    <span class="icon approval"><img src="public/icons/approval.svg" alt="Approval" style="width:26px; height:16px; opacity:0.8;"></span>
+                                    <span>Get approval</span>
+                                </div>
+                            </div>
+                            <div class="ai-bubble-assistant">
+                                Who needs to approve the NDA before it's sent out? Type down their email addresses
+                            </div>
+                            <form class="ai-input-row" autocomplete="off" onsubmit="return false;">
+                                <input type="text" placeholder="Type email addresses..." />
+                                <button type="submit" aria-label="Send">
+                                    <img src="public/icons/send.svg" alt="Send">
+                                </button>
+                            </form>
+                        </div>
+                    </aside>
+                </main>
+            </section>
 
-            <div class="content-body">
+            <div class="content-body" style="margin-top: 0;">
                 <aside class="sidebar">
                     <div class="filter-header">Workflows</div>
                     <nav class="side-nav">
