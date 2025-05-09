@@ -85,5 +85,15 @@ export default {
     "Service Requests": "Submit and track requests for internal or external services.",
     "Purchase Orders": "Authorize and document the purchase of goods or services.",
     "Tax Forms": "Report and file necessary tax information with authorities."
+  },
+  "aiAssistant": {
+    "title": "AI Agent for Guided Document Creation",
+    "shortDescription": "Let the AI agent help you by turning your long contract into a simple form. Fill in the form, and the agent will generate the document for you.",
+    "messages": [
+      { "role": "assistant", "text": "I see your contract has many fields and is quite long. Would you like me to help you create a form to fill in, and then I'll generate the document for you, so you don't have to scan the whole doc?" },
+      { "role": "user", "text": "Yes, that would be great!" },
+      { "role": "assistant", "text": "Perfect! I'll analyze your contract and extract the key fields. Once the form is ready, just fill it in and I'll generate your document." }
+    ],
+    "input": { "placeholder": "Ask the agent to create a form or help with your document..." }
   }
 };

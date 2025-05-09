@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Contract - PandaDoc</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="src/js/template-renderer.js"></script>
+    <script src="src/js/data/sales-contract-data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="header"></div>
+        <main class="document-details" id="document-content">
+            <!-- Content will be rendered here -->
+        </main>
+    </div>
+    <div id="footer"></div>
+    <script>
+        // Load header and footer
+        ['header', 'footer'].forEach(function(part) {
+            fetch(part + '.html')
+                .then(res => res.text())
+                .then(html => document.getElementById(part).innerHTML = html);
+        });
+
+        // Render the document content using the template
+        window.addEventListener('DOMContentLoaded', async function() {
+            const renderer = new DocumentDetailsRenderer('template-document-details.html');
+            const content = await renderer.render(window.salesContractData);
+            document.getElementById('document-content').innerHTML = content;
+
+            // Adjust document preview height
+            function adjustPreviewHeight() {
+                var right = document.querySelector('.document-right-content');
+                var preview = document.querySelector('.document-preview');
+                if (right && preview) {
+                    var rightHeight = right.offsetHeight;
+                    preview.style.minHeight = (rightHeight + 40) + 'px'; // 40px taller
+                }
+            }
+            adjustPreviewHeight();
+            window.addEventListener('resize', adjustPreviewHeight);
+        });
+    </script>
+</body>
+</html> 
